@@ -3,46 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Serenity Lux Hair Extensions | Raw Slavic Capsule Drops & K-Tips</title>
-  
-  <!-- Google Fonts: Cinzel Decorative for flared signature typography, Cormorant Garamond for editorial copy, Alex Brush for "Lux" script -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500;600&family=Alex+Brush&display=swap" rel="stylesheet">
-  
-  <!-- FontAwesome for sleek luxury icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Serenity Lux Hair Extensions | Raw Collection — Luxury That Lasts</title>
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500;600&family=Alex+Brush&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            noir: {
-              950: '#060606',
-              900: '#0c0c0e',
-              850: '#121215',
-              800: '#19191e',
-              700: '#23232a',
-            },
-            gold: {
-              light: '#f7e7ce',
-              champagne: '#e6ca97',
-              DEFAULT: '#d4af37',
-              rich: '#c59d28',
-              muted: '#9e823f',
-              dark: '#5a461b'
+            brand: {
+              black: '#0D0D0E',
+              dark: '#141416',
+              surface: '#1A1A1E',
+              card: '#1F1F24',
+              border: '#2C2B29',
+              gold: '#DFBA75',
+              goldLight: '#F3DFB2',
+              goldDark: '#9E752D',
+              goldMuted: '#BFA067',
+              cream: '#F7F4EE',
+              muted: '#9E9EA7'
             }
           },
           fontFamily: {
-            'cinzel-dec': ['"Cinzel Decorative"', 'serif'],
-            cinzel: ['"Cinzel"', 'serif'],
-            serif: ['"Cormorant Garamond"', 'serif'],
-            sans: ['"Montserrat"', 'sans-serif'],
-            script: ['"Alex Brush"', 'cursive'],
+            cinzel: ['Cinzel', 'serif'],
+            serif: ['Cormorant Garamond', 'serif'],
+            sans: ['Montserrat', 'sans-serif'],
+            script: ['Alex Brush', 'cursive']
           }
         }
       }
@@ -50,1225 +46,1443 @@
   </script>
 
   <style>
-    /* Custom Gold Metallic Gradient Text & Accents */
+    /* Custom Gold Gradients & Luxury Accents matching SL-001 */
     .gold-gradient-text {
-      background: linear-gradient(135deg, #faebd7 0%, #e6ca97 30%, #d4af37 60%, #b38628 100%);
+      background: linear-gradient(135deg, #F9E7C4 0%, #DFBA75 40%, #B68B3C 75%, #E6C887 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
-    .gold-gradient-border {
-      border-image: linear-gradient(135deg, #d4af37, #faebd7, #9e823f, #c59d28) 1;
+    
+    .gold-gradient-bg {
+      background: linear-gradient(135deg, #EAD3A2 0%, #C9A054 50%, #9E752D 100%);
     }
 
-    .gold-box-border {
-      border: 1px solid rgba(212, 175, 55, 0.35);
+    .gold-border-gradient {
+      border-image: linear-gradient(to bottom right, #DFBA75, #684E1C, #F3DFB2, #9E752D) 1;
+    }
+
+    .luxury-card-border {
       position: relative;
     }
-
-    .gold-glow {
-      box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+    .luxury-card-border::after {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border: 1px solid rgba(223, 186, 117, 0.22);
+      pointer-events: none;
     }
 
-    .gold-glow-hover:hover {
-      box-shadow: 0 0 35px rgba(212, 175, 55, 0.3);
-      border-color: rgba(212, 175, 55, 0.8);
-    }
-
-    /* Subdued luxury noise background texture */
-    .bg-grain {
-      background-color: #08080a;
-      background-image: radial-gradient(rgba(212, 175, 55, 0.04) 1px, transparent 0);
-      background-size: 32px 32px;
-    }
-
-    /* Scrollbar */
+    /* Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 6px;
+      height: 6px;
     }
     ::-webkit-scrollbar-track {
-      background: #09090b;
+      background: #0D0D0E;
     }
     ::-webkit-scrollbar-thumb {
-      background: #332d1f;
+      background: #413a2d;
       border-radius: 3px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #d4af37;
+      background: #cba258;
     }
 
-    /* Badge pulse */
-    @keyframes subtlePulse {
-      0%, 100% { opacity: 0.9; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.03); }
+    /* Subtle shimmer keyframe */
+    @keyframes subtleGlow {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 0.9; }
     }
-    .badge-live {
-      animation: subtlePulse 2.5s infinite ease-in-out;
+    .animate-glow {
+      animation: subtleGlow 4s ease-in-out infinite;
     }
   </style>
 </head>
-<body class="bg-noir-950 text-gray-200 font-sans antialiased bg-grain selection:bg-gold-dark selection:text-gold-light min-h-screen flex flex-col justify-between overflow-x-hidden">
 
-  <div class="bg-gradient-to-r from-noir-900 via-[#18150d] to-noir-900 border-b border-gold/30 text-xs py-2 px-4 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between text-center gap-2">
-      <div class="flex items-center space-x-2">
-        <span class="inline-block w-2 h-2 rounded-full bg-gold animate-ping"></span>
-        <span class="tracking-widest uppercase text-gold font-medium">CAPSULE DROP NO. 44</span>
-        <span class="text-neutral-400 hidden md:inline">| Single-Donor Slavic Harvest</span>
-      </div>
-      <div class="flex items-center space-x-3 text-gold-light tracking-wider">
-        <span class="text-gray-400 font-light">NEXT DROP RELEASES IN:</span>
-        <div id="dropCountdown" class="font-mono text-gold font-semibold tracking-widest bg-noir-850 px-2.5 py-0.5 rounded border border-gold/20">
-          02d : 14h : 38m : 12s
-        </div>
-      </div>
-      <div class="hidden lg:flex items-center space-x-4">
-        <a href="#pro-portal" class="text-gray-400 hover:text-gold transition text-[11px] tracking-widest uppercase">Verified Stylist Trade Pricing</a>
-      </div>
-    </div>
-  </div>
+<body class="bg-brand-black text-brand-cream font-sans antialiased selection:bg-brand-gold selection:text-brand-black">
 
-  <header class="border-b border-white/5 backdrop-blur-md bg-noir-950/80 sticky top-[37px] z-40">
-    <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+  <!-- 1. TOP ANNOUNCEMENT TICKER -->
+  <aside aria-label="Announcement" class="bg-[#121110] border-b border-brand-gold/20 py-2 px-4 text-xs font-medium tracking-widest uppercase text-center text-brand-goldLight flex items-center justify-center gap-3">
+    <span class="inline-block w-1.5 h-1.5 rounded-full bg-brand-gold animate-ping"></span>
+    <span>Next Capsule Drop: Wednesday at 12:00 PM EST &bull; 100% Single Donor Raw Hair &bull; Never Restocked</span>
+    <span class="hidden md:inline text-brand-gold/60">| Complimentary Insured Priority Shipping</span>
+  </aside>
+
+  <!-- 2. MAIN HEADER & LOGO BRANDING (Matching SL-001 Concept) -->
+  <header class="sticky top-0 z-40 bg-brand-black/95 backdrop-blur-md border-b border-brand-border/60 transition-all duration-300" id="mainHeader">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Left Nav Links -->
-      <nav class="hidden md:flex items-center space-x-8 text-xs font-light tracking-[0.2em] uppercase">
-        <a href="#drop-archive" class="hover:text-gold transition duration-200">The Drop</a>
-        <a href="#raw-manifesto" class="hover:text-gold transition duration-200">Single Donor</a>
-        <a href="#formats" class="hover:text-gold transition duration-200">K-Tips vs Bulk</a>
-        <a href="#shade-match" class="hover:text-gold transition duration-200">Color Concierge</a>
-      </nav>
-
-      <!-- Center Logo (Exact Brand Emblem from Image) -->
-      <a href="#" class="flex flex-col items-center justify-center py-2 group">
-        <div class="flex items-center space-x-1.5">
-          <!-- Stylized Intertwined SL Icon SVG based on logo -->
-          <svg class="w-8 h-8 text-gold drop-shadow-sm group-hover:scale-105 transition transform duration-300" viewBox="0 0 100 100" fill="none">
-            <path d="M52 20 C 65 20, 75 28, 75 40 C 75 52, 60 58, 48 62 C 38 65, 30 70, 30 80 C 30 90, 42 94, 55 94 C 68 94, 78 86, 88 92" stroke="url(#goldGradIcon)" stroke-width="6" stroke-linecap="round"/>
-            <path d="M48 12 L48 88" stroke="url(#goldGradIcon)" stroke-width="7" stroke-linecap="square"/>
-            <path d="M40 88 L58 88" stroke="url(#goldGradIcon)" stroke-width="6" stroke-linecap="round"/>
-            <path d="M48 55 C 32 55, 22 45, 22 35 C 22 25, 32 15, 48 15" stroke="url(#goldGradIcon)" stroke-width="5" stroke-linecap="round"/>
-            <defs>
-              <linearGradient id="goldGradIcon" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#faebd7" />
-                <stop offset="40%" stop-color="#d4af37" />
-                <stop offset="100%" stop-color="#8c6d23" />
-              </linearGradient>
-            </defs>
-          </svg>
-          <span class="font-cinzel-dec text-xl sm:text-2xl tracking-[0.2em] font-bold text-white group-hover:text-gold-champagne transition">
-            SERENITY
-          </span>
+      <!-- Upper Navigation / Utility Bar -->
+      <div class="flex items-center justify-between py-3 border-b border-white/5 text-xs text-brand-muted tracking-wider">
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="#how-it-works" class="hover:text-brand-gold transition">HOW IT WORKS</a>
+          <a href="#promise" class="hover:text-brand-gold transition">OUR PROMISE</a>
+          <a href="#capsule" class="hover:text-brand-gold transition">LATEST DROP</a>
         </div>
-        <div class="flex items-center space-x-2 -mt-1.5">
-          <span class="font-script text-gold-champagne text-lg sm:text-xl font-normal lowercase tracking-wide">Lux</span>
-          <span class="text-[9px] tracking-[0.35em] text-gray-400 uppercase font-light">Hair Extensions</span>
-        </div>
-      </a>
 
-      <!-- Right Action Items -->
-      <div class="flex items-center space-x-6 text-sm">
-        <button onclick="openSearchModal()" class="text-gray-400 hover:text-gold transition" title="Search Harvests">
-          <i class="fa-solid fa-magnifying-glass text-xs"></i>
-        </button>
-        <button onclick="openVipModal()" class="hidden sm:inline-block border border-gold/40 px-3.5 py-1.5 text-[10px] uppercase tracking-[0.2em] text-gold hover:bg-gold hover:text-noir-950 transition duration-300">
-          VIP Drop Alert
-        </button>
-        <button onclick="toggleCartDrawer()" class="relative text-gray-300 hover:text-gold transition">
-          <i class="fa-solid fa-bag-shopping text-sm"></i>
-          <span id="cartCountBadge" class="absolute -top-2 -right-2 bg-gold text-noir-950 text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">2</span>
-        </button>
-        <button onclick="toggleMobileNav()" class="md:hidden text-gold text-lg">
-          <i class="fa-solid fa-bars"></i>
-        </button>
+        <!-- Social Icons Left on Mobile / Right on Desktop -->
+        <div class="flex items-center space-x-4">
+          <a href="#" class="hover:text-brand-gold transition" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="hover:text-brand-gold transition" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" class="hover:text-brand-gold transition" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+
+        <div class="flex items-center space-x-5 text-sm">
+          <button onclick="toggleSearch()" class="hover:text-brand-gold transition flex items-center gap-1.5" aria-label="Search Collection">
+            <i class="fa-solid fa-magnifying-glass text-xs"></i>
+            <span class="hidden sm:inline text-xs">SEARCH</span>
+          </button>
+          <button onclick="openVipModal()" class="hover:text-brand-gold transition flex items-center gap-1.5" aria-label="VIP Access">
+            <i class="fa-regular fa-user text-xs"></i>
+            <span class="hidden sm:inline text-xs">VIP ACCESS</span>
+          </button>
+          <button onclick="toggleCart()" class="relative text-brand-gold hover:text-brand-goldLight transition flex items-center gap-1.5 p-1" aria-label="Shopping Bag">
+            <i class="fa-solid fa-bag-shopping text-base"></i>
+            <span class="hidden sm:inline text-xs tracking-widest font-semibold">BAG</span>
+            <span id="cartCountBadge" class="w-4 h-4 rounded-full bg-brand-gold text-brand-black text-[10px] font-bold flex items-center justify-center">0</span>
+          </button>
+        </div>
       </div>
 
-    </div>
-
-    <!-- Mobile Drawer Menu -->
-    <div id="mobileNav" class="hidden md:hidden bg-noir-900 border-b border-gold/20 px-6 py-6 space-y-4 text-xs uppercase tracking-widest text-center">
-      <a href="#drop-archive" onclick="toggleMobileNav()" class="block py-2 text-gray-300 hover:text-gold">Live Ponytail Drops</a>
-      <a href="#raw-manifesto" onclick="toggleMobileNav()" class="block py-2 text-gray-300 hover:text-gold">Single Donor Standard</a>
-      <a href="#formats" onclick="toggleMobileNav()" class="block py-2 text-gray-300 hover:text-gold">K-Tip Pre-Bonding vs Bulk</a>
-      <a href="#shade-match" onclick="toggleMobileNav()" class="block py-2 text-gray-300 hover:text-gold">Custom Match Concierge</a>
-      <a href="#pro-portal" onclick="toggleMobileNav()" class="block py-2 text-gold">Stylist Wholesale Trade</a>
-    </div>
-  </header>
-
-  <main class="flex-grow">
-    
-    <section class="relative min-h-[92vh] flex items-center justify-center px-4 py-16 overflow-hidden">
-      <!-- Ambient Backlight -->
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold/10 via-noir-950 to-noir-950 pointer-events-none"></div>
-
-      <!-- Outer Double Border Box mimicking the user's card packaging -->
-      <div class="relative w-full max-w-4xl p-6 sm:p-12 md:p-16 border border-gold/40 shadow-2xl bg-gradient-to-b from-noir-900/90 to-noir-950/95 backdrop-blur-md rounded-sm">
-        
-        <!-- Corner Embellishments -->
-        <div class="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-gold/70"></div>
-        <div class="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-gold/70"></div>
-        <div class="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-gold/70"></div>
-        <div class="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-gold/70"></div>
-
-        <!-- Inner Delicate Framing line -->
-        <div class="border border-gold/20 p-6 sm:p-10 flex flex-col items-center text-center">
-
-          <!-- Grand Intertwined SL Emblem -->
-          <div class="mb-4">
-            <svg class="w-20 h-20 sm:w-28 sm:h-28 mx-auto" viewBox="0 0 100 100" fill="none">
-              <path d="M52 18 C 68 18, 79 27, 79 40 C 79 53, 62 60, 48 64 C 36 67, 28 72, 28 82 C 28 92, 42 96, 56 96 C 72 96, 84 86, 92 92" stroke="url(#heroGold)" stroke-width="4.5" stroke-linecap="round"/>
-              <path d="M48 10 L48 90" stroke="url(#heroGold)" stroke-width="5" stroke-linecap="square"/>
-              <path d="M38 90 L58 90" stroke="url(#heroGold)" stroke-width="4.5" stroke-linecap="round"/>
-              <path d="M48 54 C 30 54, 20 44, 20 32 C 20 20, 31 10, 48 10" stroke="url(#heroGold)" stroke-width="4" stroke-linecap="round"/>
+      <!-- Center Iconic Monogram & Brandmark (Based on the attached SL-001 design) -->
+      <div class="py-5 text-center flex flex-col items-center justify-center relative">
+        <a href="#" class="group flex flex-col items-center select-none">
+          <!-- Monogram Icon SVGs Inspired directly by the intertwined SL -->
+          <div class="relative w-14 h-14 mb-2 flex items-center justify-center">
+            <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-md" fill="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <linearGradient id="heroGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#faebd7" />
-                  <stop offset="45%" stop-color="#d4af37" />
-                  <stop offset="100%" stop-color="#80621d" />
+                <linearGradient id="goldMonogram" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#F9E7C4" />
+                  <stop offset="50%" stop-color="#CBA258" />
+                  <stop offset="100%" stop-color="#8E6523" />
                 </linearGradient>
               </defs>
+              <!-- Interlaced S & L luxury paths -->
+              <circle cx="50" cy="50" r="46" stroke="url(#goldMonogram)" stroke-width="0.75" stroke-dasharray="2 3" opacity="0.6"/>
+              <!-- Elegant S monogram -->
+              <path d="M57 26 C43 25 36 32 37 42 C38 49 46 51 53 54 C63 58 65 65 63 71 C60 78 50 80 40 76 C35 74 31 70 30 65" 
+                    stroke="url(#goldMonogram)" stroke-width="3.5" stroke-linecap="round"/>
+              <!-- Vertical and flowing serif of L -->
+              <path d="M47 22 V74 H68 C73 74 76 77 79 81" 
+                    stroke="url(#goldMonogram)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M41 23 H53" stroke="url(#goldMonogram)" stroke-width="3" stroke-linecap="round"/>
             </svg>
           </div>
 
-          <!-- Exact Brand Typography -->
-          <h1 class="font-cinzel-dec text-3xl sm:text-5xl md:text-6xl tracking-[0.2em] text-white font-bold uppercase drop-shadow-sm">
-            SERENITY
+          <!-- Brand Typography -->
+          <h1 class="font-cinzel text-2xl sm:text-3xl md:text-4xl tracking-[0.25em] text-brand-cream uppercase font-semibold group-hover:text-brand-gold transition duration-300">
+            S E R E N I T Y
           </h1>
-
-          <!-- Ornamental Flourish Diamond Divider from logo -->
-          <div class="flex items-center justify-center space-x-3 my-3 w-48 sm:w-64">
-            <div class="h-[1px] bg-gradient-to-r from-transparent via-gold to-gold flex-grow"></div>
-            <div class="w-1.5 h-1.5 rotate-45 bg-gold"></div>
-            <div class="w-2 h-2 rotate-45 bg-gold-champagne"></div>
-            <div class="w-1.5 h-1.5 rotate-45 bg-gold"></div>
-            <div class="h-[1px] bg-gradient-to-l from-transparent via-gold to-gold flex-grow"></div>
+          
+          <!-- Diamond Divider from logo design -->
+          <div class="flex items-center justify-center space-x-2 my-1 w-48">
+            <span class="h-[1px] w-12 bg-gradient-to-r from-transparent to-brand-gold/60"></span>
+            <span class="w-1.5 h-1.5 rotate-45 bg-brand-gold"></span>
+            <span class="w-2 h-2 rotate-45 border border-brand-gold bg-brand-gold/30"></span>
+            <span class="w-1.5 h-1.5 rotate-45 bg-brand-gold"></span>
+            <span class="h-[1px] w-12 bg-gradient-to-l from-transparent to-brand-gold/60"></span>
           </div>
 
-          <div class="flex items-center space-x-2 sm:space-x-3 mb-8">
-            <span class="font-script text-gold-champagne text-2xl sm:text-3xl font-light">Lux</span>
-            <span class="text-xs sm:text-sm tracking-[0.38em] text-gray-300 uppercase font-light">HAIR EXTENSIONS</span>
+          <!-- Subtext with script "Lux" and HAIR EXTENSIONS -->
+          <div class="flex items-center space-x-2">
+            <span class="font-script text-2xl sm:text-3xl text-brand-goldLight -rotate-6 transform pr-1">Lux</span>
+            <span class="font-cinzel text-[11px] sm:text-xs tracking-[0.3em] uppercase text-brand-gold font-light">Hair Extensions</span>
           </div>
-
-          <!-- Sub-headline based on Card -->
-          <div class="max-w-xl mx-auto space-y-2 mb-8">
-            <div class="text-xs sm:text-sm tracking-[0.35em] text-gold uppercase font-medium">
-              RAW COLLECTION • 1-OF-1 HARVEST CAPSULES
-            </div>
-            <p class="font-serif italic text-lg sm:text-2xl text-gray-300 font-light">
-              "Luxury That Lasts."
-            </p>
-            <p class="text-xs sm:text-sm text-gray-400 font-light max-w-lg leading-relaxed pt-2">
-              Unprocessed, cuticle-aligned raw Slavic hair sourced from single consenting donors. Never chemically stripped, acid-bathed, or silicone coated.
-            </p>
+          
+          <div class="mt-1 text-[9px] tracking-[0.35em] uppercase text-brand-muted font-sans font-medium">
+            RAW COLLECTION &bull; LUXURY THAT LASTS
           </div>
+        </a>
 
-          <!-- CTAs -->
-          <div class="flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
-            <a href="#drop-archive" class="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-gold via-gold-champagne to-gold-rich text-noir-950 font-medium text-xs tracking-[0.25em] uppercase hover:brightness-110 transition duration-300 shadow-lg">
-              Explore Live Capsule Drops
-            </a>
-            <button onclick="openConciergeModal()" class="w-full sm:w-auto px-8 py-3.5 border border-gold/50 text-gold-light text-xs tracking-[0.25em] uppercase hover:bg-gold/10 transition duration-300">
-              Request Shade Match
-            </button>
-          </div>
-
-          <!-- Trust Badges -->
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 pt-6 border-t border-gold/15 w-full text-[10px] tracking-widest text-gray-400 uppercase">
-            <div><i class="fa-solid fa-gem text-gold mr-1"></i> 100% Single Donor</div>
-            <div><i class="fa-solid fa-feather text-gold mr-1"></i> Raw Intact Cuticles</div>
-            <div><i class="fa-solid fa-certificate text-gold mr-1"></i> Unsiliconed Longevity</div>
-            <div><i class="fa-solid fa-wand-magic-sparkles text-gold mr-1"></i> Custom K-Tip Bonding</div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section id="drop-archive" class="py-20 px-4 sm:px-6 max-w-7xl mx-auto border-t border-white/5">
-      
-      <!-- Section Header -->
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <div class="text-xs uppercase tracking-[0.3em] text-gold mb-2">Exclusive Weekly Inventory</div>
-        <h2 class="font-cinzel text-2xl sm:text-4xl text-white tracking-[0.15em] mb-4">THE SINGLE-DONOR CAPSULE</h2>
-        <div class="w-12 h-0.5 bg-gold mx-auto mb-4"></div>
-        <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed">
-          Because true raw hair comes from individual donors, no two bundles are identical. Each listing represents a solitary, unmixed ponytail cataloged by weight, wave pattern, and porosity. Once purchased, that exact donor piece is archived forever.
-        </p>
-      </div>
-
-      <!-- Filter & Format Controls -->
-      <div class="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-gold/20">
-        
-        <!-- Texture Filter Tabs -->
-        <div class="flex flex-wrap items-center gap-2" id="filterContainer">
-          <button onclick="filterCatalog('all')" class="filter-btn active-filter px-4 py-1.5 text-xs uppercase tracking-widest rounded-sm transition border border-gold bg-gold text-noir-950 font-semibold" data-category="all">
-            All Ponytails
-          </button>
-          <button onclick="filterCatalog('Silky Straight')" class="filter-btn px-4 py-1.5 text-xs uppercase tracking-widest rounded-sm transition border border-gold/20 text-gray-300 hover:border-gold" data-category="Silky Straight">
-            Silky Straight
-          </button>
-          <button onclick="filterCatalog('Natural Wave')" class="filter-btn px-4 py-1.5 text-xs uppercase tracking-widest rounded-sm transition border border-gold/20 text-gray-300 hover:border-gold" data-category="Natural Wave">
-            Natural Wave
-          </button>
-          <button onclick="filterCatalog('Soft Beach Wave')" class="filter-btn px-4 py-1.5 text-xs uppercase tracking-widest rounded-sm transition border border-gold/20 text-gray-300 hover:border-gold" data-category="Soft Beach Wave">
-            S-Curl / Deep Wave
-          </button>
-        </div>
-
-        <!-- Format Toggle (Raw Bulk Ponytail vs Pre-Bonded K-Tips) -->
-        <div class="flex items-center space-x-3 bg-noir-900 border border-gold/30 px-3 py-1.5 rounded-sm">
-          <span class="text-[11px] uppercase tracking-wider text-gray-400">Preparation Format:</span>
-          <select id="formatSelector" onchange="updateFormatPricing()" class="bg-noir-850 text-gold text-xs uppercase tracking-wider border-none focus:outline-none cursor-pointer">
-            <option value="raw">Raw Bulk Ponytail (Unbonded)</option>
-            <option value="ktip">Pre-Bonded Italian K-Tips (+ $85 / 100g)</option>
-            <option value="weft">Hand-Tied Genius Weft (+ $110 / 100g)</option>
-          </select>
-        </div>
-
-      </div>
-
-      <!-- Live Capsule Products Grid (1-of-1 items) -->
-      <div id="productGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Dynamically rendered via JS -->
-      </div>
-
-      <!-- Drop Policy Clarification Banner -->
-      <div class="mt-14 p-6 border border-gold/30 bg-noir-900/60 flex flex-col md:flex-row items-center justify-between gap-6 rounded-sm">
-        <div class="flex items-center space-x-4">
-          <div class="w-12 h-12 rounded-full border border-gold flex items-center justify-center text-gold text-xl flex-shrink-0">
-            <i class="fa-solid fa-lock"></i>
-          </div>
-          <div>
-            <h4 class="text-sm font-cinzel uppercase tracking-wider text-white">Cart Reservation Policy</h4>
-            <p class="text-xs text-gray-400 font-light mt-1">Due to the 1-of-1 single donor nature of Serenity Lux harvests, items added to your cart are held for precisely 12 minutes before returning to public access.</p>
-          </div>
-        </div>
-        <button onclick="openVipModal()" class="whitespace-nowrap px-6 py-2.5 border border-gold text-gold text-xs uppercase tracking-[0.2em] hover:bg-gold hover:text-noir-950 transition">
-          Join VIP Drop SMS
+        <!-- Mobile hamburger toggle -->
+        <button onclick="toggleMobileMenu()" class="md:hidden absolute right-2 top-8 text-xl text-brand-cream hover:text-brand-gold focus:outline-none" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars-staggered"></i>
         </button>
       </div>
 
-    </section>
+      <!-- Main Navigation Menu (Matching HBE Haus of Hair) -->
+      <nav class="hidden md:flex justify-center items-center py-2.5 space-x-8 text-xs font-medium tracking-[0.2em] uppercase text-brand-cream border-t border-white/5">
+        <a href="#home" class="hover:text-brand-gold transition py-1 border-b-2 border-transparent hover:border-brand-gold">HOME</a>
+        <a href="#how-it-works" class="hover:text-brand-gold transition py-1 border-b-2 border-transparent hover:border-brand-gold">HOW IT WORKS</a>
+        <a href="#about-hair" class="hover:text-brand-gold transition py-1 border-b-2 border-transparent hover:border-brand-gold">ABOUT THE HAIR</a>
+        <a href="#capsule" class="hover:text-brand-gold transition py-1 border-b-2 border-transparent hover:border-brand-gold">LATEST DROP</a>
+        <a href="#capsule" class="hover:text-brand-gold transition py-1 border-b-2 border-transparent hover:border-brand-gold">SHOP ARCHIVE</a>
+        <a href="#reviews" class="hover:text-brand-gold transition py-1 border-b-2 border-transparent hover:border-brand-gold">REVIEWS</a>
+        <a href="#faqs" class="hover:text-brand-gold transition py-1 border-b-2 border-transparent hover:border-brand-gold">FAQS</a>
+        <a href="#who-is-wearing" class="hover:text-brand-gold transition py-1 border-b-2 border-transparent hover:border-brand-gold">WHO'S WEARING SL</a>
+        <a href="#contact" class="hover:text-brand-gold transition py-1 border-b-2 border-transparent hover:border-brand-gold">CONTACT</a>
+      </nav>
+    </div>
 
-    <section id="raw-manifesto" class="py-24 bg-noir-900 border-t border-b border-gold/15">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
-          <!-- Manifesto Left Text -->
-          <div class="space-y-6">
-            <span class="text-xs uppercase tracking-[0.35em] text-gold font-medium">The Serenity Standard</span>
-            <h2 class="font-cinzel text-3xl sm:text-4xl text-white tracking-wider leading-snug">
-              WHY SINGLE-DONOR SLAVIC HAIR OUTLASTS COMMERCIAL EXTENSIONS BY YEARS
-            </h2>
-            <div class="w-16 h-0.5 bg-gold"></div>
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobileMenu" class="hidden md:hidden bg-brand-dark/98 border-b border-brand-border px-6 py-6 transition-all duration-300">
+      <div class="flex flex-col space-y-4 text-xs uppercase tracking-widest text-center font-medium">
+        <a href="#home" onclick="toggleMobileMenu()" class="hover:text-brand-gold py-1">HOME</a>
+        <a href="#how-it-works" onclick="toggleMobileMenu()" class="hover:text-brand-gold py-1">HOW IT WORKS</a>
+        <a href="#about-hair" onclick="toggleMobileMenu()" class="hover:text-brand-gold py-1">ABOUT THE HAIR</a>
+        <a href="#capsule" onclick="toggleMobileMenu()" class="hover:text-brand-gold py-1">LATEST DROP</a>
+        <a href="#capsule" onclick="toggleMobileMenu()" class="hover:text-brand-gold py-1">SHOP ARCHIVE</a>
+        <a href="#reviews" onclick="toggleMobileMenu()" class="hover:text-brand-gold py-1">REVIEWS</a>
+        <a href="#faqs" onclick="toggleMobileMenu()" class="hover:text-brand-gold py-1">FAQS</a>
+        <a href="#who-is-wearing" onclick="toggleMobileMenu()" class="hover:text-brand-gold py-1">WHO'S WEARING SERENITY LUX</a>
+        <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-brand-gold py-1">CONTACT</a>
+      </div>
+    </div>
+  </header>
 
-            <p class="text-gray-300 text-sm leading-relaxed font-light">
-              98% of the global hair market is comprised of "floor collection" factory hair—strands swept from multiple sources, bathed in harsh hydrochloric acids to strip the cuticle, and shellacked with industrial silicone that washes away after 3 shampoos.
-            </p>
-            <p class="text-gray-400 text-sm leading-relaxed font-light">
-              At <strong class="text-gold">Serenity Lux</strong>, we mirror the strict European atelier standard: solitary ponytails cut directly from youth donors in cold northern Slavic climates. With intact, unidirectional cuticles, the hair remains effortlessly soft, completely tangle-free, accepts high-lift bleach without melting, and lasts up to 2–3 full re-installations.
-            </p>
+  <!-- 3. HERO SHOWCASE (EDITORIAL LUXURY) -->
+  <section id="home" class="relative min-h-[85vh] flex items-center justify-center overflow-hidden border-b border-brand-border">
+    <!-- Atmospheric Background Image with Gold Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=2000&auto=format&fit=crop" 
+           alt="Serenity Lux Hair Model with Flowing Silk Waves" 
+           class="w-full h-full object-cover object-center filter brightness-[0.38] contrast-[1.1] scale-105 transform hover:scale-100 transition duration-1000">
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/60 to-transparent"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-gold/10 via-transparent to-transparent pointer-events-none"></div>
+    </div>
 
-            <!-- Specification Comparison Matrix -->
-            <div class="pt-4 space-y-3 font-mono text-xs">
-              <div class="flex justify-between py-2 border-b border-white/5">
-                <span class="text-gray-400 font-sans uppercase tracking-wider">Donor Integrity:</span>
-                <span class="text-gold font-semibold">100% Single Donor per Bundle</span>
-              </div>
-              <div class="flex justify-between py-2 border-b border-white/5">
-                <span class="text-gray-400 font-sans uppercase tracking-wider">Cuticle Status:</span>
-                <span class="text-emerald-400 font-semibold">100% Intact & Root-to-Tip Aligned</span>
-              </div>
-              <div class="flex justify-between py-2 border-b border-white/5">
-                <span class="text-gray-400 font-sans uppercase tracking-wider">Silicone / Acid Baths:</span>
-                <span class="text-gold font-semibold">Zero (0%) Chemistry Used</span>
-              </div>
-              <div class="flex justify-between py-2 border-b border-white/5">
-                <span class="text-gray-400 font-sans uppercase tracking-wider">Expected Client Lifespan:</span>
-                <span class="text-white font-semibold">18 to 36 Months with Maintenance</span>
-              </div>
-            </div>
+    <!-- Editorial Floating Content Box matching HBE Haus of Hair vibe -->
+    <div class="relative z-10 max-w-4xl mx-auto px-4 py-16 text-center">
+      <div class="inline-block p-1 border border-brand-gold/40 rounded-full mb-6">
+        <span class="px-5 py-1.5 rounded-full text-[10px] tracking-[0.3em] uppercase font-semibold text-brand-goldLight bg-brand-surface/80 backdrop-blur-md">
+          Collector Capsule No. 42 &bull; 10 Unique Ponytails
+        </span>
+      </div>
 
-            <div class="pt-2">
-              <a href="#shade-match" class="inline-block px-7 py-3 border border-gold text-gold text-xs uppercase tracking-[0.2em] hover:bg-gold hover:text-noir-950 transition">
-                Consult With A Master Hacker
-              </a>
-            </div>
-          </div>
+      <h2 class="font-cinzel text-3xl sm:text-5xl md:text-6xl text-brand-cream font-normal tracking-wide uppercase leading-tight">
+        Singular by Design.<br>
+        <span class="gold-gradient-text font-serif italic text-4xl sm:text-6xl md:text-7xl block mt-2 lowercase">raw capsule drops. never restocked.</span>
+      </h2>
 
-          <!-- Manifesto Right Visual Card -->
-          <div class="relative">
-            <div class="gold-box-border p-8 bg-noir-850 shadow-2xl relative z-10">
-              
-              <!-- Card Badge -->
-              <div class="flex items-center justify-between pb-6 border-b border-gold/20 mb-6">
-                <div>
-                  <span class="text-[10px] tracking-[0.3em] uppercase text-gold">Official Authenticity</span>
-                  <div class="font-cinzel text-lg text-white">DONOR LOT PASSPORT</div>
-                </div>
-                <div class="w-12 h-12 border border-gold/40 rounded-full flex items-center justify-center font-cinzel text-xs text-gold">
-                  PASS
-                </div>
-              </div>
+      <p class="mt-6 text-sm sm:text-base text-gray-300 font-light max-w-2xl mx-auto tracking-wide leading-relaxed">
+        Sourced exclusively from single consenting donors. Untouched by silicone or acid baths. Catalogued with authentic porosity, natural wave density, and hand-bonded in haus.
+      </p>
 
-              <!-- Visual Hair Bundle Showcase -->
-              <div class="relative aspect-[4/3] bg-noir-950 overflow-hidden mb-6 border border-white/10 group">
-                <img 
-                  src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=900&q=80" 
-                  alt="Raw Slavic Ponytail" 
-                  class="w-full h-full object-cover filter grayscale contrast-125 group-hover:scale-105 transition duration-700 opacity-80"
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-noir-950 via-transparent to-transparent"></div>
-                <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                  <span class="bg-noir-900/90 text-gold text-[10px] px-2.5 py-1 border border-gold/30 tracking-widest uppercase">
-                    Sample Harvest: #SL-409
-                  </span>
-                  <span class="text-white font-serif text-sm italic">Slavic Virgin Light Ash</span>
-                </div>
-              </div>
+      <div class="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#capsule" class="w-full sm:w-auto px-9 py-4 text-xs font-semibold tracking-[0.25em] uppercase text-brand-black gold-gradient-bg hover:brightness-110 shadow-lg shadow-brand-gold/10 transition-all duration-300 transform hover:-translate-y-0.5">
+          SHOP THE LATEST DROP
+        </a>
+        <a href="#how-it-works" class="w-full sm:w-auto px-9 py-4 text-xs font-semibold tracking-[0.25em] uppercase text-brand-cream border border-brand-gold/40 hover:bg-brand-gold/10 hover:border-brand-gold transition duration-300">
+          HOW IT WORKS
+        </a>
+      </div>
 
-              <div class="grid grid-cols-3 gap-3 text-center text-[10px] uppercase tracking-wider text-gray-400">
-                <div class="p-3 bg-noir-900 border border-white/5">
-                  <div class="text-white font-bold text-sm">185g</div>
-                  <div>Exact Weight</div>
-                </div>
-                <div class="p-3 bg-noir-900 border border-white/5">
-                  <div class="text-white font-bold text-sm">24"</div>
-                  <div>True Length</div>
-                </div>
-                <div class="p-3 bg-noir-900 border border-white/5">
-                  <div class="text-emerald-400 font-bold text-sm">A+</div>
-                  <div>Low Porosity</div>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Decorative background layer -->
-            <div class="absolute -top-4 -right-4 w-full h-full border border-gold/20 -z-0 pointer-events-none hidden sm:block"></div>
-          </div>
-
+      <!-- Quick Trust Indicators -->
+      <div class="mt-14 pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        <div>
+          <span class="font-cinzel text-base text-brand-gold block font-semibold">100% RAW</span>
+          <span class="text-[10px] uppercase text-brand-muted tracking-widest">Cuticle Preserved</span>
+        </div>
+        <div>
+          <span class="font-cinzel text-base text-brand-gold block font-semibold">ONE OF ONE</span>
+          <span class="text-[10px] uppercase text-brand-muted tracking-widest">Never Restocked</span>
+        </div>
+        <div>
+          <span class="font-cinzel text-base text-brand-gold block font-semibold">SINGLE DONOR</span>
+          <span class="text-[10px] uppercase text-brand-muted tracking-widest">Pure Organic Strands</span>
+        </div>
+        <div>
+          <span class="font-cinzel text-base text-brand-gold block font-semibold">HAND-BONDED</span>
+          <span class="text-[10px] uppercase text-brand-muted tracking-widest">K-Tip, Weft & Bulk</span>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="formats" class="py-20 px-6 max-w-7xl mx-auto">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-xs uppercase tracking-[0.3em] text-gold font-medium">Bespoke Preparation</span>
-        <h2 class="font-cinzel text-3xl sm:text-4xl text-white tracking-wider mb-4">TWO ARTISAN FINISHES</h2>
-        <div class="w-12 h-0.5 bg-gold mx-auto mb-4"></div>
-        <p class="text-gray-400 text-xs sm:text-sm font-light">
-          Whether you hackle and blend your own custom micro-bonds in-salon or demand ready-to-fuse Italian keratin flat tips, we hand-prep every ponytail in our laboratory.
+  <!-- 4. HOW IT WORKS SECTION (Direct match to HBE Haus of Hair layout) -->
+  <section id="how-it-works" class="py-24 bg-brand-dark relative border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Title -->
+      <div class="text-center mb-16">
+        <span class="text-xs uppercase tracking-[0.3em] text-brand-gold font-medium">The Acquisition Protocol</span>
+        <h2 class="font-cinzel text-3xl sm:text-4xl text-brand-cream mt-2 tracking-widest uppercase">
+          How It Works
+        </h2>
+        <div class="w-16 h-[1px] bg-brand-gold mx-auto mt-4"></div>
+      </div>
+
+      <!-- Layout: Left Editorial Image / Right Narrative Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Visual Column -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative p-2 border border-brand-gold/30 bg-brand-surface shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=900&auto=format&fit=crop" 
+                 alt="Hair Extensions Craftsmanship" 
+                 class="w-full h-[520px] object-cover object-center filter contrast-[1.05]">
+            <!-- Gold emblem badge over photo -->
+            <div class="absolute bottom-6 left-6 right-6 bg-brand-black/90 backdrop-blur-md p-4 border border-brand-gold/40 text-center">
+              <p class="font-cinzel text-xs uppercase tracking-widest text-brand-gold">SERENITY LUX ARCHIVE</p>
+              <p class="text-[11px] text-gray-300 mt-1 font-light">Ten Ponytails Dropped Every Wednesday at 12 PM EST</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Narrative Steps Column -->
+        <div class="lg:col-span-7 space-y-8">
+          <div class="border-l-2 border-brand-gold/60 pl-6">
+            <h3 class="font-cinzel text-lg tracking-wider text-brand-goldLight uppercase">
+              1. Limited Weekly Collector Capsules
+            </h3>
+            <p class="mt-2 text-sm text-gray-300 font-light leading-relaxed">
+              We release in limited collector capsules. Exactly ten ponytails are dropped every Wednesday at 12 PM EST. Each pony is one of one and never restocked. Once it is claimed, the donor strand profile enters our permanent archive.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-brand-gold/40 pl-6">
+            <h3 class="font-cinzel text-lg tracking-wider text-brand-goldLight uppercase">
+              2. Whole Ponytail & Studio Archive
+            </h3>
+            <p class="mt-2 text-sm text-gray-300 font-light leading-relaxed">
+              You purchase the entire raw ponytail, which becomes a working archive for your salon or personal install. One ponytail typically yields two to three installs, depending on your intended length, density, and finish.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-brand-gold/40 pl-6">
+            <h3 class="font-cinzel text-lg tracking-wider text-brand-goldLight uppercase">
+              3. In-Person Matching & Real-Time Installs
+            </h3>
+            <p class="mt-2 text-sm text-gray-300 font-light leading-relaxed">
+              Stock a curated range of textures and tones so you can consult and install in a single appointment. Invite clients to feel the unmatched cuticle purity, inspect the root alignment, and build custom dimensional blends without chemical compromises.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-brand-gold/40 pl-6">
+            <h3 class="font-cinzel text-lg tracking-wider text-brand-goldLight uppercase">
+              4. Hand-Bonded in Haus
+            </h3>
+            <p class="mt-2 text-sm text-gray-300 font-light leading-relaxed">
+              Select based on your install preference: pre-bonded Keratin K-Tips, individual bond strips, or raw bulk hair. Every single tip and weft is precision-bonded by hand in our Serenity Lux haus.
+            </p>
+          </div>
+
+          <div class="pt-4">
+            <a href="#capsule" class="inline-block px-8 py-3.5 text-xs font-semibold tracking-[0.25em] uppercase text-brand-black gold-gradient-bg hover:brightness-110 transition duration-300">
+              SHOP THE LATEST DROP
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. OUR PROMISE SECTION (ETHICALLY SOURCED, ONE OF ONE, TEXTURE PRESERVED) -->
+  <section id="promise" class="py-20 bg-brand-surface relative border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Headline & Subtitle -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="font-cinzel text-xs tracking-[0.3em] uppercase text-brand-gold">Integrity Without Compromise</span>
+        <h2 class="font-cinzel text-3xl sm:text-4xl text-brand-cream mt-2 tracking-widest uppercase">
+          Our Promise
+        </h2>
+        <p class="mt-4 text-sm text-gray-300 font-light leading-relaxed">
+          Single donor only. Ethical collection with a short chain of custody. Natural texture preserved. No acid baths. No cuticle stripping. No synthetic silicone coatings.
         </p>
+        <div class="w-16 h-[1px] bg-brand-gold mx-auto mt-4"></div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <!-- 3 Pillar Feature Cards (Exact copy of HBE Haus of Hair core values) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        <!-- Format 1: Raw Bulk -->
-        <div class="border border-gold/25 p-8 bg-noir-900/40 relative hover:border-gold/60 transition group">
-          <div class="flex justify-between items-start mb-6">
-            <span class="text-xs font-mono tracking-widest text-gold">FORMAT OPTION 01</span>
-            <i class="fa-solid fa-scissors text-gray-500 group-hover:text-gold transition"></i>
+        <!-- Pillar 1 -->
+        <div class="bg-brand-card p-8 border border-brand-border hover:border-brand-gold/60 transition duration-300 relative group">
+          <div class="w-12 h-12 rounded-full border border-brand-gold/40 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-brand-black transition">
+            <i class="fa-solid fa-feather-pointed text-lg"></i>
           </div>
-          <h3 class="font-cinzel text-2xl text-white tracking-wider mb-2">RAW BULK PONYTAILS</h3>
-          <p class="text-xs text-gold-champagne tracking-widest uppercase mb-4">For Extension Hacklers & Custom Ateliers</p>
-          <p class="text-gray-400 text-xs leading-relaxed font-light mb-6">
-            Delivered in their virgin banded ponytail state just as trimmed from the donor. Ideal for masters who craft their own micro-keratin tips, I-tips, or custom hand-tied wefts to calibrate exact root densities.
+          <h3 class="font-cinzel text-lg tracking-wider text-brand-cream uppercase mb-3">
+            Ethically Sourced
+          </h3>
+          <p class="text-xs text-gray-400 font-light leading-relaxed">
+            Every ponytail begins with an individual consenting donor, verified through a strict short chain of custody where the raw hair changes hands only once or twice before entering our studio.
           </p>
-          <ul class="space-y-2.5 text-xs text-gray-300 font-light mb-8">
-            <li class="flex items-center"><i class="fa-solid fa-check text-gold text-[10px] mr-2.5"></i> Zero weight lost to bonding adhesive</li>
-            <li class="flex items-center"><i class="fa-solid fa-check text-gold text-[10px] mr-2.5"></i> Allows multi-donor micro-blending</li>
-            <li class="flex items-center"><i class="fa-solid fa-check text-gold text-[10px] mr-2.5"></i> Direct wholesale unbonded pricing</li>
-          </ul>
-          <a href="#drop-archive" class="text-xs uppercase tracking-[0.2em] text-gold hover:text-white flex items-center group-hover:translate-x-1 transition duration-200">
-            Browse Raw Bulk Drops <i class="fa-solid fa-arrow-right ml-2 text-[10px]"></i>
-          </a>
         </div>
 
-        <!-- Format 2: Italian Keratin K-Tips -->
-        <div class="border border-gold/25 p-8 bg-noir-900/40 relative hover:border-gold/60 transition group">
-          <div class="flex justify-between items-start mb-6">
-            <span class="text-xs font-mono tracking-widest text-gold">FORMAT OPTION 02</span>
-            <i class="fa-solid fa-fire-burner text-gray-500 group-hover:text-gold transition"></i>
+        <!-- Pillar 2 -->
+        <div class="bg-brand-card p-8 border border-brand-gold/30 hover:border-brand-gold transition duration-300 relative group shadow-xl">
+          <div class="absolute -top-3 right-6 bg-brand-gold text-brand-black text-[9px] font-bold tracking-widest px-3 py-0.5 uppercase">
+            Signature Standard
           </div>
-          <h3 class="font-cinzel text-2xl text-white tracking-wider mb-2">PRE-BONDED K-TIPS</h3>
-          <p class="text-xs text-gold-champagne tracking-widest uppercase mb-4">Pre-Crafted With Virgin Italian Keratin</p>
-          <p class="text-gray-400 text-xs leading-relaxed font-light mb-6">
-            Our atelier hand-rolls individual flat or micro-cylinder bonds using pure Italian Keratin resin matched to the root shade. Each bond weighs a featherlight 0.8g–1.0g for maximum natural 360-degree rotation.
+          <div class="w-12 h-12 rounded-full border border-brand-gold/40 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-brand-black transition">
+            <i class="fa-regular fa-gem text-lg"></i>
+          </div>
+          <h3 class="font-cinzel text-lg tracking-wider text-brand-cream uppercase mb-3">
+            One of One
+          </h3>
+          <p class="text-xs text-gray-400 font-light leading-relaxed">
+            Each ponytail is measured, weighed, photographed, and catalogued with its own porosity score and raw donor index. Once claimed, it is never duplicated or restocked.
           </p>
-          <ul class="space-y-2.5 text-xs text-gray-300 font-light mb-8">
-            <li class="flex items-center"><i class="fa-solid fa-check text-gold text-[10px] mr-2.5"></i> Genuine heat-resistant Italian polymer</li>
-            <li class="flex items-center"><i class="fa-solid fa-check text-gold text-[10px] mr-2.5"></i> Zero shedding guarantee through bonded life</li>
-            <li class="flex items-center"><i class="fa-solid fa-check text-gold text-[10px] mr-2.5"></i> Ready for ultrasonic or hot-fusion installs</li>
-          </ul>
-          <a href="#drop-archive" class="text-xs uppercase tracking-[0.2em] text-gold hover:text-white flex items-center group-hover:translate-x-1 transition duration-200">
-            Browse K-Tip Ready Drops <i class="fa-solid fa-arrow-right ml-2 text-[10px]"></i>
-          </a>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="bg-brand-card p-8 border border-brand-border hover:border-brand-gold/60 transition duration-300 relative group">
+          <div class="w-12 h-12 rounded-full border border-brand-gold/40 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-brand-black transition">
+            <i class="fa-solid fa-water text-lg"></i>
+          </div>
+          <h3 class="font-cinzel text-lg tracking-wider text-brand-cream uppercase mb-3">
+            Texture Preserved
+          </h3>
+          <p class="text-xs text-gray-400 font-light leading-relaxed">
+            We safeguard biological elasticity with meticulous washing protocols that eliminate harsh chemical strippers, leaving cuticles intact and silky so hair behaves and bounces naturally for years.
+          </p>
         </div>
 
       </div>
-    </section>
 
-    <section id="shade-match" class="py-24 bg-noir-900/80 border-t border-gold/15 relative">
-      <div class="max-w-4xl mx-auto px-6">
+    </div>
+  </section>
+
+  <!-- 6. THE CAPSULE COLLECTION / SHOPPING (Interactive Products) -->
+  <section id="capsule" class="py-24 bg-brand-black relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Catalog Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-brand-border pb-6">
+        <div>
+          <span class="text-xs font-semibold tracking-[0.3em] uppercase text-brand-gold">Current Capsule Release</span>
+          <h2 class="font-cinzel text-3xl sm:text-4xl text-brand-cream uppercase mt-1 tracking-wider">
+            Shop The Latest Drop
+          </h2>
+          <p class="text-xs text-brand-muted mt-2 tracking-wide">
+            Singular by design. Ten authentic ponytails dropped weekly. Each item is one-of-a-kind.
+          </p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="mt-6 md:mt-0 flex flex-wrap gap-2 text-[11px] uppercase tracking-widest">
+          <button onclick="filterProducts('all')" class="category-btn active px-4 py-2 border border-brand-gold bg-brand-gold text-brand-black font-semibold transition" data-filter="all">All Ponytails</button>
+          <button onclick="filterProducts('k-tip')" class="category-btn px-4 py-2 border border-brand-border text-brand-cream hover:border-brand-gold transition" data-filter="k-tip">Pre-Bonded K-Tips</button>
+          <button onclick="filterProducts('bulk')" class="category-btn px-4 py-2 border border-brand-border text-brand-cream hover:border-brand-gold transition" data-filter="bulk">Raw Bulk</button>
+          <button onclick="filterProducts('weft')" class="category-btn px-4 py-2 border border-brand-border text-brand-cream hover:border-brand-gold transition" data-filter="weft">Hand-Tied Wefts</button>
+        </div>
+      </div>
+
+      <!-- Product Grid (10 Capsule Items) -->
+      <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
+        <!-- Injected via JavaScript below -->
+      </div>
+
+      <!-- Capsule Notice Box -->
+      <div class="mt-16 p-8 border border-brand-gold/30 bg-brand-surface/60 text-center max-w-3xl mx-auto relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 opacity-5 pointer-events-none">
+          <i class="fa-solid fa-crown text-9xl text-brand-gold"></i>
+        </div>
+        <h4 class="font-cinzel text-lg text-brand-goldLight tracking-widest uppercase">
+          Capsule Drop Notice
+        </h4>
+        <p class="text-xs text-gray-300 mt-2 font-light leading-relaxed max-w-xl mx-auto">
+          Due to single donor rarity, hair inventory moves within minutes of the drop. Stylists are encouraged to maintain accounts with pre-authorized checkout.
+        </p>
+        <button onclick="openVipModal()" class="mt-5 inline-block px-7 py-3 text-[11px] font-semibold tracking-[0.25em] uppercase text-brand-black gold-gradient-bg hover:brightness-110 transition">
+          JOIN VIP DROP ALERTS (SMS & EMAIL)
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. EDITORIAL PROMO CALLOUT BANNER -->
+  <section class="relative py-28 overflow-hidden bg-brand-dark border-y border-brand-border">
+    <div class="absolute inset-0 opacity-20">
+      <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1920&auto=format&fit=crop" 
+           alt="Editorial Hair Model" 
+           class="w-full h-full object-cover">
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+      <span class="text-xs tracking-[0.4em] uppercase text-brand-gold font-medium block mb-3">Limited Drop Schedule</span>
+      <h2 class="font-cinzel text-3xl sm:text-5xl uppercase tracking-widest text-brand-cream">
+        Every Wednesday at 12 PM EST
+      </h2>
+      <p class="text-sm font-serif italic text-brand-goldLight text-xl mt-3 tracking-wide">
+        "Singular by Design. Never restocked. Cherished by master extensionists worldwide."
+      </p>
+      <div class="mt-8 flex justify-center">
+        <a href="#capsule" class="px-10 py-4 text-xs font-semibold tracking-[0.3em] uppercase text-brand-black gold-gradient-bg hover:brightness-110 transition shadow-2xl">
+          SECURE CURRENT ARCHIVE
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. VERIFIED CUSTOMER REVIEWS (Matching HBE Haus of Hair layout with real stylist reviews) -->
+  <section id="reviews" class="py-24 bg-brand-surface relative border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Title & Aggregate Rating Summary -->
+      <div class="text-center mb-16">
+        <span class="text-xs uppercase tracking-[0.3em] text-brand-gold font-medium">Stylist Testimonials</span>
+        <h2 class="font-cinzel text-3xl sm:text-4xl text-brand-cream mt-2 tracking-widest uppercase">
+          Customer Reviews
+        </h2>
+        <div class="flex items-center justify-center gap-2 mt-4 text-brand-gold">
+          <i class="fa-solid fa-star text-sm"></i>
+          <i class="fa-solid fa-star text-sm"></i>
+          <i class="fa-solid fa-star text-sm"></i>
+          <i class="fa-solid fa-star text-sm"></i>
+          <i class="fa-solid fa-star text-sm"></i>
+          <span class="font-cinzel text-brand-cream text-sm ml-2 font-semibold">5.00 OUT OF 5</span>
+          <span class="text-xs text-brand-muted font-sans">(Based on 77 verified purchases)</span>
+        </div>
+        <div class="w-16 h-[1px] bg-brand-gold mx-auto mt-4"></div>
+      </div>
+
+      <!-- Review Filter Tabs -->
+      <div class="flex flex-wrap items-center justify-between border-b border-brand-border/80 pb-4 mb-8 text-xs tracking-wider uppercase text-brand-muted">
+        <div class="flex space-x-6">
+          <button class="text-brand-gold border-b border-brand-gold pb-1 font-semibold">Product Reviews (57)</button>
+          <button class="hover:text-brand-cream transition">Haus Reviews (20)</button>
+        </div>
+        <div class="mt-3 sm:mt-0 flex items-center space-x-3 text-xs">
+          <span>Sort By:</span>
+          <select class="bg-brand-card text-brand-cream border border-brand-border px-3 py-1.5 focus:outline-none focus:border-brand-gold text-xs">
+            <option>Most Recent</option>
+            <option>Highest Rating</option>
+            <option>Verified Stylist</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Review Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="reviewsContainer">
         
-        <div class="gold-box-border p-8 sm:p-12 bg-noir-950/90 shadow-2xl">
-          <div class="text-center max-w-xl mx-auto mb-10">
-            <span class="text-xs uppercase tracking-[0.3em] text-gold font-medium">Bespoke Salon Service</span>
-            <h2 class="font-cinzel text-2xl sm:text-4xl text-white tracking-wider my-3">COLOR & TEXTURE CONCIERGE</h2>
-            <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed">
-              Matching virgin Slavic hair requires evaluating undertones, natural curl expansion, and fine or coarse hair diameter. Submit your client's daylight photos for curated ponytail recommendations before the next drop.
-            </p>
-          </div>
-
-          <form id="conciergeForm" onsubmit="handleConciergeSubmit(event)" class="space-y-6">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
-                <label class="block text-[11px] uppercase tracking-wider text-gray-300 mb-2">Your Name / Stylist Name</label>
-                <input type="text" required placeholder="Elena Rostova" class="w-full bg-noir-900 border border-gold/30 px-4 py-3 text-xs text-white placeholder-gray-600 focus:outline-none focus:border-gold">
-              </div>
-              <div>
-                <label class="block text-[11px] uppercase tracking-wider text-gray-300 mb-2">Email Address</label>
-                <input type="email" required placeholder="salon@domain.com" class="w-full bg-noir-900 border border-gold/30 px-4 py-3 text-xs text-white placeholder-gray-600 focus:outline-none focus:border-gold">
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              <div>
-                <label class="block text-[11px] uppercase tracking-wider text-gray-300 mb-2">Target Length</label>
-                <select class="w-full bg-noir-900 border border-gold/30 px-4 py-3 text-xs text-gray-200 focus:outline-none focus:border-gold">
-                  <option>18 - 20 inches</option>
-                  <option>22 - 24 inches</option>
-                  <option>26 - 28 inches</option>
-                  <option>30+ inches (Ultra Rare)</option>
-                </select>
-              </div>
-              <div>
-                <label class="block text-[11px] uppercase tracking-wider text-gray-300 mb-2">Natural Texture</label>
-                <select class="w-full bg-noir-900 border border-gold/30 px-4 py-3 text-xs text-gray-200 focus:outline-none focus:border-gold">
-                  <option>Pin Straight / Glass Slavic</option>
-                  <option>Natural Body Wave</option>
-                  <option>Deep S-Wave / Textured</option>
-                </select>
-              </div>
-              <div>
-                <label class="block text-[11px] uppercase tracking-wider text-gray-300 mb-2">Preferred Format</label>
-                <select class="w-full bg-noir-900 border border-gold/30 px-4 py-3 text-xs text-gray-200 focus:outline-none focus:border-gold">
-                  <option>Italian Keratin K-Tips</option>
-                  <option>Raw Bulk Ponytail</option>
-                  <option>Genius Micro-Weft</option>
-                </select>
-              </div>
-            </div>
-
-            <div>
-              <label class="block text-[11px] uppercase tracking-wider text-gray-300 mb-2">Client Crown & Ends Photo (Daylight)</label>
-              <div class="border border-dashed border-gold/40 p-6 text-center bg-noir-900/50 hover:bg-noir-900 transition cursor-pointer">
-                <i class="fa-solid fa-cloud-arrow-up text-gold text-2xl mb-2"></i>
-                <p class="text-xs text-gray-300">Drag & drop natural lighting photo or click to browse</p>
-                <p class="text-[10px] text-gray-500 mt-1">PNG, JPG up to 15MB</p>
-              </div>
-            </div>
-
-            <div class="text-center pt-4">
-              <button type="submit" class="px-10 py-3.5 bg-gradient-to-r from-gold via-gold-champagne to-gold text-noir-950 font-semibold text-xs uppercase tracking-[0.25em] hover:brightness-110 transition shadow-lg">
-                Submit For Atelier Match Review
-              </button>
-            </div>
-          </form>
-
-        </div>
-
-      </div>
-    </section>
-
-    <section id="pro-portal" class="py-20 border-t border-white/5">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="border border-gold/30 bg-gradient-to-br from-noir-900 via-noir-850 to-noir-900 p-8 sm:p-14 flex flex-col lg:flex-row items-center justify-between gap-10">
-          <div class="max-w-2xl space-y-4">
-            <span class="text-gold text-xs font-mono uppercase tracking-widest">Trade Verification</span>
-            <h3 class="font-cinzel text-2xl sm:text-3xl text-white tracking-wider">ARE YOU A LICENSED EXTENSION SPECIALIST?</h3>
-            <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed">
-              Serenity Lux partners with world-class independent extension artists, luxury salons, and high-ticket K-tip specialists. Approved trade accounts receive 30-minute early drop access, wholesale bundle rates, and priority color concierges.
-            </p>
-            <div class="flex flex-wrap gap-4 text-xs text-gray-300 font-light pt-2">
-              <div class="flex items-center"><i class="fa-solid fa-clock text-gold mr-2"></i> 11:30 AM EST Early Drop Window</div>
-              <div class="flex items-center"><i class="fa-solid fa-percent text-gold mr-2"></i> 20% Trade Commission / Margin</div>
-            </div>
-          </div>
+        <!-- Review 1 -->
+        <div class="bg-brand-card p-6 border border-brand-border hover:border-brand-gold/40 transition duration-300 flex flex-col justify-between">
           <div>
-            <button onclick="openTradeModal()" class="px-8 py-4 border-2 border-gold text-gold font-medium text-xs uppercase tracking-[0.25em] hover:bg-gold hover:text-noir-950 transition duration-300 shadow-xl whitespace-nowrap">
-              Apply For Pro Trade Access
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex text-brand-gold text-xs space-x-1">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-[10px] text-brand-muted tracking-wider">09/30/2026</span>
+            </div>
+            <p class="font-cinzel text-xs text-brand-gold tracking-wider uppercase font-semibold">PRE-BONDED RAW SLAVIC WAVY 43CM : 82G</p>
+            <p class="text-xs text-gray-300 font-light mt-3 leading-relaxed">
+              "Amazing, as always! This is my third ponytail purchase from Serenity Lux and they have consistently exceeded expectation. The shine and cuticle alignment are unmatched."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[11px]">
+            <span class="font-medium text-brand-cream">Sasha R. &bull; <span class="text-brand-gold text-[10px]">Verified Stylist (US)</span></span>
+            <span class="text-[10px] text-gray-400 bg-brand-surface px-2 py-0.5 border border-brand-border">3rd Install</span>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="bg-brand-card p-6 border border-brand-border hover:border-brand-gold/40 transition duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex text-brand-gold text-xs space-x-1">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-[10px] text-brand-muted tracking-wider">08/27/2026</span>
+            </div>
+            <p class="font-cinzel text-xs text-brand-gold tracking-wider uppercase font-semibold">PRE-BONDED RAW WAVY 56CM : 103G</p>
+            <p class="text-xs text-gray-300 font-light mt-3 leading-relaxed">
+              "Absolutely breathtaking hair. The natural dimensional tone matched my client's hair with zero blending required. As a specialist, premium raw hair changes everything."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[11px]">
+            <span class="font-medium text-brand-cream">Barb Peterson &bull; <span class="text-brand-gold text-[10px]">Verified Salon Owner</span></span>
+            <span class="text-[10px] text-gray-400 bg-brand-surface px-2 py-0.5 border border-brand-border">K-Tip</span>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bg-brand-card p-6 border border-brand-border hover:border-brand-gold/40 transition duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex text-brand-gold text-xs space-x-1">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-[10px] text-brand-muted tracking-wider">07/20/2026</span>
+            </div>
+            <p class="font-cinzel text-xs text-brand-gold tracking-wider uppercase font-semibold">PRE-BONDED RAW DEEP WAVE 47CM : 51G</p>
+            <p class="text-xs text-gray-300 font-light mt-3 leading-relaxed">
+              "I got my hands on this single donor bonded hair and the quality is unreal. The texture feels like silk and the bond strips are clean and durable. 10/10."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[11px]">
+            <span class="font-medium text-brand-cream">Dawn Longin &bull; <span class="text-brand-gold text-[10px]">Verified Pro</span></span>
+            <span class="text-[10px] text-gray-400 bg-brand-surface px-2 py-0.5 border border-brand-border">Deep Wave</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Action buttons -->
+      <div class="mt-12 text-center flex flex-col sm:flex-row items-center justify-center gap-4">
+        <button onclick="openReviewModal()" class="px-8 py-3 text-xs uppercase tracking-[0.2em] font-semibold text-brand-black gold-gradient-bg hover:brightness-110 transition">
+          WRITE A REVIEW
+        </button>
+        <button class="px-8 py-3 text-xs uppercase tracking-[0.2em] font-semibold text-brand-cream border border-brand-border hover:border-brand-gold transition">
+          LOAD MORE REVIEWS (54)
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 9. WHO'S WEARING SERENITY LUX (EDITORIAL GALLERY) -->
+  <section id="who-is-wearing" class="py-24 bg-brand-dark relative border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <span class="text-xs uppercase tracking-[0.3em] text-brand-gold font-medium">In the Studio & On the Runway</span>
+        <h2 class="font-cinzel text-3xl sm:text-4xl text-brand-cream mt-2 tracking-widest uppercase">
+          Who's Wearing Serenity Lux
+        </h2>
+        <p class="text-xs text-brand-muted mt-2 tracking-widest uppercase">Tag @SerenityLuxHair on Instagram to be featured</p>
+        <div class="w-16 h-[1px] bg-brand-gold mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <!-- Photo 1 -->
+        <div class="group relative overflow-hidden bg-brand-card aspect-[4/5] border border-brand-border/60">
+          <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=800&auto=format&fit=crop" 
+               alt="Serenity Lux Client Install" 
+               class="w-full h-full object-cover group-hover:scale-105 transition duration-500 filter brightness-95">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end">
+            <span class="text-[10px] text-brand-gold font-cinzel uppercase tracking-widest">Natural Raw Wavy &bull; 60cm</span>
+            <span class="text-xs text-brand-cream font-medium">Install by @alexandrahair</span>
+          </div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="group relative overflow-hidden bg-brand-card aspect-[4/5] border border-brand-border/60">
+          <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=800&auto=format&fit=crop" 
+               alt="Serenity Lux Natural Curls" 
+               class="w-full h-full object-cover group-hover:scale-105 transition duration-500 filter brightness-95">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end">
+            <span class="text-[10px] text-brand-gold font-cinzel uppercase tracking-widest">Raw Burmese Curls &bull; 45cm</span>
+            <span class="text-xs text-brand-cream font-medium">Install by @moniquecurls</span>
+          </div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="group relative overflow-hidden bg-brand-card aspect-[4/5] border border-brand-border/60">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop" 
+               alt="Serenity Lux K Tip Blend" 
+               class="w-full h-full object-cover group-hover:scale-105 transition duration-500 filter brightness-95">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end">
+            <span class="text-[10px] text-brand-gold font-cinzel uppercase tracking-widest">K-Tip 2-Donor Blend &bull; 50cm</span>
+            <span class="text-xs text-brand-cream font-medium">Install by @ester_studio</span>
+          </div>
+        </div>
+
+        <!-- Photo 4 -->
+        <div class="group relative overflow-hidden bg-brand-card aspect-[4/5] border border-brand-border/60">
+          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop" 
+               alt="Serenity Lux Sleek Straight" 
+               class="w-full h-full object-cover group-hover:scale-105 transition duration-500 filter brightness-95">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end">
+            <span class="text-[10px] text-brand-gold font-cinzel uppercase tracking-widest">Raw Cambodian Silk &bull; 65cm</span>
+            <span class="text-xs text-brand-cream font-medium">Install by @milanluxuryhair</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 10. FREQUENTLY ASKED QUESTIONS SECTION -->
+  <section id="faqs" class="py-24 bg-brand-surface relative border-b border-brand-border">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <span class="text-xs uppercase tracking-[0.3em] text-brand-gold font-medium">Client & Stylist Guidance</span>
+        <h2 class="font-cinzel text-3xl sm:text-4xl text-brand-cream mt-2 tracking-widest uppercase">
+          Frequently Asked Questions
+        </h2>
+        <div class="w-16 h-[1px] bg-brand-gold mx-auto mt-4"></div>
+      </div>
+
+      <div class="space-y-4" id="faqAccordion">
+        
+        <!-- FAQ 1 -->
+        <div class="border border-brand-border bg-brand-card">
+          <button onclick="toggleFaq(1)" class="w-full py-4 px-6 text-left flex justify-between items-center text-sm font-cinzel uppercase tracking-wider text-brand-cream hover:text-brand-gold">
+            <span>What makes Serenity Lux "Raw Single Donor" hair different?</span>
+            <i id="faqIcon-1" class="fa-solid fa-plus text-xs text-brand-gold transition-transform duration-200"></i>
+          </button>
+          <div id="faqContent-1" class="hidden px-6 pb-5 text-xs text-gray-400 font-light leading-relaxed border-t border-white/5 pt-3">
+            Unlike commercial extension bundles which blend hair from dozens of heads and immerse it in acid to melt down cuticles before masking it in silicone, our hair is sourced cleanly from one single consenting donor. The cuticles are fully aligned and intact. It behaves just like organic luxury hair, holding curls, taking color gracefully, and lasting 2 to 3+ years with proper home care.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="border border-brand-border bg-brand-card">
+          <button onclick="toggleFaq(2)" class="w-full py-4 px-6 text-left flex justify-between items-center text-sm font-cinzel uppercase tracking-wider text-brand-cream hover:text-brand-gold">
+            <span>How many installs does one ponytail yield?</span>
+            <i id="faqIcon-2" class="fa-solid fa-plus text-xs text-brand-gold transition-transform duration-200"></i>
+          </button>
+          <div id="faqContent-2" class="hidden px-6 pb-5 text-xs text-gray-400 font-light leading-relaxed border-t border-white/5 pt-3">
+            One whole raw ponytail from our weekly drops typically yields two to three installs depending on your client’s target density, bond size (micro vs standard K-Tips), and natural hair thickness. Stylists routinely use a single ponytail to create both full volume transformations or two custom accent fills.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="border border-brand-border bg-brand-card">
+          <button onclick="toggleFaq(3)" class="w-full py-4 px-6 text-left flex justify-between items-center text-sm font-cinzel uppercase tracking-wider text-brand-cream hover:text-brand-gold">
+            <span>Why is everything "Final Sale with No Restocks"?</span>
+            <i id="faqIcon-3" class="fa-solid fa-plus text-xs text-brand-gold transition-transform duration-200"></i>
+          </button>
+          <div id="faqContent-3" class="hidden px-6 pb-5 text-xs text-gray-400 font-light leading-relaxed border-t border-white/5 pt-3">
+            Because each ponytail is genuinely one-of-a-kind from an individual donor, we do not perform industrial mass manufacturing. In alignment with sanitary hygiene laws for virgin hair products, all ponytails and capsules are strictly final sale. We meticulously document the exact grams, length, texture, and origin so you know every nuance before purchase.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="border border-brand-border bg-brand-card">
+          <button onclick="toggleFaq(4)" class="w-full py-4 px-6 text-left flex justify-between items-center text-sm font-cinzel uppercase tracking-wider text-brand-cream hover:text-brand-gold">
+            <span>Can I lighten, bleach, or color Serenity Lux hair?</span>
+            <i id="faqIcon-4" class="fa-solid fa-plus text-xs text-brand-gold transition-transform duration-200"></i>
+          </button>
+          <div id="faqContent-4" class="hidden px-6 pb-5 text-xs text-gray-400 font-light leading-relaxed border-t border-white/5 pt-3">
+            Yes. Because our hair has never experienced chemical acid baths or synthetic coating, it lifts beautifully and reliably with professional lighteners. Natural curl patterns bounce back resiliently. We always recommend performing a strand test prior to full chemical color processing.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 11. VIP CONCIERGE & CONTACT FORM -->
+  <section id="contact" class="py-24 bg-brand-black relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="p-8 sm:p-12 border border-brand-gold/30 bg-brand-card relative">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-black px-6 py-0.5 border border-brand-gold text-[10px] tracking-[0.3em] uppercase text-brand-gold">
+          Private Concierge
+        </div>
+
+        <div class="text-center max-w-xl mx-auto mb-8">
+          <h3 class="font-cinzel text-2xl sm:text-3xl text-brand-cream uppercase tracking-wider">
+            Inquire or Reserve Custom Bonds
+          </h3>
+          <p class="text-xs text-gray-400 mt-2 font-light">
+            Need custom keratin tipped bonds, specific gram weight reservations, or salon wholesale inquiries? Speak directly with our lead artisan.
+          </p>
+        </div>
+
+        <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[10px] uppercase tracking-widest text-brand-gold mb-1">Your Name</label>
+              <input type="text" required placeholder="Elena Vance" class="w-full bg-brand-surface border border-brand-border px-4 py-3 text-xs text-brand-cream focus:outline-none focus:border-brand-gold">
+            </div>
+            <div>
+              <label class="block text-[10px] uppercase tracking-widest text-brand-gold mb-1">Email Address</label>
+              <input type="email" required placeholder="elena@luxuryextensions.com" class="w-full bg-brand-surface border border-brand-border px-4 py-3 text-xs text-brand-cream focus:outline-none focus:border-brand-gold">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[10px] uppercase tracking-widest text-brand-gold mb-1">Salon / Stylist Name</label>
+              <input type="text" placeholder="Atelier Hair Studio" class="w-full bg-brand-surface border border-brand-border px-4 py-3 text-xs text-brand-cream focus:outline-none focus:border-brand-gold">
+            </div>
+            <div>
+              <label class="block text-[10px] uppercase tracking-widest text-brand-gold mb-1">Inquiry Type</label>
+              <select class="w-full bg-brand-surface border border-brand-border px-4 py-3 text-xs text-brand-cream focus:outline-none focus:border-brand-gold">
+                <option>Custom Hand-Bonding Request</option>
+                <option>Weekly Capsule Pre-Authorization</option>
+                <option>Texture & Color Matching Assistance</option>
+                <option>General Customer Inquiries</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-[10px] uppercase tracking-widest text-brand-gold mb-1">Message</label>
+            <textarea rows="4" required placeholder="Specify your desired texture, length in cm, and install method..." class="w-full bg-brand-surface border border-brand-border px-4 py-3 text-xs text-brand-cream focus:outline-none focus:border-brand-gold"></textarea>
+          </div>
+
+          <div class="text-center pt-2">
+            <button type="submit" class="w-full sm:w-auto px-10 py-3.5 text-xs font-semibold tracking-[0.25em] uppercase text-brand-black gold-gradient-bg hover:brightness-110 transition">
+              TRANSMIT CONCIERGE REQUEST
             </button>
           </div>
-        </div>
+        </form>
+
       </div>
-    </section>
 
-  </main>
+    </div>
+  </section>
 
-  <footer class="bg-noir-950 border-t border-gold/20 pt-16 pb-12 text-xs">
-    <div class="max-w-7xl mx-auto px-6">
+  <!-- 12. LUXURY FOOTER (With SL-001 Frame Border & Typography) -->
+  <footer class="bg-brand-black border-t border-brand-gold/30 pt-16 pb-12 relative">
+    
+    <!-- Outer framing line matching the card design in SL-001 -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="flex flex-col items-center justify-center text-center mb-12">
-        <!-- Logo Emblem -->
-        <svg class="w-12 h-12 text-gold mb-3" viewBox="0 0 100 100" fill="none">
-          <path d="M52 20 C 65 20, 75 28, 75 40 C 75 52, 60 58, 48 62 C 38 65, 30 70, 30 80 C 30 90, 42 94, 55 94 C 68 94, 78 86, 88 92" stroke="#d4af37" stroke-width="5" stroke-linecap="round"/>
-          <path d="M48 14 L48 88" stroke="#d4af37" stroke-width="6" stroke-linecap="square"/>
-          <path d="M40 88 L58 88" stroke="#d4af37" stroke-width="5" stroke-linecap="round"/>
-          <path d="M48 55 C 32 55, 22 45, 22 35 C 22 25, 32 15, 48 15" stroke="#d4af37" stroke-width="4.5" stroke-linecap="round"/>
-        </svg>
-
-        <h4 class="font-cinzel text-xl tracking-[0.3em] text-white">SERENITY</h4>
-        <h4 class="font-cinzel-dec text-xl tracking-[0.22em] text-white font-bold">SERENITY</h4>
-        <div class="flex items-center space-x-2 my-1">
-          <span class="font-script text-gold-champagne text-lg">Lux</span>
-          <span class="text-[9px] tracking-[0.35em] text-gray-400 uppercase font-light">Hair Extensions</span>
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-brand-border">
+        
+        <!-- Brand Summary -->
+        <div class="md:col-span-4 space-y-4">
+          <div class="flex items-center space-x-3">
+            <span class="font-cinzel text-xl text-brand-cream tracking-[0.2em] font-semibold">SERENITY</span>
+            <span class="font-script text-2xl text-brand-gold -rotate-6">Lux</span>
+          </div>
+          <p class="font-cinzel text-[10px] text-brand-gold tracking-[0.3em] uppercase">RAW COLLECTION &bull; LUXURY THAT LASTS</p>
+          <p class="text-xs text-gray-400 font-light leading-relaxed max-w-sm">
+            Ethically curated single-donor raw ponytails and hand-bonded extensions. Singular by design. Weekly capsules dropped every Wednesday at 12 PM EST.
+          </p>
+          <div class="flex space-x-4 text-brand-goldLight text-sm pt-2">
+            <a href="#" class="hover:text-brand-gold transition"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="hover:text-brand-gold transition"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#" class="hover:text-brand-gold transition"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="hover:text-brand-gold transition"><i class="fa-brands fa-pinterest"></i></a>
+          </div>
         </div>
-        <p class="font-serif italic text-gold-champagne/80 text-sm mt-1">Raw Collection • Luxury That Lasts</p>
+
+        <!-- Links Column 1 -->
+        <div class="md:col-span-2 space-y-3">
+          <h4 class="font-cinzel text-xs text-brand-gold tracking-widest uppercase font-semibold">COLLECTIONS</h4>
+          <ul class="space-y-2 text-xs text-gray-400 font-light">
+            <li><a href="#capsule" class="hover:text-brand-gold transition">Latest Drop</a></li>
+            <li><a href="#capsule" class="hover:text-brand-gold transition">Pre-Bonded K-Tips</a></li>
+            <li><a href="#capsule" class="hover:text-brand-gold transition">Virgin Bulk Hair</a></li>
+            <li><a href="#capsule" class="hover:text-brand-gold transition">Hand-Tied Wefts</a></li>
+            <li><a href="#capsule" class="hover:text-brand-gold transition">Shop Archive</a></li>
+          </ul>
+        </div>
+
+        <!-- Links Column 2 -->
+        <div class="md:col-span-2 space-y-3">
+          <h4 class="font-cinzel text-xs text-brand-gold tracking-widest uppercase font-semibold">INFORMATION</h4>
+          <ul class="space-y-2 text-xs text-gray-400 font-light">
+            <li><a href="#how-it-works" class="hover:text-brand-gold transition">How It Works</a></li>
+            <li><a href="#promise" class="hover:text-brand-gold transition">Our Promise</a></li>
+            <li><a href="#faqs" class="hover:text-brand-gold transition">Final Sale Terms</a></li>
+            <li><a href="#faqs" class="hover:text-brand-gold transition">Shipping & Customs</a></li>
+            <li><a href="#contact" class="hover:text-brand-gold transition">Stylist Concierge</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter / VIP Signup -->
+        <div class="md:col-span-4 space-y-3">
+          <h4 class="font-cinzel text-xs text-brand-gold tracking-widest uppercase font-semibold">THE WEEKLY DROP LIST</h4>
+          <p class="text-xs text-gray-400 font-light leading-relaxed">
+            Gain early 15-minute access passwords prior to the public Wednesday 12:00 PM release.
+          </p>
+          <form onsubmit="handleNewsletter(event)" class="flex flex-col sm:flex-row gap-2 mt-3">
+            <input type="email" required placeholder="Enter stylist email" class="bg-brand-surface border border-brand-border px-4 py-2.5 text-xs text-brand-cream focus:outline-none focus:border-brand-gold flex-grow">
+            <button type="submit" class="px-5 py-2.5 text-[10px] font-semibold tracking-widest uppercase text-brand-black gold-gradient-bg hover:brightness-110 transition">
+              JOIN
+            </button>
+          </form>
+          <span class="text-[10px] text-brand-muted block">No spam. Only drop catalogs and private allocations.</span>
+        </div>
+
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-8 border-t border-b border-white/5 text-gray-400">
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-brand-muted">
         <div>
-          <h5 class="text-white uppercase tracking-widest text-[11px] mb-3">Atelier Collections</h5>
-          <ul class="space-y-2 text-[11px] font-light">
-            <li><a href="#drop-archive" class="hover:text-gold transition">Weekly Capsule Drops</a></li>
-            <li><a href="#formats" class="hover:text-gold transition">Italian Keratin K-Tips</a></li>
-            <li><a href="#formats" class="hover:text-gold transition">Virgin Raw Slavic Bulk</a></li>
-            <li><a href="#drop-archive" class="hover:text-gold transition">Rare Ultra-Blonde 1-of-1s</a></li>
-          </ul>
+          &copy; <span id="yearSpan">2026</span> SERENITY LUX HAIR EXTENSIONS. All Rights Reserved.
         </div>
-        <div>
-          <h5 class="text-white uppercase tracking-widest text-[11px] mb-3">Donor Ethics</h5>
-          <ul class="space-y-2 text-[11px] font-light">
-            <li><a href="#raw-manifesto" class="hover:text-gold transition">Fair Single Donor Compensation</a></li>
-            <li><a href="#raw-manifesto" class="hover:text-gold transition">Cuticle Alignment Testing</a></li>
-            <li><a href="#raw-manifesto" class="hover:text-gold transition">Zero Hydrochloric Processing</a></li>
-            <li><a href="#raw-manifesto" class="hover:text-gold transition">Certificate of Authenticity</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="text-white uppercase tracking-widest text-[11px] mb-3">Stylist Services</h5>
-          <ul class="space-y-2 text-[11px] font-light">
-            <li><a href="#shade-match" class="hover:text-gold transition">Daylight Shade Match</a></li>
-            <li><a href="#pro-portal" class="hover:text-gold transition">Salon Trade Enrollment</a></li>
-            <li><a href="#pro-portal" class="hover:text-gold transition">K-Tip Hackling Seminars</a></li>
-            <li><a href="#shade-match" class="hover:text-gold transition">Custom Gram Calibration</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="text-white uppercase tracking-widest text-[11px] mb-3">Private Client Support</h5>
-          <p class="text-[11px] font-light text-gray-400 mb-2">White-glove concierge available Monday – Friday 9:00 AM – 6:00 PM EST.</p>
-          <a href="mailto:concierge@serenityluxhair.com" class="text-gold text-[11px] tracking-wider hover:underline">concierge@serenityluxhair.com</a>
-        </div>
-      </div>
-
-      <div class="flex flex-col sm:flex-row items-center justify-between pt-8 text-[11px] text-gray-500 font-light">
-        <p>© 2026 Serenity Lux Hair Extensions Inc. All worldwide rights reserved.</p>
-        <div class="flex space-x-6 mt-4 sm:mt-0">
-          <a href="#" class="hover:text-gray-400">Terms of Allocation</a>
-          <a href="#" class="hover:text-gray-400">Provenance Guarantees</a>
-          <a href="#" class="hover:text-gray-400">Privacy Policy</a>
+        <div class="flex space-x-6 mt-4 sm:mt-0 text-[10px] tracking-wider uppercase">
+          <a href="#" class="hover:text-brand-gold transition">TERMS OF SERVICE</a>
+          <a href="#" class="hover:text-brand-gold transition">FINAL SALE POLICY</a>
+          <a href="#" class="hover:text-brand-gold transition">PRIVACY</a>
         </div>
       </div>
 
     </div>
   </footer>
 
-  <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-opacity duration-300 opacity-0">
-    <!-- Backdrop -->
-    <div id="cartBackdrop" onclick="toggleCartDrawer()" class="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity"></div>
-
-    <div class="fixed inset-y-0 right-0 max-w-full flex pl-10 pointer-events-auto">
-      <div class="w-screen max-w-md bg-noir-900 border-l border-gold/30 p-6 flex flex-col justify-between shadow-2xl">
-        
-        <div>
-          <div class="flex items-center justify-between pb-4 border-b border-gold/20">
-            <div>
-              <span class="text-[10px] tracking-widest uppercase text-gold">1-of-1 Reserved Bag</span>
-              <h3 class="font-cinzel text-lg text-white">YOUR ALLOCATION</h3>
-            </div>
-            <button onclick="toggleCartDrawer()" class="text-gray-400 hover:text-gold text-lg">
-              <i class="fa-solid fa-xmark"></i>
-            </button>
-          </div>
-
-          <!-- Reservation Countdown notice -->
-          <div class="bg-noir-950 border border-gold/20 p-2.5 my-4 flex items-center justify-between text-xs">
-            <span class="text-gray-400"><i class="fa-regular fa-clock text-gold mr-1.5"></i> Time left to secure:</span>
-            <span id="reservationTimer" class="font-mono text-gold font-semibold">11:42</span>
-          </div>
-
-          <!-- Cart Items Container -->
-          <div id="cartItemsList" class="space-y-4 max-h-[50vh] overflow-y-auto pr-1">
-            <!-- Dynamic Cart Items -->
-          </div>
-        </div>
-
-        <!-- Checkout / Summary -->
-        <div class="pt-6 border-t border-gold/20 space-y-3">
-          <div class="flex justify-between text-xs text-gray-400">
-            <span>Subtotal</span>
-            <span id="cartSubtotal" class="text-white font-mono">$1,165.00</span>
-          </div>
-          <div class="flex justify-between text-xs text-gray-400">
-            <span>Insured Courier Shipping</span>
-            <span class="text-gold uppercase tracking-wider text-[10px]">Complimentary</span>
-          </div>
-          <div class="flex justify-between text-sm text-white font-medium pt-2 border-t border-white/5">
-            <span>Total Allocation</span>
-            <span id="cartTotal" class="text-gold font-mono text-base font-semibold">$1,165.00</span>
-          </div>
-
-          <button onclick="initiateCheckout()" class="w-full py-3.5 bg-gradient-to-r from-gold via-gold-champagne to-gold text-noir-950 font-bold text-xs uppercase tracking-[0.25em] hover:brightness-110 transition shadow-lg">
-            Proceed To Secure Checkout
-          </button>
-          <p class="text-[10px] text-center text-gray-500">Each ponytail is packed in our signature magnetic keepsake box with donor certificate.</p>
-        </div>
-
+  <!-- 13. SHOPPING CART SIDE DRAWER (Exact feature from HBE Haus of Hair) -->
+  <div id="cartDrawerOverlay" onclick="toggleCart()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
+  
+  <div id="cartDrawer" class="fixed top-0 right-0 h-full w-full sm:w-[420px] bg-brand-surface border-l border-brand-gold/40 z-50 transform translate-x-full transition-transform duration-300 flex flex-col justify-between shadow-2xl">
+    
+    <!-- Drawer Header -->
+    <div class="p-6 border-b border-brand-border flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <i class="fa-solid fa-bag-shopping text-brand-gold"></i>
+        <h3 class="font-cinzel text-sm uppercase tracking-widest text-brand-cream">Your Archive Bag</h3>
+        <span id="drawerCount" class="text-xs text-brand-gold">([0] items)</span>
       </div>
-    </div>
-  </div>
-
-  <div id="quickviewModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden">
-    <div class="bg-noir-900 border border-gold/40 max-w-3xl w-full p-6 sm:p-8 relative shadow-2xl rounded-sm">
-      <button onclick="closeQuickview()" class="absolute top-4 right-4 text-gray-400 hover:text-gold text-lg">
+      <button onclick="toggleCart()" class="text-brand-muted hover:text-brand-cream text-lg">
         <i class="fa-solid fa-xmark"></i>
       </button>
-
-      <div id="quickviewContent" class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-        <!-- Rendered dynamically -->
-      </div>
     </div>
-  </div>
 
-  <div id="vipModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden">
-    <div class="bg-noir-900 border border-gold/40 max-w-md w-full p-8 text-center relative shadow-2xl rounded-sm">
-      <button onclick="closeVipModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gold text-lg">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
-      <div class="w-12 h-12 mx-auto border border-gold rounded-full flex items-center justify-center text-gold text-xl mb-4">
-        <i class="fa-regular fa-bell"></i>
-      </div>
-
-      <span class="text-xs uppercase tracking-[0.3em] text-gold">Priority Access</span>
-      <h3 class="font-cinzel-dec text-lg sm:text-xl text-white my-2 font-bold tracking-wider">SERENITY DROP PRIVILEGE</h3>
-      <p class="text-gray-400 text-xs font-light mb-6">
-        Our virgin Slavic drops sell out within minutes. Enter your mobile phone number to receive early secret link access 15 minutes before the public release on Wednesdays.
-      </p>
-
-      <form onsubmit="handleVipSubmit(event)" class="space-y-4">
-        <input type="text" placeholder="First & Last Name" required class="w-full bg-noir-850 border border-gold/30 px-4 py-2.5 text-xs text-white placeholder-gray-600 focus:outline-none focus:border-gold">
-        <input type="tel" placeholder="+1 (555) 000-0000" required class="w-full bg-noir-850 border border-gold/30 px-4 py-2.5 text-xs text-white placeholder-gray-600 focus:outline-none focus:border-gold">
-        
-        <button type="submit" class="w-full py-3 bg-gold text-noir-950 font-bold text-xs uppercase tracking-[0.2em] hover:bg-gold-light transition">
-          Secure VIP SMS Notifications
+    <!-- Cart Items Area -->
+    <div id="cartItemsList" class="p-6 flex-grow overflow-y-auto space-y-4">
+      <!-- Populated dynamically -->
+      <div id="emptyCartNotice" class="text-center py-16 text-brand-muted">
+        <i class="fa-regular fa-folder-open text-4xl mb-3 text-brand-gold/40"></i>
+        <p class="font-cinzel text-sm uppercase tracking-wider text-brand-cream">Your Bag is Empty</p>
+        <p class="text-xs text-gray-400 mt-1">Explore current capsule ponytails before they are archived.</p>
+        <button onclick="toggleCart(); location.href='#capsule'" class="mt-6 px-6 py-2.5 text-[11px] font-semibold uppercase tracking-widest text-brand-black gold-gradient-bg">
+          EXPLORE LATEST DROP
         </button>
-      </form>
-      <p class="text-[9px] text-gray-500 mt-3">We never spam. You can reply STOP at any moment.</p>
+      </div>
+    </div>
+
+    <!-- Mandatory Checkout Terms Checkbox (Critical feature from HBE Haus of Hair) -->
+    <div class="p-6 border-t border-brand-border bg-brand-card space-y-4">
+      
+      <div class="p-3 bg-brand-black border border-brand-border/80 text-[11px] text-gray-300">
+        <label class="flex items-start space-x-2.5 cursor-pointer select-none">
+          <input type="checkbox" id="termsCheckbox" onchange="validateCheckoutState()" class="mt-0.5 accent-brand-gold w-4 h-4 rounded">
+          <span class="leading-tight">
+            I understand that all raw ponytails and hand-crafted capsules are <strong class="text-brand-gold">final sale with no refunds or transfers</strong>. I acknowledge natural variation in raw single-donor tones and textures is expected.
+          </span>
+        </label>
+      </div>
+
+      <!-- Subtotal -->
+      <div class="flex items-center justify-between text-xs tracking-wider uppercase">
+        <span class="text-brand-muted">Subtotal (USD)</span>
+        <span id="cartSubtotal" class="font-cinzel text-base text-brand-gold font-bold">$0.00</span>
+      </div>
+
+      <!-- Checkout Button -->
+      <button id="checkoutButton" onclick="triggerCheckout()" disabled class="w-full py-3.5 text-xs font-semibold tracking-[0.25em] uppercase text-brand-black bg-brand-gold/40 cursor-not-allowed transition duration-200">
+        PROCEED TO CHECKOUT
+      </button>
+
+      <p class="text-[10px] text-center text-brand-muted">
+        Complimentary insured signature delivery on all collector orders.
+      </p>
     </div>
   </div>
 
-  <div id="toastNotification" class="fixed bottom-6 right-6 z-50 bg-noir-900 border border-gold px-4 py-3 shadow-2xl flex items-center space-x-3 transform translate-y-24 transition-transform duration-300">
-    <i class="fa-solid fa-check text-gold"></i>
-    <span id="toastMessage" class="text-xs text-gray-200 tracking-wider">Item reserved in your private bag.</span>
+  <!-- 14. PRODUCT DETAIL / QUICK VIEW MODAL -->
+  <div id="productModalOverlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
+    <div id="productModalBox" class="bg-brand-surface border border-brand-gold/40 max-w-3xl w-full max-h-[90vh] overflow-y-auto relative transform scale-95 transition-transform duration-300">
+      
+      <button onclick="closeProductModal()" class="absolute top-4 right-4 z-20 text-brand-cream hover:text-brand-gold text-xl w-8 h-8 rounded-full bg-brand-black/60 flex items-center justify-center">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="grid grid-cols-1 md:grid-cols-2" id="modalProductContent">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 15. VIP DROP ALERT MODAL -->
+  <div id="vipModalOverlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
+    <div class="bg-brand-card border border-brand-gold max-w-md w-full p-8 relative">
+      <button onclick="closeVipModal()" class="absolute top-4 right-4 text-brand-muted hover:text-brand-cream text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="text-center">
+        <div class="w-12 h-12 rounded-full border border-brand-gold/50 flex items-center justify-center text-brand-gold mx-auto mb-4">
+          <i class="fa-solid fa-bell"></i>
+        </div>
+        <h3 class="font-cinzel text-xl text-brand-cream uppercase tracking-widest">
+          Serenity VIP Access
+        </h3>
+        <p class="text-xs text-gray-300 mt-2 font-light leading-relaxed">
+          Receive direct private passwords 15 minutes before the public Wednesday 12:00 PM EST capsule drop.
+        </p>
+
+        <form onsubmit="handleVipSubmit(event)" class="mt-6 space-y-4">
+          <div>
+            <input type="text" required placeholder="Full Name" class="w-full bg-brand-surface border border-brand-border px-4 py-3 text-xs text-brand-cream focus:outline-none focus:border-brand-gold">
+          </div>
+          <div>
+            <input type="email" required placeholder="Email Address" class="w-full bg-brand-surface border border-brand-border px-4 py-3 text-xs text-brand-cream focus:outline-none focus:border-brand-gold">
+          </div>
+          <div>
+            <input type="tel" placeholder="Mobile (For 10-Min SMS Warning)" class="w-full bg-brand-surface border border-brand-border px-4 py-3 text-xs text-brand-cream focus:outline-none focus:border-brand-gold">
+          </div>
+          <button type="submit" class="w-full py-3.5 text-xs font-semibold tracking-[0.2em] uppercase text-brand-black gold-gradient-bg hover:brightness-110 transition">
+            REQUEST INVITATION
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 16. TOAST NOTIFICATION POPUP -->
+  <div id="toastMessage" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-brand-card border border-brand-gold px-6 py-4 shadow-2xl flex items-center space-x-3 pointer-events-none">
+    <div id="toastIcon" class="text-brand-gold">
+      <i class="fa-solid fa-circle-check"></i>
+    </div>
+    <div>
+      <h5 id="toastTitle" class="font-cinzel text-xs uppercase tracking-wider text-brand-cream font-bold">Success</h5>
+      <p id="toastBody" class="text-[11px] text-gray-300 font-light">Item added to your archive bag.</p>
+    </div>
   </div>
 
   <script>
-    // 1-of-1 Single Donor Ponytail Database (Matching HBE Haus of Hair core model)
-    const inventory = [
+    // Capsule catalog data modeled after HBE Haus of Hair structure
+    const PRODUCTS = [
       {
-        id: "SL-4401",
-        title: "Virgin Nordic Baby Blonde",
-        donorOrigin: "Northern Slavic (Unprocessed)",
-        length: "24 inches",
-        weight: "165 grams",
-        porosity: "A+ Low Porosity (Silky Intact)",
-        texture: "Silky Straight",
-        shadeLevel: "Level 10 Cold Champagne",
-        basePrice: 620,
-        imageUrl: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=80",
-        sold: false,
-        donorNotes: "Ultra fine cuticle structure with glass natural luster. Accepts heat up to 450°F without friction. Zero yellow undertone processing."
-      },
-      {
-        id: "SL-4402",
-        title: "Cold Ash Brunette Raw Ponytail",
-        donorOrigin: "Central Slavic Highland",
-        length: "22 inches",
-        weight: "185 grams",
-        porosity: "Low-Medium Porosity",
+        id: "SL-01",
+        title: "PRE-BONDED RAW SLAVIC NATURAL WAVE",
+        length: "56cm (22 inches)",
+        weight: "103g",
+        price: 885,
+        type: "k-tip",
         texture: "Natural Wave",
-        shadeLevel: "Level 5/6 Neutral Mocha",
-        basePrice: 545,
-        imageUrl: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=700&q=80",
-        sold: false,
-        donorNotes: "Thick terminal ends with luscious gentle S-wave when air dried naturally. Rare dense strand caliber."
+        donor: "Single Consenting Slavic Donor #1409",
+        status: "Available",
+        badge: "Capsule Drop",
+        description: "Pure virgin hair with unbroken cuticle direction. Precision bonded by hand in haus with high-grade Italian keratin. Blends effortlessly into soft medium-to-fine wave patterns.",
+        image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=700&auto=format&fit=crop"
       },
       {
-        id: "SL-4403",
-        title: "Honey Wheat Sunlit Balayage Donor",
-        donorOrigin: "Baltic Coastal Harvest",
-        length: "26 inches",
-        weight: "190 grams",
-        porosity: "Virgin Low Porosity",
-        texture: "Soft Beach Wave",
-        shadeLevel: "Level 8/9 Dimensional Wheat",
-        basePrice: 690,
-        imageUrl: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=700&q=80",
-        sold: false,
-        donorNotes: "Naturally sun-kissed gradients formed naturally over 5 years of organic donor growth. Single root origin."
+        id: "SL-02",
+        title: "RAW CAMBODIAN NATURAL WAVY BULK",
+        length: "60cm (24 inches)",
+        weight: "115g",
+        price: 790,
+        type: "bulk",
+        texture: "Wavy",
+        donor: "Raw Single Donor #2081",
+        status: "Available",
+        badge: "One of One",
+        description: "Dense, resilient natural raw ponytail with rich luster. Completely chemical and dye free. Ideal for custom hand-tied weft fabrication or bespoke micro-rings.",
+        image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=700&auto=format&fit=crop"
       },
       {
-        id: "SL-4404",
-        title: "Deep Espresso Raven Slavic Hair",
-        donorOrigin: "Carpathian Mountain Region",
-        length: "28 inches (Ultra Length)",
-        weight: "210 grams",
-        porosity: "Virgin Diamond Coat",
-        texture: "Silky Straight",
-        shadeLevel: "Level 2/3 Midnight Espresso",
-        basePrice: 610,
-        imageUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80",
-        sold: true, // Example sold piece to reflect HBE Haus of Hair scarcity
-        donorNotes: "Archived piece from Drop 43. Incredible 28-inch length with uniform density from rubber band to tips."
+        id: "SL-03",
+        title: "PRE-BONDED RAW VIRGIN CURLY 3A/3B",
+        length: "48cm (19 inches)",
+        weight: "85g",
+        price: 820,
+        type: "k-tip",
+        texture: "Organic Curls",
+        donor: "Single Donor #1877",
+        status: "Available",
+        badge: "Rare Texture",
+        description: "True organic curls straight from the donor without chemical perms. Unmatched bounce and elasticity that maintains shape seamlessly after washing.",
+        image: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=700&auto=format&fit=crop"
       },
       {
-        id: "SL-4405",
-        title: "Pale Pearl Platinum Harvest",
-        donorOrigin: "Northern Slavic Virgin",
-        length: "20 inches",
-        weight: "150 grams",
-        porosity: "Virgin Ultra-Fine",
+        id: "SL-04",
+        title: "HAND-TIED WEFT RAW VIRGIN DEEP WAVE",
+        length: "50cm (20 inches)",
+        weight: "100g",
+        price: 745,
+        type: "weft",
+        texture: "Deep Wave",
+        donor: "Single Donor #3019",
+        status: "Available",
+        badge: "Hand-Crafted",
+        description: "Featherlight, ultra-slim micro wefts tied meticulously by hand. Lies completely flat against the scalp with zero bulk or bunching.",
+        image: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=700&auto=format&fit=crop"
+      },
+      {
+        id: "SL-05",
+        title: "PRE-BONDED RAW SLAVIC DEEP WAVE",
+        length: "45cm (18 inches)",
+        weight: "72g",
+        price: 690,
+        type: "k-tip",
+        texture: "Deep Wave",
+        donor: "Single Donor #2204",
+        status: "Available",
+        badge: "Capsule Drop",
+        description: "Silky medium-density wave with natural dimension. Pre-tipped into fine micro keratin bonds ready for direct stylist application.",
+        image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=700&auto=format&fit=crop"
+      },
+      {
+        id: "SL-06",
+        title: "RAW BURMESE COARSE WAVY BULK",
+        length: "65cm (26 inches)",
+        weight: "120g",
+        price: 860,
+        type: "bulk",
+        texture: "Coarse Wave",
+        donor: "Single Donor #4112",
+        status: "Available",
+        badge: "One of One",
+        description: "Remarkable fullness root to tip. Holds heat styling for days and responds impeccably to custom coloring or balayage treatments.",
+        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=700&auto=format&fit=crop"
+      },
+      {
+        id: "SL-07",
+        title: "PRE-BONDED RAW VIRGIN SILK STRAIGHT",
+        length: "52cm (20 inches)",
+        weight: "92g",
+        price: 780,
+        type: "k-tip",
+        texture: "Silk Straight",
+        donor: "Single Donor #5009",
+        status: "Available",
+        badge: "Capsule Drop",
+        description: "Glass-like organic straight strands with natural movement. Not ironed with chemicals; retains natural body and healthy weight.",
+        image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=700&auto=format&fit=crop"
+      },
+      {
+        id: "SL-08",
+        title: "HAND-TIED WEFT RAW NATURAL BRUNETTE",
+        length: "55cm (22 inches)",
+        weight: "110g",
+        price: 810,
+        type: "weft",
         texture: "Natural Wave",
-        shadeLevel: "Level 10/11 Crystal Platinum",
-        basePrice: 580,
-        imageUrl: "https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=700&q=80",
-        sold: false,
-        donorNotes: "Natural Scandinavian pale blonde without chemical bleaching. Super rare donor genetics. Softest touch available worldwide."
-      },
-      {
-        id: "SL-4406",
-        title: "Warm Cinnamon Chestnut Ponytail",
-        donorOrigin: "Slavic Forest Foothills",
-        length: "24 inches",
-        weight: "175 grams",
-        porosity: "Virgin High Elasticity",
-        texture: "Soft Beach Wave",
-        shadeLevel: "Level 6 Auburn Cinnamon",
-        basePrice: 560,
-        imageUrl: "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?auto=format&fit=crop&w=700&q=80",
-        sold: false,
-        donorNotes: "Rich auburn highlights visible under direct sunshine. Perfect candidate for seamless red/warm blends."
+        donor: "Single Donor #6120",
+        status: "Available",
+        badge: "One of One",
+        description: "Rich espresso dimension with natural gold undertones in daylight. Completely uncolored and untreated. Ultra-fine micro-track seams.",
+        image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=700&auto=format&fit=crop"
       }
     ];
 
-    // User Bag State
-    let cart = [
-      {
-        product: inventory[0],
-        format: "ktip", // Italian K-Tip format
-        price: inventory[0].basePrice + 85
-      },
-      {
-        product: inventory[1],
-        format: "raw", // Raw bulk
-        price: inventory[1].basePrice
-      }
-    ];
-
+    // In-memory cart store
+    let cart = [];
     let currentFilter = 'all';
 
-    document.addEventListener("DOMContentLoaded", () => {
-      renderProducts();
-      renderCart();
-      startCountdownTimer();
-    });
-
-    function getFormatLabel(formatKey) {
-      if (formatKey === 'ktip') return 'Pre-Bonded Italian K-Tips';
-      if (formatKey === 'weft') return 'Hand-Tied Genius Weft';
-      return 'Raw Bulk Ponytail (Unbonded)';
-    }
-
-    function getFormatSurcharge(formatKey) {
-      if (formatKey === 'ktip') return 85;
-      if (formatKey === 'weft') return 110;
-      return 0;
-    }
-
-    function renderProducts() {
-      const grid = document.getElementById("productGrid");
-      const currentSelectedFormat = document.getElementById("formatSelector").value;
-      const surcharge = getFormatSurcharge(currentSelectedFormat);
-
-      grid.innerHTML = "";
-
-      const filtered = inventory.filter(item => {
-        if (currentFilter === 'all') return true;
-        return item.texture === currentFilter;
-      });
-
-      filtered.forEach(item => {
-        const calculatedPrice = item.basePrice + (item.sold ? 0 : surcharge);
-        const card = document.createElement("div");
-        card.className = "border border-gold/30 bg-noir-900/60 overflow-hidden flex flex-col justify-between group hover:border-gold transition duration-300";
-
-        card.innerHTML = `
-          <div>
-            <!-- Image & Badges -->
-            <div class="relative aspect-[4/5] overflow-hidden bg-noir-950">
-              <img 
-                src="${item.imageUrl}" 
-                alt="${item.title}" 
-                class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ${item.sold ? 'grayscale opacity-40' : 'opacity-90'}"
-              />
-              
-              <!-- Donor ID Badge -->
-              <div class="absolute top-3 left-3 bg-noir-950/90 border border-gold/40 px-2.5 py-1 text-[10px] tracking-widest text-gold font-mono">
-                LOT ${item.id}
-              </div>
-
-              <!-- Status Badge -->
-              <div class="absolute top-3 right-3">
-                ${item.sold 
-                  ? `<span class="bg-red-950/90 text-red-300 border border-red-800 text-[10px] uppercase tracking-wider px-2 py-0.5">Sold to Private Artist</span>`
-                  : `<span class="bg-noir-900/90 text-emerald-400 border border-emerald-600/40 text-[10px] uppercase tracking-wider px-2 py-0.5 badge-live">1-of-1 Live</span>`
-                }
-              </div>
-
-              <!-- Quick Specs Overlay on Hover -->
-              <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-noir-950 via-noir-950/80 to-transparent flex justify-between items-end">
-                <div>
-                  <span class="text-[10px] uppercase text-gray-400 tracking-wider">Provenance</span>
-                  <div class="text-xs text-white font-medium">${item.donorOrigin}</div>
-                </div>
-                <div class="text-right">
-                  <span class="text-[10px] uppercase text-gray-400 tracking-wider">Single Donor</span>
-                  <div class="text-xs text-gold font-bold">${item.weight}</div>
-                </div>
-              </div>
+    // Initialize Catalog
+    function renderProductGrid(filter = 'all') {
+      const grid = document.getElementById('productGrid');
+      const filtered = filter === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.type === filter);
+      
+      grid.innerHTML = filtered.map(product => `
+        <div class="bg-brand-card border border-brand-border hover:border-brand-gold/60 transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative overflow-hidden aspect-[4/5] bg-brand-surface cursor-pointer" onclick="openProductModal('${product.id}')">
+            <img src="${product.image}" alt="${product.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 filter brightness-95">
+            <div class="absolute top-3 left-3 bg-brand-black/90 border border-brand-gold/40 text-[9px] text-brand-gold tracking-widest uppercase px-2.5 py-1 font-semibold">
+              ${product.badge}
             </div>
+            <div class="absolute inset-0 bg-brand-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+              <span class="px-5 py-2.5 text-[10px] tracking-[0.2em] uppercase font-semibold text-brand-black gold-gradient-bg shadow-md">
+                QUICK VIEW ARCHIVE
+              </span>
+            </div>
+          </div>
 
-            <!-- Content Details -->
-            <div class="p-6">
-              <div class="flex items-center justify-between text-xs text-gold-champagne tracking-wider uppercase mb-1">
-                <span>${item.length}</span>
-                <span>•</span>
-                <span>${item.texture}</span>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <div class="flex items-center justify-between text-[10px] text-brand-gold tracking-widest uppercase mb-1">
+                <span>${product.length}</span>
+                <span>${product.weight}</span>
               </div>
-
-              <h3 class="font-cinzel text-lg text-white tracking-wide group-hover:text-gold transition">
-                ${item.title}
+              <h3 class="font-cinzel text-xs text-brand-cream uppercase font-semibold tracking-wider group-hover:text-brand-gold transition line-clamp-2">
+                ${product.title}
               </h3>
-
-              <p class="text-xs text-gray-400 font-light mt-2 line-clamp-2">
-                ${item.donorNotes}
+              <p class="text-[11px] text-brand-muted mt-1 font-light italic">
+                ${product.donor}
               </p>
+            </div>
 
-              <!-- Technical specs list -->
-              <div class="mt-4 pt-4 border-t border-white/5 space-y-1 text-[11px] text-gray-300 font-light">
-                <div class="flex justify-between">
-                  <span class="text-gray-500">Color Spectrum:</span>
-                  <span>${item.shadeLevel}</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-500">Cuticle Porosity:</span>
-                  <span class="text-emerald-400">${item.porosity}</span>
-                </div>
-              </div>
+            <div class="mt-5 pt-4 border-t border-white/5 flex items-center justify-between">
+              <span class="font-cinzel text-sm text-brand-gold font-bold">$${product.price}.00</span>
+              <button onclick="addToCart('${product.id}')" class="px-3.5 py-2 text-[10px] tracking-widest uppercase font-semibold text-brand-cream border border-brand-gold/40 hover:bg-brand-gold hover:text-brand-black transition">
+                CLAIM PONY
+              </button>
             </div>
           </div>
-
-          <!-- Bottom Action Price Bar -->
-          <div class="p-6 pt-0">
-            <div class="flex items-center justify-between pt-4 border-t border-gold/20">
-              <div>
-                <span class="text-[9px] uppercase tracking-widest text-gray-400 block">Total Investment</span>
-                <span class="font-mono text-gold text-lg font-semibold">$${calculatedPrice}</span>
-              </div>
-
-              <div class="flex items-center space-x-2">
-                <button onclick="viewProductDetails('${item.id}')" class="p-2.5 border border-gold/30 text-gray-300 hover:text-gold hover:border-gold transition" title="Inspect Donor Certificate">
-                  <i class="fa-regular fa-eye text-xs"></i>
-                </button>
-                ${item.sold 
-                  ? `<button disabled class="px-4 py-2 bg-neutral-800 text-gray-500 text-xs uppercase tracking-widest cursor-not-allowed">Archived</button>`
-                  : `<button onclick="addToBag('${item.id}')" class="px-4 py-2 bg-gold hover:bg-gold-light text-noir-950 font-semibold text-xs uppercase tracking-widest transition duration-200">
-                      Reserve
-                    </button>`
-                }
-              </div>
-            </div>
-          </div>
-        `;
-
-        grid.appendChild(card);
-      });
+        </div>
+      `).join('');
     }
 
-    function filterCatalog(category) {
+    // Filter Buttons
+    function filterProducts(category) {
       currentFilter = category;
-      document.querySelectorAll(".filter-btn").forEach(btn => {
-        if (btn.getAttribute("data-category") === category) {
-          btn.className = "filter-btn active-filter px-4 py-1.5 text-xs uppercase tracking-widest rounded-sm transition border border-gold bg-gold text-noir-950 font-semibold";
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        if(btn.dataset.filter === category) {
+          btn.classList.add('bg-brand-gold', 'text-brand-black', 'border-brand-gold');
+          btn.classList.remove('text-brand-cream', 'border-brand-border');
         } else {
-          btn.className = "filter-btn px-4 py-1.5 text-xs uppercase tracking-widest rounded-sm transition border border-gold/20 text-gray-300 hover:border-gold";
+          btn.classList.remove('bg-brand-gold', 'text-brand-black', 'border-brand-gold');
+          btn.classList.add('text-brand-cream', 'border-brand-border');
         }
       });
-      renderProducts();
+      renderProductGrid(category);
     }
 
-    function updateFormatPricing() {
-      renderProducts();
-      showToast("Applied format update across all available ponytails.");
-    }
+    // Cart Management
+    function addToCart(productId) {
+      const product = PRODUCTS.find(p => p.id === productId);
+      if(!product) return;
 
-    function addToBag(itemId) {
-      const item = inventory.find(i => i.id === itemId);
-      if (!item || item.sold) return;
-
-      const currentSelectedFormat = document.getElementById("formatSelector").value;
-      const surcharge = getFormatSurcharge(currentSelectedFormat);
-      const calculatedPrice = item.basePrice + surcharge;
-
-      // Check if already in cart (since 1-of-1)
-      const existing = cart.find(c => c.product.id === itemId);
+      const existing = cart.find(item => item.id === productId);
       if (existing) {
-        showToast(`Ponytail Lot ${itemId} is already reserved in your bag.`);
-        toggleCartDrawer();
-        return;
-      }
-
-      cart.push({
-        product: item,
-        format: currentSelectedFormat,
-        price: calculatedPrice
-      });
-
-      renderCart();
-      showToast(`Reserved Lot ${itemId} in your private bag.`);
-      toggleCartDrawer();
-    }
-
-    function removeFromBag(index) {
-      cart.splice(index, 1);
-      renderCart();
-      showToast("Removed ponytail allocation from bag.");
-    }
-
-    function renderCart() {
-      const cartContainer = document.getElementById("cartItemsList");
-      const badge = document.getElementById("cartCountBadge");
-      const subtotalEl = document.getElementById("cartSubtotal");
-      const totalEl = document.getElementById("cartTotal");
-
-      badge.innerText = cart.length;
-
-      if (cart.length === 0) {
-        cartContainer.innerHTML = `
-          <div class="py-12 text-center text-gray-500">
-            <i class="fa-solid fa-box-open text-2xl mb-2 text-gold/40"></i>
-            <p class="text-xs uppercase tracking-wider">Your 1-of-1 allocation bag is empty</p>
-          </div>
-        `;
-        subtotalEl.innerText = "$0.00";
-        totalEl.innerText = "$0.00";
-        return;
-      }
-
-      let subtotal = 0;
-      cartContainer.innerHTML = "";
-
-      cart.forEach((cartItem, idx) => {
-        subtotal += cartItem.price;
-        const itemRow = document.createElement("div");
-        itemRow.className = "p-3 bg-noir-950 border border-gold/20 flex items-center justify-between";
-
-        itemRow.innerHTML = `
-          <div class="flex items-center space-x-3">
-            <img src="${cartItem.product.imageUrl}" class="w-12 h-14 object-cover border border-gold/30">
-            <div>
-              <div class="text-[10px] font-mono text-gold">LOT ${cartItem.product.id}</div>
-              <div class="text-xs text-white font-medium">${cartItem.product.title}</div>
-              <div class="text-[10px] text-gray-400 font-light mt-0.5">${getFormatLabel(cartItem.format)}</div>
-              <div class="text-xs text-gold font-mono font-semibold mt-1">$${cartItem.price}</div>
-            </div>
-          </div>
-          <button onclick="removeFromBag(${idx})" class="text-gray-500 hover:text-red-400 p-2 text-xs" title="Release Reservation">
-            <i class="fa-solid fa-trash-can"></i>
-          </button>
-        `;
-        cartContainer.appendChild(itemRow);
-      });
-
-      subtotalEl.innerText = `$${subtotal.toLocaleString()}.00`;
-      totalEl.innerText = `$${subtotal.toLocaleString()}.00`;
-    }
-
-    function toggleCartDrawer() {
-      const drawer = document.getElementById("cartDrawer");
-      if (drawer.classList.contains("opacity-0")) {
-        drawer.classList.remove("opacity-0", "pointer-events-none");
+        showToast("Capsule Notice", "This is a 1-of-1 ponytail. Only 1 can be claimed per archive.", "info");
       } else {
-        drawer.classList.add("opacity-0", "pointer-events-none");
+        cart.push({ ...product, qty: 1 });
+        updateCartUI();
+        showToast("Claimed to Bag", `${product.title} added to your archive bag.`);
+        openCart();
       }
     }
 
-    function initiateCheckout() {
-      if (cart.length === 0) {
-        showToast("Your bag is currently empty.");
+    function removeFromCart(productId) {
+      cart = cart.filter(item => item.id !== productId);
+      updateCartUI();
+      validateCheckoutState();
+    }
+
+    function updateCartUI() {
+      const badge = document.getElementById('cartCountBadge');
+      const drawerCount = document.getElementById('drawerCount');
+      const list = document.getElementById('cartItemsList');
+      const subtotalEl = document.getElementById('cartSubtotal');
+      
+      const count = cart.length;
+      badge.textContent = count;
+      drawerCount.textContent = `[${count}] items`;
+
+      if (count === 0) {
+        list.innerHTML = `
+          <div id="emptyCartNotice" class="text-center py-16 text-brand-muted">
+            <i class="fa-regular fa-folder-open text-4xl mb-3 text-brand-gold/40"></i>
+            <p class="font-cinzel text-sm uppercase tracking-wider text-brand-cream">Your Bag is Empty</p>
+            <p class="text-xs text-gray-400 mt-1">Explore current capsule ponytails before they are archived.</p>
+            <button onclick="toggleCart(); location.href='#capsule'" class="mt-6 px-6 py-2.5 text-[11px] font-semibold uppercase tracking-widest text-brand-black gold-gradient-bg">
+              EXPLORE LATEST DROP
+            </button>
+          </div>
+        `;
+        subtotalEl.textContent = "$0.00";
         return;
       }
-      showToast("Redirecting to Encrypted Stripe Luxury Checkout...");
-      setTimeout(() => {
-        alert("Serenity Lux Concierge: In this demonstration, you are redirected to our verified single-donor vault payment processor with custom insured dispatch.");
-      }, 500);
+
+      const total = cart.reduce((acc, curr) => acc + curr.price, 0);
+      subtotalEl.textContent = `$${total.toFixed(2)}`;
+
+      list.innerHTML = cart.map(item => `
+        <div class="flex items-start space-x-4 p-3 bg-brand-black border border-brand-border">
+          <img src="${item.image}" alt="${item.title}" class="w-16 h-20 object-cover border border-brand-border">
+          <div class="flex-grow">
+            <div class="flex justify-between items-start">
+              <h4 class="font-cinzel text-xs text-brand-cream uppercase font-semibold tracking-wider leading-tight">${item.title}</h4>
+              <button onclick="removeFromCart('${item.id}')" class="text-brand-muted hover:text-brand-gold text-xs ml-2">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+            <p class="text-[10px] text-brand-gold mt-1 tracking-widest uppercase">${item.length} &bull; ${item.weight}</p>
+            <div class="flex justify-between items-center mt-3">
+              <span class="text-[10px] text-gray-400 uppercase tracking-widest">Qty: 1 (One-of-One)</span>
+              <span class="font-cinzel text-xs text-brand-gold font-bold">$${item.price}.00</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
     }
 
-    function viewProductDetails(itemId) {
-      const item = inventory.find(i => i.id === itemId);
-      if (!item) return;
+    // Cart Drawer Controls
+    function toggleCart() {
+      const drawer = document.getElementById('cartDrawer');
+      const overlay = document.getElementById('cartDrawerOverlay');
+      if (drawer.classList.contains('translate-x-full')) {
+        openCart();
+      } else {
+        closeCart();
+      }
+    }
 
-      const currentSelectedFormat = document.getElementById("formatSelector").value;
-      const surcharge = getFormatSurcharge(currentSelectedFormat);
-      const calculatedPrice = item.basePrice + (item.sold ? 0 : surcharge);
+    function openCart() {
+      const drawer = document.getElementById('cartDrawer');
+      const overlay = document.getElementById('cartDrawerOverlay');
+      overlay.classList.remove('hidden');
+      setTimeout(() => overlay.classList.remove('opacity-0'), 10);
+      drawer.classList.remove('translate-x-full');
+    }
 
-      const content = document.getElementById("quickviewContent");
-      content.innerHTML = `
-        <div class="aspect-[4/5] bg-noir-950 border border-gold/30 overflow-hidden">
-          <img src="${item.imageUrl}" class="w-full h-full object-cover">
+    function closeCart() {
+      const drawer = document.getElementById('cartDrawer');
+      const overlay = document.getElementById('cartDrawerOverlay');
+      drawer.classList.add('translate-x-full');
+      overlay.classList.add('opacity-0');
+      setTimeout(() => overlay.classList.add('hidden'), 300);
+    }
+
+    // Checkout Terms Enforcement
+    function validateCheckoutState() {
+      const checkbox = document.getElementById('termsCheckbox');
+      const checkoutBtn = document.getElementById('checkoutButton');
+      if (checkbox.checked && cart.length > 0) {
+        checkoutBtn.removeAttribute('disabled');
+        checkoutBtn.classList.remove('bg-brand-gold/40', 'cursor-not-allowed');
+        checkoutBtn.classList.add('gold-gradient-bg', 'hover:brightness-110');
+      } else {
+        checkoutBtn.setAttribute('disabled', 'true');
+        checkoutBtn.classList.add('bg-brand-gold/40', 'cursor-not-allowed');
+        checkoutBtn.classList.remove('gold-gradient-bg', 'hover:brightness-110');
+      }
+    }
+
+    function triggerCheckout() {
+      const checkbox = document.getElementById('termsCheckbox');
+      if (!checkbox.checked) {
+        showToast("Final Sale Acknowledgment Required", "Please accept the Final Sale and variations agreement before proceeding.", "info");
+        return;
+      }
+      showToast("Redirecting to Secure Payment", "Establishing encrypted checkout gateway for your collector ponytails...", "success");
+      setTimeout(() => {
+        closeCart();
+        showToast("Order Reserved", "Your ponytail archive reservation is safely queued for confirmation.", "success");
+      }, 1500);
+    }
+
+    // Product Modal / Quick View
+    function openProductModal(id) {
+      const p = PRODUCTS.find(item => item.id === id);
+      if(!p) return;
+
+      const modalContainer = document.getElementById('modalProductContent');
+      modalContainer.innerHTML = `
+        <div class="relative aspect-square md:aspect-auto h-full min-h-[350px] bg-brand-black">
+          <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover">
+          <div class="absolute top-4 left-4 bg-brand-black/90 border border-brand-gold text-[10px] text-brand-gold px-3 py-1 font-semibold uppercase tracking-widest">
+            ${p.badge}
+          </div>
         </div>
-        <div class="space-y-4">
+
+        <div class="p-8 flex flex-col justify-between space-y-6">
           <div>
-            <div class="text-[10px] font-mono tracking-widest text-gold">AUTHENTICATED LOT: ${item.id}</div>
-            <h3 class="font-cinzel text-xl text-white my-1">${item.title}</h3>
-            <span class="text-xs text-gold-champagne font-mono font-semibold text-lg">$${calculatedPrice} USD</span>
-          </div>
-
-          <p class="text-xs text-gray-300 font-light leading-relaxed">
-            ${item.donorNotes}
-          </p>
-
-          <div class="bg-noir-950 border border-white/10 p-3 space-y-1.5 text-[11px] font-mono">
-            <div class="flex justify-between text-gray-400">
-              <span>Donor Regional Harvest:</span>
-              <span class="text-white">${item.donorOrigin}</span>
+            <div class="flex items-center space-x-2 text-[10px] text-brand-gold tracking-widest uppercase mb-1">
+              <span>${p.type.toUpperCase()}</span>
+              <span>&bull;</span>
+              <span>${p.texture}</span>
             </div>
-            <div class="flex justify-between text-gray-400">
-              <span>Solitary Weight:</span>
-              <span class="text-gold font-bold">${item.weight}</span>
-            </div>
-            <div class="flex justify-between text-gray-400">
-              <span>True Natural Length:</span>
-              <span class="text-white">${item.length}</span>
-            </div>
-            <div class="flex justify-between text-gray-400">
-              <span>Natural Texture Pattern:</span>
-              <span class="text-white">${item.texture}</span>
-            </div>
-            <div class="flex justify-between text-gray-400">
-              <span>Bleachability Safety Rating:</span>
-              <span class="text-emerald-400">Safe up to Level 11 Blonde</span>
+            <h2 class="font-cinzel text-xl text-brand-cream uppercase font-semibold tracking-wider">${p.title}</h2>
+            <div class="mt-2 text-2xl font-cinzel text-brand-gold font-bold">$${p.price}.00</div>
+            <p class="text-xs text-gray-300 font-light mt-4 leading-relaxed">${p.description}</p>
+            
+            <div class="mt-6 border-t border-brand-border pt-4 space-y-2 text-xs">
+              <div class="flex justify-between py-1 border-b border-white/5">
+                <span class="text-brand-muted uppercase tracking-widest text-[10px]">Length:</span>
+                <span class="text-brand-cream font-medium">${p.length}</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-white/5">
+                <span class="text-brand-muted uppercase tracking-widest text-[10px]">Net Gram Weight:</span>
+                <span class="text-brand-cream font-medium">${p.weight}</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-white/5">
+                <span class="text-brand-muted uppercase tracking-widest text-[10px]">Donor Profile:</span>
+                <span class="text-brand-cream font-medium">${p.donor}</span>
+              </div>
+              <div class="flex justify-between py-1">
+                <span class="text-brand-muted uppercase tracking-widest text-[10px]">Cuticle Integrity:</span>
+                <span class="text-brand-gold font-medium">100% Intact & Aligned</span>
+              </div>
             </div>
           </div>
 
-          <div class="pt-2">
-            ${item.sold 
-              ? `<div class="p-3 bg-red-950/40 text-red-300 text-xs text-center border border-red-900">This harvest lot has already been secured.</div>`
-              : `<button onclick="addToBag('${item.id}'); closeQuickview();" class="w-full py-3 bg-gold text-noir-950 font-bold text-xs uppercase tracking-widest hover:bg-gold-light transition">
-                  Reserve This Specific Ponytail
-                </button>`
-            }
+          <div class="space-y-3">
+            <button onclick="addToCart('${p.id}'); closeProductModal();" class="w-full py-4 text-xs font-semibold tracking-[0.25em] uppercase text-brand-black gold-gradient-bg hover:brightness-110 transition shadow-lg">
+              CLAIM THIS ARCHIVE PONTAIL
+            </button>
+            <p class="text-[10px] text-center text-brand-muted uppercase tracking-wider">
+              Single Donor Item &bull; Never Restocked
+            </p>
           </div>
         </div>
       `;
 
-      document.getElementById("quickviewModal").classList.remove("hidden");
+      const overlay = document.getElementById('productModalOverlay');
+      overlay.classList.remove('hidden');
+      setTimeout(() => {
+        overlay.classList.remove('opacity-0');
+        document.getElementById('productModalBox').classList.remove('scale-95');
+      }, 10);
     }
 
-    function closeQuickview() {
-      document.getElementById("quickviewModal").classList.add("hidden");
+    function closeProductModal() {
+      const overlay = document.getElementById('productModalOverlay');
+      const box = document.getElementById('productModalBox');
+      box.classList.add('scale-95');
+      overlay.classList.add('opacity-0');
+      setTimeout(() => overlay.classList.add('hidden'), 300);
     }
 
+    // VIP Modal
     function openVipModal() {
-      document.getElementById("vipModal").classList.remove("hidden");
+      const overlay = document.getElementById('vipModalOverlay');
+      overlay.classList.remove('hidden');
+      setTimeout(() => overlay.classList.remove('opacity-0'), 10);
     }
+
     function closeVipModal() {
-      document.getElementById("vipModal").classList.add("hidden");
+      const overlay = document.getElementById('vipModalOverlay');
+      overlay.classList.add('opacity-0');
+      setTimeout(() => overlay.classList.add('hidden'), 300);
     }
+
     function handleVipSubmit(e) {
       e.preventDefault();
       closeVipModal();
-      showToast("VIP Drop Privilege Confirmed. You will receive SMS alerts 15m prior to launch.");
+      showToast("VIP Application Submitted", "You have been registered for early Wednesday drop allocations.");
     }
 
-    function handleConciergeSubmit(e) {
+    function handleNewsletter(e) {
       e.preventDefault();
-      showToast("Color profile received. A Serenity Lux Master Hacker will email custom shade recommendations within 4 hours.");
-      document.getElementById("conciergeForm").reset();
+      showToast("Subscription Confirmed", "You will receive capsule previews before public launch.");
+      e.target.reset();
     }
 
-    function openTradeModal() {
-      alert("Serenity Lux Salon Trade: Please submit your Cosmetology License ID or Salon Business Tax EIN to trade@serenityluxhair.com for wholesale portal credential generation.");
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      showToast("Concierge Transmitted", "Our master artisan will review your inquiry within 4 hours.");
+      e.target.reset();
     }
 
-    function openSearchModal() {
-      const query = prompt("Search single-donor harvests by shade, length, or texture (e.g., 'blonde', '24 inch', 'straight'):");
-      if (query) {
-        showToast(`Filtered database for keyword: "${query}"`);
+    function openReviewModal() {
+      showToast("Stylist Review Portal", "Reviews are invitation-only post delivery to ensure 100% verified installs.", "info");
+    }
+
+    // FAQ Accordion
+    function toggleFaq(index) {
+      const content = document.getElementById(`faqContent-${index}`);
+      const icon = document.getElementById(`faqIcon-${index}`);
+      
+      const isOpen = !content.classList.contains('hidden');
+      // Close others
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById(`faqContent-${i}`).classList.add('hidden');
+        document.getElementById(`faqIcon-${i}`).classList.remove('rotate-45');
+      }
+
+      if(!isOpen) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-45');
       }
     }
 
-    function toggleMobileNav() {
-      const menu = document.getElementById("mobileNav");
-      menu.classList.toggle("hidden");
+    // Mobile Menu
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
     }
 
-    function startCountdownTimer() {
-      // Countdown for next capsule drop (simulated 2 days 14 hours)
-      let totalSeconds = 2 * 86400 + 14 * 3600 + 38 * 60 + 12;
-      const display = document.getElementById("dropCountdown");
-
-      setInterval(() => {
-        if (totalSeconds <= 0) {
-          totalSeconds = 7 * 86400; // resets weekly
-        }
-        totalSeconds--;
-
-        const days = Math.floor(totalSeconds / 86400);
-        const hours = Math.floor((totalSeconds % 86400) / 3600);
-        const minutes = Math.floor((totalSeconds % 3600) / 60);
-        const seconds = totalSeconds % 60;
-
-        display.innerText = 
-          `${String(days).padStart(2, '0')}d : ${String(hours).padStart(2, '0')}h : ${String(minutes).padStart(2, '0')}m : ${String(seconds).padStart(2, '0')}s`;
-      }, 1000);
-
-      // Cart reservation timer countdown
-      let cartSeconds = 702;
-      const resDisplay = document.getElementById("reservationTimer");
-      setInterval(() => {
-        if (cartSeconds > 0) {
-          cartSeconds--;
-          const m = Math.floor(cartSeconds / 60);
-          const s = cartSeconds % 60;
-          resDisplay.innerText = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-        }
-      }, 1000);
+    // Search Toggle
+    function toggleSearch() {
+      showToast("Search Catalog", "Filter by Slavic, Cambodian, Burmese, K-Tip, or Wefts in the catalog below.", "info");
+      location.href = "#capsule";
     }
 
-    // Toast feedback helper
-    function showToast(msg) {
-      const toast = document.getElementById("toastNotification");
-      const text = document.getElementById("toastMessage");
-      text.innerText = msg;
-      toast.classList.remove("translate-y-24");
+    // Custom Toast Notification System
+    function showToast(title, message, type = "success") {
+      const toast = document.getElementById('toastMessage');
+      const titleEl = document.getElementById('toastTitle');
+      const bodyEl = document.getElementById('toastBody');
+      const iconEl = document.getElementById('toastIcon');
+
+      titleEl.textContent = title;
+      bodyEl.textContent = message;
+
+      if(type === "info") {
+        iconEl.innerHTML = `<i class="fa-solid fa-circle-info text-brand-gold"></i>`;
+      } else {
+        iconEl.innerHTML = `<i class="fa-solid fa-circle-check text-brand-gold"></i>`;
+      }
+
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
       setTimeout(() => {
-        toast.classList.add("translate-y-24");
-      }, 3500);
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 4000);
     }
+
+    // Initial run on window load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderProductGrid();
+      const yr = new Date().getFullYear();
+      document.getElementById('yearSpan').textContent = yr;
+    });
   </script>
 </body>
 </html>
