@@ -1,643 +1,649 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serenity Lux | Luxury Hair Extensions</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serenity Lux Hair Extensions</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Custom Animations and Overrides */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+    }
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    .font-cinzel {
+      font-family: 'Cinzel Decorative', serif;
+    }
+
+    @keyframes luxuryReveal {
+      0% { opacity: 0; transform: translateY(30px); letter-spacing: 0px; filter: blur(5px); }
+      100% { opacity: 1; transform: translateY(0); letter-spacing: 4px; filter: blur(0); }
+    }
+    .animate-luxury-title {
+      animation: luxuryReveal 2.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0; transform: translateY(5px); }
+      10%, 90% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-announcement {
+      animation: fadeInOut 4s infinite;
+    }
+
+    /* Nav Link Hover Underline */
+    .nav-link {
+      position: relative;
+      padding-bottom: 0.25rem;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #D4AF37;
+      left: 0;
+      bottom: -4px;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after,
+    .group:hover .nav-link::after {
+      width: 100%;
+    }
     
-    <style>
-        :root {
-            --gold: #D4AF37;
-            --charcoal: #333333;
-        }
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #ffffff;
-            color: var(--charcoal);
-        }
-        .font-cinzel {
-            font-family: 'Cinzel Decorative', serif;
-        }
-        
-        /* Smooth scrolling padding to account for sticky header */
-        html {
-            scroll-padding-top: 120px;
-        }
-
-        /* Animations */
-        @keyframes luxuryReveal {
-            0% { opacity: 0; transform: translateY(30px); letter-spacing: 0px; filter: blur(5px); }
-            100% { opacity: 1; transform: translateY(0); letter-spacing: 4px; filter: blur(0); }
-        }
-        .animate-luxury-title {
-            animation: luxuryReveal 2.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-        }
-        
-        @keyframes fadeInOut {
-            0%, 100% { opacity: 0; }
-            10%, 90% { opacity: 1; }
-        }
-        .animate-fade-in-out {
-            animation: fadeInOut 4s infinite;
-        }
-
-        /* Nav Link Hover Styles */
-        .nav-link {
-            position: relative;
-            padding-bottom: 0.25rem;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background-color: var(--gold);
-            left: 0;
-            bottom: -4px;
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #111111; 
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #D4AF37; 
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #b5952f; 
-        }
-    </style>
+    /* Mega Menu Hover Bridge (keeps menu open when moving mouse down) */
+    .mega-menu-container::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 0;
+      width: 100%;
+      height: 20px;
+    }
+  </style>
 </head>
-<body class="min-h-screen bg-[#111111] text-white overflow-x-hidden">
+<body class="min-h-screen bg-white text-[#333333]">
 
-    <header id="main-header" class="fixed top-0 w-full z-40 bg-[#1a1a1a] shadow-md border-b border-[#333333] transition-all duration-500">
-        <!-- Top Utility / Announcement Bar -->
-        <div class="bg-black text-[#D4AF37] text-xs py-2 text-center tracking-widest uppercase overflow-hidden relative h-8 flex items-center justify-center border-b border-[#333333]">
-            <span id="announcement-text" class="transition-opacity duration-500 opacity-100">Complimentary Shipping on U.S. Orders Over $150</span>
+  <!-- Cart Drawer Overlay -->
+  <div id="cart-overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 opacity-0 invisible transition-all duration-300"></div>
+  
+  <!-- Cart Drawer -->
+  <div id="cart-drawer" class="fixed top-0 right-0 h-full w-[90%] md:w-[400px] bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+      <h2 class="text-xl font-medium tracking-wide">Your Cart (<span id="cart-count-title">0</span>)</h2>
+      <button id="close-cart-btn" class="text-gray-400 hover:text-[#D4AF37] transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <div class="flex-1 p-6 flex flex-col items-center justify-center text-center" id="cart-empty-state">
+      <div class="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center text-gray-300 mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+        </svg>
+      </div>
+      <p class="text-gray-500 mb-6">Your luxury cart is currently empty.</p>
+      <button id="continue-shopping-btn" class="bg-[#D4AF37] text-white px-8 py-3 uppercase text-sm tracking-widest font-semibold hover:bg-[#b5952f] transition-all hover:shadow-lg w-full">
+        Continue Shopping
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu-container" class="fixed inset-0 z-50 flex hidden">
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/50"></div>
+    <div id="mobile-drawer" class="relative w-4/5 max-w-sm bg-white h-full flex flex-col shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out">
+      <div class="p-4 border-b flex justify-between items-center bg-[#f8f8f8]">
+        <span class="font-semibold tracking-widest">MENU</span>
+        <button id="close-mobile-btn" class="p-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="p-6 space-y-6 overflow-y-auto">
+         <div class="space-y-4 font-medium text-lg">
+           <a href="#pro-hair" class="mobile-link block border-b pb-2">Professional Hair</a>
+           <a href="#ready-to-wear" class="mobile-link block border-b pb-2">Ready-to-Wear Hair</a>
+           <a href="#capsule" class="mobile-link block border-b pb-2">Capsule Collection</a>
+           <a href="#" class="mobile-link block border-b pb-2">Tools & Accessories</a>
+           <a href="#academy" class="mobile-link block border-b pb-2">Academy</a>
+           <a href="#" class="mobile-link block border-b pb-2 text-red-600">Sale</a>
+         </div>
+         <div class="pt-8 space-y-4 text-sm text-gray-500 uppercase tracking-wider">
+           <p>Sign Up / Login</p>
+           <p>Create Pro Account</p>
+         </div>
+      </div>
+    </div>
+  </div>
+
+  <header id="main-header" class="fixed top-0 w-full z-40 bg-white shadow-sm border-b border-gray-100 transition-all duration-500">
+    <!-- Top Utility Bar -->
+    <div class="bg-[#333333] text-white text-xs py-2 text-center tracking-widest uppercase overflow-hidden h-[32px] flex items-center justify-center">
+      <span id="announcement-text" class="animate-announcement block">Complimentary Shipping on U.S. Orders Over $150</span>
+    </div>
+
+    <!-- Main Header Area -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="header-container" class="flex justify-between items-center h-24 transition-all duration-500">
+        
+        <!-- Left: Desktop Links / Mobile Menu Toggle -->
+        <div class="flex-1 flex items-center">
+          <button id="open-mobile-btn" class="md:hidden mr-4 text-gray-800">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <div class="hidden md:flex space-x-6 text-xs font-semibold tracking-wider uppercase text-gray-500">
+            <a href="#" class="hover:text-[#D4AF37] transition-colors">Sign Up / Login</a>
+            <span class="text-gray-300">|</span>
+            <a href="#" class="hover:text-[#D4AF37] transition-colors">Create Pro Account</a>
+          </div>
         </div>
 
-        <!-- Main Header Area -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div id="header-container" class="flex justify-between items-center transition-all duration-500 h-24">
-                
-                <!-- Left: Desktop Links / Mobile Menu Toggle -->
-                <div class="flex-1 flex items-center">
-                    <button class="md:hidden mr-4 text-white hover:text-[#D4AF37] transition-colors" onclick="toggleMobileMenu(true)">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                    <div class="hidden md:flex space-x-6 text-xs font-semibold tracking-wider uppercase text-gray-400">
-                        <a href="#" class="hover:text-[#D4AF37] transition-colors">Sign Up / Login</a>
-                        <span class="text-gray-600">|</span>
-                        <a href="#" class="hover:text-[#D4AF37] transition-colors">Create Pro Account</a>
-                    </div>
-                </div>
+        <!-- Center: Brand Logo -->
+        <div class="flex-shrink-0 flex items-center justify-center cursor-pointer">
+          <img 
+            id="header-logo"
+            src="SL-001_2.png" 
+            alt="Serenity Lux" 
+            class="h-auto max-h-[120px] w-auto object-contain transition-all duration-500 py-2"
+          />
+        </div>
 
-                <!-- Center: Brand Logo -->
-                <div class="flex-shrink-0 flex items-center justify-center cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <img 
-                        id="header-logo"
-                        src="SL-001_3.png" 
-                        alt="Serenity Lux Logo" 
-                        class="transition-all duration-500 object-contain h-20 drop-shadow-md"
-                    />
-                </div>
+        <!-- Right: Icons -->
+        <div class="flex-1 flex items-center justify-end space-x-6">
+          <button class="text-gray-800 hover:text-[#D4AF37] transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </button>
+          <button id="open-cart-btn" class="text-gray-800 hover:text-[#D4AF37] transition-colors relative">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+            <span id="cart-badge" class="absolute -top-1 -right-2 bg-[#D4AF37] text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center hidden">
+              0
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
 
-                <!-- Right: Icons -->
-                <div class="flex-1 flex items-center justify-end space-x-6">
-                    <button class="text-white hover:text-[#D4AF37] transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                    </button>
-                    <button class="text-white hover:text-[#D4AF37] transition-colors relative" onclick="openCart()">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                        </svg>
-                        <!-- Cart Badge (hidden by default if 0) -->
-                        <span id="cart-badge" class="absolute -top-1 -right-2 bg-[#D4AF37] text-white text-[10px] font-bold h-4 w-4 rounded-full hidden items-center justify-center transition-all duration-300">
-                            0
-                        </span>
-                    </button>
-                </div>
+    <!-- Navigation Menu (Desktop) -->
+    <nav id="desktop-nav" class="hidden md:block border-t border-gray-50 bg-white relative transition-all duration-500 transform origin-top">
+      <ul class="flex justify-center space-x-10 py-4">
+        <li class="group">
+          <a href="#pro-hair" class="nav-link text-sm font-medium text-[#333333] cursor-pointer tracking-wide uppercase js-scroll-link">Professional Hair</a>
+          
+          <!-- Mega Menu Dropdown -->
+          <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-[600px] bg-white shadow-xl border-t border-[#D4AF37] p-8 hidden group-hover:grid grid-cols-3 gap-8 z-50 mega-menu-container transition-opacity duration-300">
+            <div>
+              <h3 class="font-bold text-[#D4AF37] mb-4 uppercase text-xs tracking-widest">Strand-by-Strands</h3>
+              <ul class="space-y-3 text-sm text-gray-600">
+                <li class="hover:text-[#D4AF37] cursor-pointer">I-Tip Extensions</li>
+                <li class="hover:text-[#D4AF37] cursor-pointer">K-Tip Extensions</li>
+                <li class="hover:text-[#D4AF37] cursor-pointer">Microbead Rings</li>
+              </ul>
             </div>
-        </div>
+            <div>
+              <h3 class="font-bold text-[#D4AF37] mb-4 uppercase text-xs tracking-widest">Wefts</h3>
+              <ul class="space-y-3 text-sm text-gray-600">
+                <li class="hover:text-[#D4AF37] cursor-pointer">Hand-Tied Wefts</li>
+                <li class="hover:text-[#D4AF37] cursor-pointer">Machine Wefts</li>
+                <li class="hover:text-[#D4AF37] cursor-pointer">Genius Wefts</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-bold text-[#D4AF37] mb-4 uppercase text-xs tracking-widest">Tape-Ins</h3>
+              <ul class="space-y-3 text-sm text-gray-600">
+                <li class="hover:text-[#D4AF37] cursor-pointer">Seamless Tape-Ins</li>
+                <li class="hover:text-[#D4AF37] cursor-pointer">Pro Tape Replacement</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li><a href="#ready-to-wear" class="nav-link text-sm font-medium text-[#333333] cursor-pointer tracking-wide uppercase js-scroll-link">Ready-to-Wear Hair</a></li>
+        <li><a href="#capsule" class="nav-link text-sm font-medium text-[#333333] cursor-pointer tracking-wide uppercase js-scroll-link">Capsule Collection</a></li>
+        <li><a href="#" class="nav-link text-sm font-medium text-[#333333] cursor-pointer tracking-wide uppercase">Tools & Accessories</a></li>
+        <li><a href="#academy" class="nav-link text-sm font-medium text-[#333333] cursor-pointer tracking-wide uppercase js-scroll-link">Academy</a></li>
+        <li><a href="#" class="nav-link text-sm font-medium text-red-600 cursor-pointer tracking-wide uppercase after:bg-red-600">Sale</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <!-- Navigation Menu (Desktop) -->
-        <nav id="secondary-nav" class="hidden md:block border-t border-[#333333] bg-[#1a1a1a] relative transition-all duration-500 origin-top h-[53px] opacity-100 overflow-visible">
-            <ul class="flex justify-center space-x-10 py-4">
-                <!-- Professional Hair with Mega Menu using CSS group-hover -->
-                <li class="relative group">
-                    <a href="#pro-hair" class="text-sm font-medium text-white nav-link tracking-wide hover:text-[#D4AF37] transition-colors">Professional Hair</a>
-                    
-                    <!-- Mega Menu Dropdown -->
-                    <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-[600px] bg-[#111111] shadow-2xl border-t border-[#D4AF37] p-8 grid grid-cols-3 gap-8 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                        <div>
-                            <h3 class="font-bold text-[#D4AF37] mb-4 uppercase text-xs tracking-widest">Strand-by-Strands</h3>
-                            <ul class="space-y-3 text-sm text-gray-400">
-                                <li class="hover:text-white transition-colors cursor-pointer">I-Tip Extensions</li>
-                                <li class="hover:text-white transition-colors cursor-pointer">K-Tip Extensions</li>
-                                <li class="hover:text-white transition-colors cursor-pointer">Microbead Rings</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-[#D4AF37] mb-4 uppercase text-xs tracking-widest">Wefts</h3>
-                            <ul class="space-y-3 text-sm text-gray-400">
-                                <li class="hover:text-white transition-colors cursor-pointer">Hand-Tied Wefts</li>
-                                <li class="hover:text-white transition-colors cursor-pointer">Machine Wefts</li>
-                                <li class="hover:text-white transition-colors cursor-pointer">Genius Wefts</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-[#D4AF37] mb-4 uppercase text-xs tracking-widest">Tape-Ins</h3>
-                            <ul class="space-y-3 text-sm text-gray-400">
-                                <li class="hover:text-white transition-colors cursor-pointer">Seamless Tape-Ins</li>
-                                <li class="hover:text-white transition-colors cursor-pointer">Pro Tape Replacement</li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                <li class="relative"><a href="#ready-to-wear" class="text-sm font-medium text-white nav-link tracking-wide hover:text-[#D4AF37] transition-colors">Ready-to-Wear Hair</a></li>
-                <li class="relative"><a href="#capsule" class="text-sm font-medium text-white nav-link tracking-wide hover:text-[#D4AF37] transition-colors">Capsule Collection</a></li>
-                <li class="relative"><a href="#academy" class="text-sm font-medium text-white nav-link tracking-wide hover:text-[#D4AF37] transition-colors">Academy</a></li>
-                <li class="relative"><a href="#" class="text-sm font-medium text-red-500 nav-link after:bg-red-500 tracking-wide">Sale</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Spacer for fixed header -->
+  <div class="h-[170px]" id="header-spacer"></div>
 
-    <main class="pt-[145px]"> <!-- Padding top accounts for header height -->
-        <div class="relative w-full h-[85vh] min-h-[600px] bg-[#111111] flex items-center justify-center overflow-hidden">
+  <main>
+    <!-- Hero Section -->
+    <div class="relative w-full h-[75vh] min-h-[600px] bg-gray-100 flex items-center justify-center overflow-hidden">
+      <img 
+        src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=1920" 
+        alt="Serenity Lux Lifestyle" 
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/40"></div>
+      
+      <div class="relative z-10 text-center px-4 max-w-3xl">
+        <h2 class="text-4xl md:text-6xl text-white mb-6 drop-shadow-xl animate-luxury-title font-cinzel">
+          Elevate Your Artistry
+        </h2>
+        <p class="text-white text-lg md:text-xl mb-10 drop-shadow font-light">
+          Discover the industry's most ethically sourced, premium professional extensions.
+        </p>
+        <button class="bg-[#D4AF37] text-white px-10 py-4 uppercase text-sm tracking-[0.2em] font-semibold hover:bg-[#b5952f] hover:scale-105 transition-all duration-300 shadow-lg js-scroll-link" href="#pro-hair">
+          Shop Professional
+        </button>
+      </div>
+    </div>
+
+    <section class="py-24 bg-white border-t border-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 md:space-y-32">
+        
+        <!-- Professional Hair Section -->
+        <div id="pro-hair" class="flex flex-col md:flex-row items-center gap-12 lg:gap-20 scroll-mt-32">
+          <div class="flex-1 w-full h-[400px] md:h-[550px] overflow-hidden relative group shadow-sm bg-[#1a1a1a]">
             <img 
-                src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=1920" 
-                alt="Serenity Lux Lifestyle" 
-                class="absolute inset-0 w-full h-full object-cover"
+              src="SL-001.png" 
+              alt="Professional Hair" 
+              class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105 p-8" 
             />
-            <div class="absolute inset-0 bg-black/40"></div>
-            
-            <div class="relative z-10 text-center px-4 max-w-3xl flex flex-col items-center">
-                <h2 class="text-4xl md:text-6xl text-white mb-6 drop-shadow-2xl animate-luxury-title font-cinzel">
-                    Elevate Your Artistry
-                </h2>
-                <div class="w-12 h-[2px] bg-[#D4AF37] mb-8 opacity-0 animate-[luxuryReveal_2s_ease-out_1s_forwards]"></div>
-                <p class="text-white text-lg md:text-xl mb-10 drop-shadow font-light tracking-wide opacity-0 animate-[luxuryReveal_2s_ease-out_1.5s_forwards]">
-                    Discover the industry's most ethically sourced, premium professional extensions.
-                </p>
-                <a href="#pro-hair" class="bg-[#D4AF37] text-white px-10 py-4 uppercase text-sm tracking-[0.2em] font-semibold hover:bg-[#b5952f] hover:scale-105 transition-all duration-500 shadow-xl opacity-0 animate-[luxuryReveal_2s_ease-out_2s_forwards]">
-                    Shop Professional
-                </a>
-            </div>
-        </div>
-
-        <section class="py-24 bg-[#111111] border-t border-[#222222]">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 md:space-y-32">
-                
-                <!-- Professional Hair Section -->
-                <div id="pro-hair" class="flex flex-col md:flex-row items-center gap-12 lg:gap-20 scroll-mt-[120px]">
-                    <div class="flex-1 w-full h-[400px] md:h-[550px] overflow-hidden relative group shadow-lg bg-black flex items-center justify-center p-8 border border-[#333333]">
-                        <img 
-                            src="SL-001_3.png" 
-                            alt="Professional Hair" 
-                            class="w-full h-full object-contain transition-transform duration-1000 group-hover:scale-105 drop-shadow-2xl" 
-                        />
-                    </div>
-                    <div class="flex-1 text-center md:text-left">
-                        <p class="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.2em] mb-4">For Certified Stylists</p>
-                        <h3 class="text-4xl lg:text-5xl text-white mb-6 font-cinzel">
-                            Professional Hair
-                        </h3>
-                        <p class="text-gray-400 mb-10 font-light leading-relaxed max-w-lg mx-auto md:mx-0 text-lg">
-                            Elevate your salon's artistry with our premium, ethically sourced professional extensions. Designed exclusively for experts who demand perfect color matching, seamless blending, and absolute longevity.
-                        </p>
-                        <button class="border border-[#D4AF37] text-[#D4AF37] px-10 py-4 uppercase text-xs tracking-widest font-semibold hover:bg-[#D4AF37] hover:text-white transition-all duration-300">
-                            Shop Professional
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Ready to Wear Section -->
-                <div id="ready-to-wear" class="flex flex-col md:flex-row-reverse items-center gap-12 lg:gap-20 scroll-mt-[120px]">
-                    <div class="flex-1 w-full h-[400px] md:h-[550px] overflow-hidden relative group shadow-lg bg-black flex items-center justify-center p-8 border border-[#333333]">
-                        <img 
-                            src="SL-001_3.png" 
-                            alt="Ready to Wear Hair" 
-                            class="w-full h-full object-contain transition-transform duration-1000 group-hover:scale-105 drop-shadow-2xl" 
-                        />
-                    </div>
-                    <div class="flex-1 text-center md:text-left md:pl-8">
-                        <p class="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.2em] mb-4">For Everyone</p>
-                        <h3 class="text-4xl lg:text-5xl text-white mb-6 font-cinzel">
-                            Ready-to-Wear Hair
-                        </h3>
-                        <p class="text-gray-400 mb-10 font-light leading-relaxed max-w-lg mx-auto md:mx-0 text-lg">
-                            Achieve instant volume and dramatic length from the comfort of your home. Our luxury clip-ins, ponytails, and halo pieces offer zero-damage application and effortless glamour for any occasion.
-                        </p>
-                        <button class="border border-[#D4AF37] text-[#D4AF37] px-10 py-4 uppercase text-xs tracking-widest font-semibold hover:bg-[#D4AF37] hover:text-white transition-all duration-300">
-                            Shop Ready-to-Wear
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="capsule" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-[120px]">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl text-white mb-4 font-cinzel">
-                    The Capsule Collection
-                </h2>
-                <div class="w-16 h-[2px] bg-[#D4AF37] mx-auto mb-4"></div>
-                <p class="text-gray-400 font-light text-sm tracking-widest uppercase">Curated Bestsellers</p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-                <!-- Product 1 -->
-                <div class="group cursor-pointer">
-                    <div class="relative overflow-hidden mb-6 bg-[#1a1a1a] border border-[#333333] aspect-[4/5] flex items-center justify-center p-4">
-                        <img src="SL-001_3.png" alt="Seamless Tape-Ins" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 drop-shadow-xl" />
-                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300"></div>
-                        <button onclick="addToCart(event)" class="absolute bottom-0 left-0 w-full bg-[#1a1a1a]/95 backdrop-blur text-white py-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 font-semibold text-sm tracking-wider uppercase hover:bg-[#D4AF37] shadow-lg border-t border-[#333333]">
-                            Quick Add
-                        </button>
-                    </div>
-                    <div class="text-center">
-                        <p class="text-xs text-[#D4AF37] uppercase tracking-widest mb-2">Tape-Ins</p>
-                        <h3 class="text-base text-gray-200 mb-2 font-medium">22" Seamless Tape-In Extensions</h3>
-                        <p class="text-white font-semibold">$245.00</p>
-                    </div>
-                </div>
-
-                <!-- Product 2 -->
-                <div class="group cursor-pointer">
-                    <div class="relative overflow-hidden mb-6 bg-[#1a1a1a] border border-[#333333] aspect-[4/5] flex items-center justify-center p-4">
-                        <img src="SL-001_3.png" alt="Hand-Tied Wefts" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 drop-shadow-xl" />
-                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300"></div>
-                        <button onclick="addToCart(event)" class="absolute bottom-0 left-0 w-full bg-[#1a1a1a]/95 backdrop-blur text-white py-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 font-semibold text-sm tracking-wider uppercase hover:bg-[#D4AF37] shadow-lg border-t border-[#333333]">
-                            Quick Add
-                        </button>
-                    </div>
-                    <div class="text-center">
-                        <p class="text-xs text-[#D4AF37] uppercase tracking-widest mb-2">Wefts</p>
-                        <h3 class="text-base text-gray-200 mb-2 font-medium">18" Hand-Tied Weft Collection</h3>
-                        <p class="text-white font-semibold">$310.00</p>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="group cursor-pointer">
-                    <div class="relative overflow-hidden mb-6 bg-[#1a1a1a] border border-[#333333] aspect-[4/5] flex items-center justify-center p-4">
-                        <img src="SL-001_3.png" alt="Keratin K-Tips" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 drop-shadow-xl" />
-                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300"></div>
-                        <button onclick="addToCart(event)" class="absolute bottom-0 left-0 w-full bg-[#1a1a1a]/95 backdrop-blur text-white py-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 font-semibold text-sm tracking-wider uppercase hover:bg-[#D4AF37] shadow-lg border-t border-[#333333]">
-                            Quick Add
-                        </button>
-                    </div>
-                    <div class="text-center">
-                        <p class="text-xs text-[#D4AF37] uppercase tracking-widest mb-2">Strand-by-Strands</p>
-                        <h3 class="text-base text-gray-200 mb-2 font-medium">20" Keratin K-Tip Strands</h3>
-                        <p class="text-white font-semibold">$185.00</p>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="group cursor-pointer">
-                    <div class="relative overflow-hidden mb-6 bg-[#1a1a1a] border border-[#333333] aspect-[4/5] flex items-center justify-center p-4">
-                        <img src="SL-001_3.png" alt="Clip-Ins" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 drop-shadow-xl" />
-                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300"></div>
-                        <button onclick="addToCart(event)" class="absolute bottom-0 left-0 w-full bg-[#1a1a1a]/95 backdrop-blur text-white py-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 font-semibold text-sm tracking-wider uppercase hover:bg-[#D4AF37] shadow-lg border-t border-[#333333]">
-                            Quick Add
-                        </button>
-                    </div>
-                    <div class="text-center">
-                        <p class="text-xs text-[#D4AF37] uppercase tracking-widest mb-2">Ready-to-Wear</p>
-                        <h3 class="text-base text-gray-200 mb-2 font-medium">Luxury Clip-In Volumizer Set</h3>
-                        <p class="text-white font-semibold">$275.00</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-24 bg-[#1a1a1a] border-t border-[#222222]">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <p class="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.2em] mb-4">Spotted</p>
-                    <h2 class="text-3xl md:text-4xl text-white mb-4 font-cinzel">
-                        In the Studio & On the Runway
-                    </h2>
-                    <p class="text-gray-400 font-light text-sm tracking-widest uppercase">Who's Wearing Serenity Lux</p>
-                </div>
-
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="relative aspect-[3/4] overflow-hidden group bg-black">
-                        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=600" alt="Runway" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale hover:grayscale-0 opacity-80 hover:opacity-100" />
-                    </div>
-                    <div class="relative aspect-[3/4] overflow-hidden group bg-black">
-                        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&q=80&w=600" alt="Runway" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale hover:grayscale-0 opacity-80 hover:opacity-100" />
-                    </div>
-                    <div class="relative aspect-[3/4] overflow-hidden group bg-black">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" alt="Runway" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale hover:grayscale-0 opacity-80 hover:opacity-100" />
-                    </div>
-                    <div class="relative aspect-[3/4] overflow-hidden group bg-black">
-                        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=600" alt="Runway" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale hover:grayscale-0 opacity-80 hover:opacity-100" />
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-24 bg-[#111111] border-t border-[#222222]">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl text-white mb-4 font-cinzel">
-                        The Serenity Standard
-                    </h2>
-                    <div class="w-16 h-[2px] bg-[#D4AF37] mx-auto mb-4"></div>
-                    <p class="text-gray-400 font-light text-sm tracking-widest uppercase">Verified Stylist & Customer Reviews</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    <div class="bg-[#1a1a1a] p-10 shadow-lg border border-[#333333] text-center hover:-translate-y-2 transition-transform duration-500">
-                        <div class="flex justify-center space-x-1 mb-6 text-[#D4AF37]">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
-                        </div>
-                        <p class="text-gray-300 font-light leading-relaxed mb-8 italic">"The seamless blend and zero return hair on the Serenity Wefts completely elevated my salon's offerings. My clients refuse to wear anything else."</p>
-                        <div>
-                            <p class="text-white font-semibold tracking-wider text-sm uppercase">Elena R.</p>
-                            <p class="text-[#D4AF37] text-xs font-medium uppercase tracking-widest mt-1">Master Stylist, LA</p>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-[#1a1a1a] p-10 shadow-lg border border-[#333333] text-center hover:-translate-y-2 transition-transform duration-500">
-                        <div class="flex justify-center space-x-1 mb-6 text-[#D4AF37]">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
-                        </div>
-                        <p class="text-gray-300 font-light leading-relaxed mb-8 italic">"I rely on Serenity Lux for my red carpet clients. The quality holds up beautifully under extreme styling, heat, and lights. Absolutely flawless."</p>
-                        <div>
-                            <p class="text-white font-semibold tracking-wider text-sm uppercase">Sophia M.</p>
-                            <p class="text-[#D4AF37] text-xs font-medium uppercase tracking-widest mt-1">Celebrity Hairstylist</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-[#1a1a1a] p-10 shadow-lg border border-[#333333] text-center hover:-translate-y-2 transition-transform duration-500">
-                        <div class="flex justify-center space-x-1 mb-6 text-[#D4AF37]">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
-                        </div>
-                        <p class="text-gray-300 font-light leading-relaxed mb-8 italic">"The Clip-In Volumizer is a game-changer. It takes me 5 minutes to put in, blends perfectly with my natural hair, and looks incredibly luxurious."</p>
-                        <div>
-                            <p class="text-white font-semibold tracking-wider text-sm uppercase">Jessica T.</p>
-                            <p class="text-[#D4AF37] text-xs font-medium uppercase tracking-widest mt-1">Customer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-black text-white py-20 border-t border-[#333333]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center md:items-start gap-12">
-            
-            <!-- Left: Logo Area -->
-            <div class="flex-shrink-0">
-                <img src="SL-001_3.png" alt="Serenity Lux Footer Logo" class="h-40 md:h-56 object-contain opacity-90 drop-shadow-2xl hover:opacity-100 transition-opacity cursor-pointer" onclick="window.scrollTo(0,0)"/>
-            </div>
-
-            <!-- Right: Links Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-12 flex-grow w-full md:pl-20 mt-8 md:mt-0">
-                <div>
-                    <h5 class="uppercase tracking-widest text-xs font-bold mb-6 text-[#D4AF37]">Shop</h5>
-                    <ul class="space-y-4 text-sm text-gray-400 font-light">
-                        <li><a href="javascript:void(0)" onclick="scrollToSection('pro-hair')" class="hover:text-white transition-colors">Professional Hair</a></li>
-                        <li><a href="javascript:void(0)" onclick="scrollToSection('ready-to-wear')" class="hover:text-white transition-colors">Ready-to-Wear</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Accessories</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="uppercase tracking-widest text-xs font-bold mb-6 text-[#D4AF37]">Support</h5>
-                    <ul class="space-y-4 text-sm text-gray-400 font-light">
-                        <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Shipping & Returns</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Pro Application</a></li>
-                    </ul>
-                </div>
-                <div class="col-span-2 md:col-span-1">
-                    <h5 class="uppercase tracking-widest text-xs font-bold mb-6 text-[#D4AF37]">Stay Connected</h5>
-                    <p class="text-sm text-gray-400 font-light mb-4">Join our list for exclusive offers and professional insights.</p>
-                    <form onsubmit="event.preventDefault();" class="flex">
-                        <input 
-                            type="email" 
-                            placeholder="Enter your email" 
-                            class="bg-transparent border-b border-gray-600 py-2 px-0 w-full text-sm focus:outline-none focus:border-[#D4AF37] transition-colors text-white"
-                        />
-                        <button type="submit" class="text-[#D4AF37] text-sm uppercase tracking-wider font-bold ml-4 hover:text-white transition-colors">
-                            Subscribe
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Cart Drawer -->
-    <div id="cart-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 transition-all duration-300 opacity-0 invisible" onclick="closeCart()"></div>
-    <div id="cart-drawer" class="fixed top-0 right-0 h-full w-[90%] md:w-[400px] bg-[#1a1a1a] border-l border-[#333333] z-50 shadow-2xl transform transition-transform duration-300 ease-in-out flex flex-col translate-x-full">
-        <div class="flex items-center justify-between p-6 border-b border-[#333333]">
-            <h2 class="text-xl font-medium tracking-wide text-white">Your Cart (<span id="cart-drawer-count">0</span>)</h2>
-            <button onclick="closeCart()" class="text-gray-400 hover:text-[#D4AF37] transition-colors p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
-                </svg>
+          </div>
+          <div class="flex-1 text-center md:text-left">
+            <p class="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.2em] mb-4">For Certified Stylists</p>
+            <h3 class="text-4xl lg:text-5xl text-[#333333] mb-6 font-cinzel">
+              Professional Hair
+            </h3>
+            <p class="text-gray-500 mb-10 font-light leading-relaxed max-w-lg mx-auto md:mx-0 text-lg">
+              Elevate your salon's artistry with our premium, ethically sourced professional extensions. Designed exclusively for experts who demand perfect color matching, seamless blending, and absolute longevity.
+            </p>
+            <button class="border border-[#333333] text-[#333333] px-10 py-4 uppercase text-xs tracking-widest font-semibold hover:bg-[#333333] hover:text-white transition-all duration-300">
+              Explore Professional Lines
             </button>
+          </div>
+        </div>
+
+        <!-- Ready to Wear Section -->
+        <div id="ready-to-wear" class="flex flex-col md:flex-row-reverse items-center gap-12 lg:gap-20 scroll-mt-32">
+          <div class="flex-1 w-full h-[400px] md:h-[550px] overflow-hidden relative group shadow-sm bg-[#1a1a1a] flex items-center justify-center">
+            <img 
+              src="SL-001.png" 
+              alt="Ready to Wear Hair" 
+              class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105 p-8" 
+            />
+          </div>
+          <div class="flex-1 text-center md:text-left md:pl-8">
+            <p class="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.2em] mb-4">For Everyone</p>
+            <h3 class="text-4xl lg:text-5xl text-[#333333] mb-6 font-cinzel">
+              Ready-to-Wear Hair
+            </h3>
+            <p class="text-gray-500 mb-10 font-light leading-relaxed max-w-lg mx-auto md:mx-0 text-lg">
+              Achieve instant volume and dramatic length from the comfort of your home. Our luxury clip-ins, ponytails, and halo pieces offer zero-damage application and effortless glamour for any occasion.
+            </p>
+            <button class="border border-[#333333] text-[#333333] px-10 py-4 uppercase text-xs tracking-widest font-semibold hover:bg-[#333333] hover:text-white transition-all duration-300">
+              Shop Ready-to-Wear
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="capsule" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-32">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl text-[#333333] mb-4 font-cinzel">
+          The Capsule Collection
+        </h2>
+        <div class="w-16 h-[2px] bg-[#D4AF37] mx-auto mb-4"></div>
+        <p class="text-gray-500 font-light text-sm tracking-widest uppercase">Our Signature Bestsellers</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <!-- Product 1 -->
+        <div class="group cursor-pointer">
+          <div class="relative overflow-hidden mb-6 bg-[#1a1a1a] aspect-[4/5] p-4 flex items-center justify-center">
+            <img src="SL-001.png" alt="Seamless Tape-In Extensions" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+            <button class="quick-add-btn absolute bottom-0 left-0 w-full bg-white/95 backdrop-blur text-[#333333] py-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 font-semibold text-sm tracking-wider uppercase hover:bg-[#D4AF37] hover:text-white">
+              Quick Add
+            </button>
+          </div>
+          <div class="text-center">
+            <p class="text-xs text-gray-500 uppercase tracking-widest mb-2">Tape-Ins</p>
+            <h3 class="text-base text-[#333333] mb-2 font-medium">22" Seamless Tape-In</h3>
+            <p class="text-[#D4AF37] font-semibold">$245.00</p>
+          </div>
         </div>
         
-        <div class="flex-1 p-6 flex flex-col items-center justify-center text-center">
-            <div id="empty-cart-view" class="flex flex-col items-center">
-                <div class="w-16 h-16 bg-[#111111] border border-[#333333] rounded-full flex items-center justify-center text-gray-400 mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                    </svg>
-                </div>
-                <p class="text-gray-400 mb-6">Your luxury cart is currently empty.</p>
-                <button onclick="closeCart()" class="bg-[#D4AF37] text-white px-8 py-3 uppercase text-sm tracking-widest font-semibold hover:bg-[#b5952f] transition-all hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] w-full">
-                    Continue Shopping
-                </button>
-            </div>
-            <div id="active-cart-view" class="hidden flex-col items-center w-full">
-                <p class="text-gray-300 mb-6 font-medium">You have items in your luxury cart.</p>
-                <button class="bg-[#D4AF37] text-white px-8 py-3 uppercase text-sm tracking-widest font-semibold hover:bg-[#b5952f] transition-all hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] w-full mb-3">
-                    Proceed to Checkout
-                </button>
-                <button onclick="closeCart()" class="text-sm underline text-gray-500 hover:text-white transition-colors">
-                    Keep Shopping
-                </button>
-            </div>
+        <!-- Product 2 -->
+        <div class="group cursor-pointer">
+          <div class="relative overflow-hidden mb-6 bg-[#1a1a1a] aspect-[4/5] p-4 flex items-center justify-center">
+            <img src="SL-001.png" alt="Hand-Tied Weft Collection" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+            <button class="quick-add-btn absolute bottom-0 left-0 w-full bg-white/95 backdrop-blur text-[#333333] py-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 font-semibold text-sm tracking-wider uppercase hover:bg-[#D4AF37] hover:text-white">
+              Quick Add
+            </button>
+          </div>
+          <div class="text-center">
+            <p class="text-xs text-gray-500 uppercase tracking-widest mb-2">Wefts</p>
+            <h3 class="text-base text-[#333333] mb-2 font-medium">18" Hand-Tied Weft</h3>
+            <p class="text-[#D4AF37] font-semibold">$310.00</p>
+          </div>
         </div>
-    </div>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 z-50 flex opacity-0 invisible transition-all duration-300">
-        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="toggleMobileMenu(false)"></div>
-        <div id="mobile-menu-drawer" class="relative w-4/5 max-w-sm bg-[#1a1a1a] border-r border-[#333333] h-full flex flex-col shadow-2xl transform -translate-x-full transition-transform duration-300">
-            <div class="p-4 border-b border-[#333333] flex justify-between items-center bg-[#111111]">
-                <span class="font-semibold tracking-widest text-white">MENU</span>
-                <button onclick="toggleMobileMenu(false)" class="p-2 text-white hover:text-[#D4AF37]">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-            <div class="p-6 space-y-6 overflow-y-auto">
-                <div class="space-y-4 font-medium text-lg">
-                    <a href="#pro-hair" onclick="toggleMobileMenu(false)" class="block border-b border-[#333333] pb-2 text-white hover:text-[#D4AF37] transition-colors">Professional Hair</a>
-                    <a href="#ready-to-wear" onclick="toggleMobileMenu(false)" class="block border-b border-[#333333] pb-2 text-white hover:text-[#D4AF37] transition-colors">Ready-to-Wear Hair</a>
-                    <a href="#capsule" onclick="toggleMobileMenu(false)" class="block border-b border-[#333333] pb-2 text-white hover:text-[#D4AF37] transition-colors">Capsule Collection</a>
-                    <a href="#academy" onclick="toggleMobileMenu(false)" class="block border-b border-[#333333] pb-2 text-white hover:text-[#D4AF37] transition-colors">Academy</a>
-                    <a href="#" class="block border-b border-[#333333] pb-2 text-red-500 hover:text-red-400">Sale</a>
-                </div>
-                <div class="pt-8 space-y-4 text-sm text-gray-500 uppercase tracking-wider">
-                    <a href="#" class="block hover:text-white transition-colors">Sign Up / Login</a>
-                    <a href="#" class="block hover:text-white transition-colors">Create Pro Account</a>
-                </div>
-            </div>
+        <!-- Product 3 -->
+        <div class="group cursor-pointer">
+          <div class="relative overflow-hidden mb-6 bg-[#1a1a1a] aspect-[4/5] p-4 flex items-center justify-center">
+            <img src="SL-001.png" alt="Keratin K-Tip Strands" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+            <button class="quick-add-btn absolute bottom-0 left-0 w-full bg-white/95 backdrop-blur text-[#333333] py-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 font-semibold text-sm tracking-wider uppercase hover:bg-[#D4AF37] hover:text-white">
+              Quick Add
+            </button>
+          </div>
+          <div class="text-center">
+            <p class="text-xs text-gray-500 uppercase tracking-widest mb-2">Strand-by-Strands</p>
+            <h3 class="text-base text-[#333333] mb-2 font-medium">20" Keratin K-Tip</h3>
+            <p class="text-[#D4AF37] font-semibold">$185.00</p>
+          </div>
         </div>
+
+        <!-- Product 4 -->
+        <div class="group cursor-pointer">
+          <div class="relative overflow-hidden mb-6 bg-[#1a1a1a] aspect-[4/5] p-4 flex items-center justify-center">
+            <img src="SL-001.png" alt="Luxury Clip-In Set" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+            <button class="quick-add-btn absolute bottom-0 left-0 w-full bg-white/95 backdrop-blur text-[#333333] py-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 font-semibold text-sm tracking-wider uppercase hover:bg-[#D4AF37] hover:text-white">
+              Quick Add
+            </button>
+          </div>
+          <div class="text-center">
+            <p class="text-xs text-gray-500 uppercase tracking-widest mb-2">Ready-to-Wear</p>
+            <h3 class="text-base text-[#333333] mb-2 font-medium">Clip-In Volumizer Set</h3>
+            <p class="text-[#D4AF37] font-semibold">$275.00</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="academy" class="py-24 bg-white scroll-mt-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <p class="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.2em] mb-4">Spotted</p>
+          <h2 class="text-3xl md:text-4xl text-[#333333] mb-4 font-cinzel">
+            In the Studio & On the Runway
+          </h2>
+          <p class="text-gray-500 font-light text-sm tracking-widest uppercase">Who's Wearing Serenity Lux</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="relative aspect-[3/4] overflow-hidden group bg-gray-100">
+            <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=600" alt="Runway Model" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale hover:grayscale-0" />
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+              <span class="text-white border border-white px-4 py-2 text-xs uppercase tracking-widest backdrop-blur-sm cursor-pointer">View Look</span>
+            </div>
+          </div>
+          <div class="relative aspect-[3/4] overflow-hidden group bg-gray-100">
+            <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&q=80&w=600" alt="Runway Model" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale hover:grayscale-0" />
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+              <span class="text-white border border-white px-4 py-2 text-xs uppercase tracking-widest backdrop-blur-sm cursor-pointer">View Look</span>
+            </div>
+          </div>
+          <div class="relative aspect-[3/4] overflow-hidden group bg-gray-100">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" alt="Runway Model" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale hover:grayscale-0" />
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+              <span class="text-white border border-white px-4 py-2 text-xs uppercase tracking-widest backdrop-blur-sm cursor-pointer">View Look</span>
+            </div>
+          </div>
+          <div class="relative aspect-[3/4] overflow-hidden group bg-gray-100">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=600" alt="Runway Model" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale hover:grayscale-0" />
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+              <span class="text-white border border-white px-4 py-2 text-xs uppercase tracking-widest backdrop-blur-sm cursor-pointer">View Look</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-gray-50 border-t border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl text-[#333333] mb-4 font-cinzel">
+            The Serenity Standard
+          </h2>
+          <div class="w-16 h-[2px] bg-[#D4AF37] mx-auto mb-4"></div>
+          <p class="text-gray-500 font-light text-sm tracking-widest uppercase">Verified Stylist & Customer Reviews</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div class="bg-white p-10 shadow-sm border border-gray-50 text-center hover:-translate-y-2 transition-transform duration-500">
+            <div class="flex justify-center space-x-1 mb-6 text-[#D4AF37]">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
+            </div>
+            <p class="text-gray-600 font-light leading-relaxed mb-8 italic">"The seamless blend and zero return hair on the Serenity Wefts completely elevated my salon's offerings. My clients refuse to wear anything else."</p>
+            <div>
+              <p class="text-[#333333] font-semibold tracking-wider text-sm uppercase">Elena R.</p>
+              <p class="text-[#D4AF37] text-xs font-medium uppercase tracking-widest mt-1">Master Stylist, LA</p>
+            </div>
+          </div>
+          
+          <div class="bg-white p-10 shadow-sm border border-gray-50 text-center hover:-translate-y-2 transition-transform duration-500">
+             <div class="flex justify-center space-x-1 mb-6 text-[#D4AF37]">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
+            </div>
+            <p class="text-gray-600 font-light leading-relaxed mb-8 italic">"I rely on Serenity Lux for my red carpet clients. The quality holds up beautifully under extreme styling, heat, and lights. Absolutely flawless."</p>
+            <div>
+              <p class="text-[#333333] font-semibold tracking-wider text-sm uppercase">Sophia M.</p>
+              <p class="text-[#D4AF37] text-xs font-medium uppercase tracking-widest mt-1">Celebrity Hairstylist</p>
+            </div>
+          </div>
+
+          <div class="bg-white p-10 shadow-sm border border-gray-50 text-center hover:-translate-y-2 transition-transform duration-500">
+             <div class="flex justify-center space-x-1 mb-6 text-[#D4AF37]">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
+            </div>
+            <p class="text-gray-600 font-light leading-relaxed mb-8 italic">"The Clip-In Volumizer is a game-changer. It takes me 5 minutes to put in, blends perfectly with my natural hair, and looks incredibly luxurious."</p>
+            <div>
+              <p class="text-[#333333] font-semibold tracking-wider text-sm uppercase">Jessica T.</p>
+              <p class="text-[#D4AF37] text-xs font-medium uppercase tracking-widest mt-1">Customer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#333333] text-white py-16 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 items-start">
+      <div>
+        <img 
+          src="SL-001_2.png" 
+          alt="Serenity Lux" 
+          class="h-32 w-auto object-contain mb-6 drop-shadow-xl"
+        />
+        <p class="text-sm text-gray-400 font-light leading-relaxed">
+          Premium hair extensions crafted for professionals. Experience uncompromising quality and luxury.
+        </p>
+      </div>
+      <div class="mt-4 md:mt-0">
+        <h5 class="uppercase tracking-widest text-xs font-bold mb-6 text-[#D4AF37]">Shop</h5>
+        <ul class="space-y-4 text-sm text-gray-400 font-light">
+          <li class="hover:text-[#D4AF37] cursor-pointer transition-colors"><a href="#pro-hair" class="js-scroll-link">Professional Hair</a></li>
+          <li class="hover:text-[#D4AF37] cursor-pointer transition-colors"><a href="#ready-to-wear" class="js-scroll-link">Ready-to-Wear</a></li>
+          <li class="hover:text-[#D4AF37] cursor-pointer transition-colors"><a href="#capsule" class="js-scroll-link">Capsule Collection</a></li>
+        </ul>
+      </div>
+      <div class="mt-4 md:mt-0">
+        <h5 class="uppercase tracking-widest text-xs font-bold mb-6 text-[#D4AF37]">Support</h5>
+        <ul class="space-y-4 text-sm text-gray-400 font-light">
+          <li class="hover:text-[#D4AF37] cursor-pointer transition-colors">Contact Us</li>
+          <li class="hover:text-[#D4AF37] cursor-pointer transition-colors">Shipping & Returns</li>
+          <li class="hover:text-[#D4AF37] cursor-pointer transition-colors">Pro Application</li>
+        </ul>
+      </div>
+      <div class="mt-4 md:mt-0">
+        <h5 class="uppercase tracking-widest text-xs font-bold mb-6 text-[#D4AF37]">Stay Connected</h5>
+        <div class="flex">
+          <input 
+            type="email" 
+            placeholder="Enter your email" 
+            class="bg-transparent border-b border-gray-600 py-2 px-0 w-full text-sm focus:outline-none focus:border-[#D4AF37] transition-colors"
+          />
+          <button class="text-[#D4AF37] text-sm uppercase tracking-wider font-bold ml-4 hover:text-white transition-colors">
+            Subscribe
+          </button>
+        </div>
+      </div>
     </div>
+  </footer>
 
-    <script>
-        // Global State
-        let cartItemCount = 0;
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      /* --- Rotating Announcement Bar --- */
+      const announcements = [
+        "Complimentary Shipping on U.S. Orders Over $150",
+        "Sign up for Pro Account for Exclusive Pricing",
+        "Shop the New Ready-to-Wear Capsule Collection"
+      ];
+      let currentAnnouncementIndex = 0;
+      const announcementElement = document.getElementById('announcement-text');
+      
+      setInterval(() => {
+        currentAnnouncementIndex = (currentAnnouncementIndex + 1) % announcements.length;
+        announcementElement.innerText = announcements[currentAnnouncementIndex];
+      }, 4000);
 
-        // Announcement Bar Logic
-        const announcements = [
-            "Complimentary Shipping on U.S. Orders Over $150",
-            "Certified Pros: Log in for Exclusive Pricing",
-            "New In: The Seamless Tape-In Collection"
-        ];
-        let currentAnnouncement = 0;
-        const textElement = document.getElementById('announcement-text');
+      /* --- Shrinking Sticky Header on Scroll --- */
+      const header = document.getElementById('main-header');
+      const headerContainer = document.getElementById('header-container');
+      const desktopNav = document.getElementById('desktop-nav');
+      const logo = document.getElementById('header-logo');
 
-        setInterval(() => {
-            textElement.style.opacity = '0';
-            setTimeout(() => {
-                currentAnnouncement = (currentAnnouncement + 1) % announcements.length;
-                textElement.innerText = announcements[currentAnnouncement];
-                textElement.style.opacity = '1';
-            }, 500); // Wait half a sec for fade out before changing text
-        }, 4000); // Change every 4 seconds
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          headerContainer.classList.remove('h-24');
+          headerContainer.classList.add('h-16');
+          desktopNav.classList.add('hidden'); // Collapse the mega-nav bar
+          logo.classList.remove('max-h-[120px]');
+          logo.classList.add('max-h-[60px]');
+        } else {
+          headerContainer.classList.add('h-24');
+          headerContainer.classList.remove('h-16');
+          desktopNav.classList.remove('hidden'); // Expand mega-nav bar
+          logo.classList.add('max-h-[120px]');
+          logo.classList.remove('max-h-[60px]');
+        }
+      });
 
-        // Scroll Logic for Shrinking Header
-        window.addEventListener('scroll', () => {
-            const headerContainer = document.getElementById('header-container');
-            const logo = document.getElementById('header-logo');
-            const nav = document.getElementById('secondary-nav');
-
-            if (window.scrollY > 50) {
-                // Scrolled State
-                headerContainer.classList.remove('h-24');
-                headerContainer.classList.add('h-16');
-                
-                logo.classList.remove('h-20');
-                logo.classList.add('h-12');
-                
-                nav.classList.remove('h-[53px]', 'opacity-100', 'border-t');
-                nav.classList.add('h-0', 'opacity-0', 'overflow-hidden', 'border-transparent');
-                
-                // Disable pointer events so invisible nav isn't clickable
-                nav.style.pointerEvents = 'none';
-            } else {
-                // Top State
-                headerContainer.classList.remove('h-16');
-                headerContainer.classList.add('h-24');
-                
-                logo.classList.remove('h-12');
-                logo.classList.add('h-20');
-                
-                nav.classList.remove('h-0', 'opacity-0', 'overflow-hidden', 'border-transparent');
-                nav.classList.add('h-[53px]', 'opacity-100', 'border-t');
-                
-                nav.style.pointerEvents = 'auto';
-            }
+      /* --- Smooth Anchor Scrolling --- */
+      const scrollLinks = document.querySelectorAll('.js-scroll-link');
+      scrollLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            // Close mobile menu if open
+            closeMobileMenu();
+            // Account for header height (roughly 140px when expanded)
+            const headerOffset = 140; 
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
         });
+      });
 
-        // Cart Functions
-        function openCart() {
-            const overlay = document.getElementById('cart-overlay');
-            const drawer = document.getElementById('cart-drawer');
-            overlay.classList.remove('opacity-0', 'invisible');
-            overlay.classList.add('opacity-100', 'visible');
-            drawer.classList.remove('translate-x-full');
-        }
+      /* --- Cart Drawer Logic --- */
+      let cartCount = 0;
+      const cartBadge = document.getElementById('cart-badge');
+      const cartTitleCount = document.getElementById('cart-count-title');
+      const openCartBtn = document.getElementById('open-cart-btn');
+      const closeCartBtn = document.getElementById('close-cart-btn');
+      const continueBtn = document.getElementById('continue-shopping-btn');
+      const cartOverlay = document.getElementById('cart-overlay');
+      const cartDrawer = document.getElementById('cart-drawer');
+      const quickAddBtns = document.querySelectorAll('.quick-add-btn');
 
-        function closeCart() {
-            const overlay = document.getElementById('cart-overlay');
-            const drawer = document.getElementById('cart-drawer');
-            drawer.classList.add('translate-x-full');
-            overlay.classList.remove('opacity-100', 'visible');
-            overlay.classList.add('opacity-0', 'invisible');
-        }
+      function openCart() {
+        cartOverlay.classList.remove('opacity-0', 'invisible');
+        cartOverlay.classList.add('opacity-100', 'visible');
+        cartDrawer.classList.remove('translate-x-full');
+      }
 
-        function addToCart(event) {
-            // Prevent default behavior if needed
-            if(event) event.preventDefault();
-            
-            // Increment Count
-            cartItemCount++;
-            
-            // Update Badges
-            const badge = document.getElementById('cart-badge');
-            badge.innerText = cartItemCount;
-            badge.classList.remove('hidden');
-            badge.classList.add('flex');
-            
-            document.getElementById('cart-drawer-count').innerText = cartItemCount;
+      function closeCart() {
+        cartOverlay.classList.remove('opacity-100', 'visible');
+        cartOverlay.classList.add('opacity-0', 'invisible');
+        cartDrawer.classList.add('translate-x-full');
+      }
 
-            // Toggle Empty/Active States
-            document.getElementById('empty-cart-view').classList.add('hidden');
-            document.getElementById('empty-cart-view').classList.remove('flex');
-            
-            document.getElementById('active-cart-view').classList.remove('hidden');
-            document.getElementById('active-cart-view').classList.add('flex');
+      openCartBtn.addEventListener('click', openCart);
+      closeCartBtn.addEventListener('click', closeCart);
+      continueBtn.addEventListener('click', closeCart);
+      cartOverlay.addEventListener('click', closeCart);
 
-            // Open the drawer
-            openCart();
-        }
+      quickAddBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          cartCount++;
+          cartBadge.innerText = cartCount;
+          cartBadge.classList.remove('hidden');
+          cartTitleCount.innerText = cartCount;
+          openCart();
+        });
+      });
 
-        // Mobile Menu Functions
-        function toggleMobileMenu(isOpen) {
-            const menu = document.getElementById('mobile-menu');
-            const drawer = document.getElementById('mobile-menu-drawer');
-            
-            if (isOpen) {
-                menu.classList.remove('opacity-0', 'invisible');
-                menu.classList.add('opacity-100', 'visible');
-                drawer.classList.remove('-translate-x-full');
-            } else {
-                drawer.classList.add('-translate-x-full');
-                menu.classList.remove('opacity-100', 'visible');
-                menu.classList.add('opacity-0', 'invisible');
-            }
-        }
-    </script>
+      /* --- Mobile Menu Logic --- */
+      const openMobileBtn = document.getElementById('open-mobile-btn');
+      const closeMobileBtn = document.getElementById('close-mobile-btn');
+      const mobileContainer = document.getElementById('mobile-menu-container');
+      const mobileOverlay = document.getElementById('mobile-overlay');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+
+      function openMobileMenu() {
+        mobileContainer.classList.remove('hidden');
+        setTimeout(() => {
+          mobileDrawer.classList.remove('-translate-x-full');
+        }, 10);
+      }
+
+      function closeMobileMenu() {
+        mobileDrawer.classList.add('-translate-x-full');
+        setTimeout(() => {
+          mobileContainer.classList.add('hidden');
+        }, 300); // Wait for transition
+      }
+
+      openMobileBtn.addEventListener('click', openMobileMenu);
+      closeMobileBtn.addEventListener('click', closeMobileMenu);
+      mobileOverlay.addEventListener('click', closeMobileMenu);
+
+    });
+  </script>
 </body>
 </html>
