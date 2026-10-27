@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenity Lux Hair Extensions</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant:ital,wght@0,700;1,700&family=Lato:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#222222',
+                            gray: '#555555',
+                            light: '#ffffff',
+                            lightGray: '#F9F9F9',
+                            border: '#E5E5E5',
+                            accent: '#333333'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        accent: ['Cormorant', 'serif'],
+                        cinzel: ['"Cinzel Decorative"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Feather Icons for lightweight SVGs -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <style>
+        body {
+            color: #555555;
+        }
+        /* Custom gradient overlay for hero section */
+        .hero-overlay {
+            background: linear-gradient(to top, #ffffff, rgba(255, 255, 255, 0));
+        }
+        /* Smooth transitions for hover effects */
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-brand-light antialiased flex flex-col min-h-screen">
+
+    <!-- Announcement Bar -->
+    <div class="bg-brand-dark text-white text-center py-2.5 px-4 text-[10px] font-sans font-bold uppercase tracking-[0.2em]">
+        Shop the bedroom event - on now!
+    </div>
+
+    <!-- Header -->
+    <header class="bg-brand-light border-b border-brand-border sticky top-0 z-50 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-5 pb-5">
+            
+            <!-- Top Row (Logo & Icons) -->
+            <div class="flex justify-between items-center">
+                
+                <!-- Mobile Menu Button & Spacer (Left) -->
+                <div class="flex items-center flex-1">
+                    <button class="text-brand-gray p-2 -ml-2 md:hidden hover:text-brand-dark transition-colors">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+
+                <!-- Logo (Centered) -->
+                <div class="flex-shrink-0 flex justify-center">
+                    <a href="/">
+                        <img src="https://7inxcg-ws.myshopify.com/cdn/shop/files/Black_Spooky_Spider_Web_Halloween_Email_Header_1.png?height=56&v=1793064265" 
+                             alt="Serenity Lux Hair Extensions" 
+                             class="h-11 md:h-14 object-contain">
+                    </a>
+                </div>
+
+                <!-- Action Icons (Right) -->
+                <div class="flex items-center justify-end space-x-5 md:space-x-7 text-brand-gray flex-1">
+                    <button aria-label="Search" class="hover:text-brand-dark transition-colors"><i data-feather="search" class="w-4 h-4"></i></button>
+                    <button aria-label="Account" class="hover:text-brand-dark transition-colors hidden sm:block"><i data-feather="user" class="w-4 h-4"></i></button>
+                    <button aria-label="Cart" class="hover:text-brand-dark transition-colors relative">
+                        <i data-feather="shopping-cart" class="w-4 h-4"></i>
+                        <span class="absolute -top-2 -right-2.5 bg-brand-dark text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bottom Row (Desktop Nav - Below Logo) -->
+            <nav class="hidden md:flex justify-center space-x-10 mt-6">
+                <a href="#" class="text-brand-gray hover:text-brand-dark font-sans text-sm font-bold tracking-[0.15em] transition-colors">HOME</a>
+                <a href="#" class="text-brand-gray hover:text-brand-dark font-sans text-sm font-bold tracking-[0.15em] transition-colors">SERENITY COLLECTION</a>
+                <a href="#" class="text-brand-gray hover:text-brand-dark font-sans text-sm font-bold tracking-[0.15em] transition-colors">ABOUT US</a>
+                <a href="#" class="text-brand-gray hover:text-brand-dark font-sans text-sm font-bold tracking-[0.15em] transition-colors">CONTACT US</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative w-full min-h-[70vh] md:h-[80vh] flex flex-col md:flex-row bg-white overflow-hidden border-b border-brand-border">
+            <!-- Content Showcase -->
+            <div class="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start px-8 md:px-16 lg:px-24 py-16 z-20 text-center md:text-left order-2 md:order-1">
+                <p class="text-[10px] md:text-xs font-bold tracking-[0.2em] text-brand-gray mb-4 uppercase">
+                    Welcome to Serenity Lux
+                </p>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-cinzel text-brand-dark leading-tight mb-6">
+                    The Pinnacle of <br/><span class="font-serif italic text-brand-gray">Luxury Hair</span>
+                </h1>
+                <p class="text-brand-gray text-sm md:text-base font-sans max-w-md mb-10 leading-relaxed">
+                    Elevate your everyday look with our premium, seamlessly blended extensions. Discover breathtaking volume, effortless length, and an elegant finish crafted for the modern standard of beauty.
+                </p>
+                <a href="#" class="inline-block bg-brand-dark text-white px-10 py-4 text-xs font-bold tracking-[0.2em] uppercase border border-brand-dark hover:bg-transparent hover:text-brand-dark transition-all duration-300 shadow-sm hover:shadow-none">
+                    SHOP NOW
+                </a>
+            </div>
+            
+            <!-- Image Showcase -->
+            <div class="w-full md:w-1/2 relative h-[50vh] md:h-full order-1 md:order-2">
+                <!-- Soft elegant overlay to reduce harshness -->
+                <div class="absolute inset-0 bg-brand-dark/5 mix-blend-multiply z-10 transition-opacity"></div>
+                <img src="https://7inxcg-ws.myshopify.com/cdn/shop/files/colorful-array-human-hair-extensions-various-shades_963414-10050.avif?v=1793073071&width=1920" 
+                     alt="Serenity Hair Extensions Showcase" 
+                     class="absolute inset-0 w-full h-full object-cover object-center md:object-left z-0 shadow-inner">
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="py-20 md:py-32 px-4 max-w-7xl mx-auto">
+            <div class="mb-16 flex flex-col items-center text-center">
+                <p class="text-[10px] md:text-xs font-bold tracking-[0.2em] text-brand-gray mb-4 uppercase">Shop By</p>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-cinzel text-brand-dark">Categories</h2>
+                <div class="w-12 h-[1px] bg-brand-border mt-6"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <a href="#" class="group block relative bg-brand-lightGray hover-lift h-[24rem] flex items-end overflow-hidden border border-brand-border">
+                    <img src="https://7inxcg-ws.myshopify.com/cdn/shop/collections/Bright-Color-Straight-Human-Hair-Bundles-P-Dyed-Women-s-Hair-Extensions-Casual-Simple-Style-No-Bangs-Long-Straight-Hair-Weave-Hairpiece-Wig-0.webp" 
+                         alt="Straight Bundle" 
+                         class="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:scale-105 transition-transform duration-700 ease-in-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60"></div>
+                    <div class="relative z-10 p-6 w-full flex justify-center">
+                        <div class="bg-white/95 backdrop-blur-sm text-brand-dark px-8 py-3 font-sans text-sm font-bold tracking-widest uppercase border border-white/20">
+                            Straight Bundle
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 2 -->
+                <a href="#" class="group block relative bg-brand-lightGray hover-lift h-[24rem] flex items-end overflow-hidden border border-brand-border">
+                    <img src="https://7inxcg-ws.myshopify.com/cdn/shop/collections/wet-wavy-goddess-curl.webp" 
+                         alt="Wavy Bundle" 
+                         class="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:scale-105 transition-transform duration-700 ease-in-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60"></div>
+                    <div class="relative z-10 p-6 w-full flex justify-center">
+                        <div class="bg-white/95 backdrop-blur-sm text-brand-dark px-8 py-3 font-sans text-sm font-bold tracking-widest uppercase border border-white/20">
+                            Wavy Bundle
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 3 -->
+                <a href="#" class="group block relative bg-brand-lightGray hover-lift h-[24rem] flex items-end overflow-hidden border border-brand-border">
+                    <img src="https://7inxcg-ws.myshopify.com/cdn/shop/collections/Loose-Curl-Bulk-Hair-Extensions-for-Braiding-with-Good-Quality.webp" 
+                         alt="Curly Bundle" 
+                         class="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:scale-105 transition-transform duration-700 ease-in-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60"></div>
+                    <div class="relative z-10 p-6 w-full flex justify-center">
+                        <div class="bg-white/95 backdrop-blur-sm text-brand-dark px-8 py-3 font-sans text-sm font-bold tracking-widest uppercase border border-white/20">
+                            Curly Bundle
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Bestsellers Section -->
+        <section class="py-20 md:py-32 px-4 max-w-7xl mx-auto border-t border-brand-border">
+            <div class="mb-16 flex flex-col items-center text-center">
+                <p class="text-[10px] md:text-xs font-bold tracking-[0.2em] text-brand-gray mb-4 uppercase">Discover</p>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-cinzel text-brand-dark">Our Signature Bestsellers</h2>
+                <div class="w-12 h-[1px] bg-brand-border mt-6"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1: Genius Wefts -->
+                <div class="group flex flex-col hover-lift">
+                    <a href="#" class="block relative bg-brand-lightGray h-[22rem] overflow-hidden border border-brand-border mb-5">
+                        <img src="https://7inxcg-ws.myshopify.com/cdn/shop/collections/Bright-Color-Straight-Human-Hair-Bundles-P-Dyed-Women-s-Hair-Extensions-Casual-Simple-Style-No-Bangs-Long-Straight-Hair-Weave-Hairpiece-Wig-0.webp" 
+                             alt="Genius Wefts" 
+                             class="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:scale-105 transition-transform duration-700 ease-in-out">
+                    </a>
+                    <div class="flex flex-col text-center px-2">
+                        <h4 class="font-sans font-bold text-sm tracking-[0.15em] text-brand-dark uppercase mb-1.5">Genius Wefts</h4>
+                        <p class="font-serif italic text-brand-gray text-sm mb-3">Seamless & Undetectable</p>
+                        <p class="font-sans text-sm text-brand-dark tracking-wide">From $250</p>
+                    </div>
+                </div>
+
+                <!-- Product 2: K-Tips -->
+                <div class="group flex flex-col hover-lift">
+                    <a href="#" class="block relative bg-brand-lightGray h-[22rem] overflow-hidden border border-brand-border mb-5">
+                        <img src="https://7inxcg-ws.myshopify.com/cdn/shop/files/colorful-array-human-hair-extensions-various-shades_963414-10050.avif?v=1793073071&width=800" 
+                             alt="Keratin K-Tips" 
+                             class="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:scale-105 transition-transform duration-700 ease-in-out">
+                    </a>
+                    <div class="flex flex-col text-center px-2">
+                        <h4 class="font-sans font-bold text-sm tracking-[0.15em] text-brand-dark uppercase mb-1.5">Keratin K-Tips</h4>
+                        <p class="font-serif italic text-brand-gray text-sm mb-3">Ultimate Customization</p>
+                        <p class="font-sans text-sm text-brand-dark tracking-wide">From $185</p>
+                    </div>
+                </div>
+
+                <!-- Product 3: I-Tips -->
+                <div class="group flex flex-col hover-lift">
+                    <a href="#" class="block relative bg-brand-lightGray h-[22rem] overflow-hidden border border-brand-border mb-5">
+                        <img src="https://7inxcg-ws.myshopify.com/cdn/shop/collections/Loose-Curl-Bulk-Hair-Extensions-for-Braiding-with-Good-Quality.webp" 
+                             alt="Micro I-Tips" 
+                             class="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:scale-105 transition-transform duration-700 ease-in-out">
+                    </a>
+                    <div class="flex flex-col text-center px-2">
+                        <h4 class="font-sans font-bold text-sm tracking-[0.15em] text-brand-dark uppercase mb-1.5">Micro I-Tips</h4>
+                        <p class="font-serif italic text-brand-gray text-sm mb-3">No Heat, No Glue</p>
+                        <p class="font-sans text-sm text-brand-dark tracking-wide">From $195</p>
+                    </div>
+                </div>
+
+                <!-- Product 4: Tape-Ins -->
+                <div class="group flex flex-col hover-lift">
+                    <a href="#" class="block relative bg-brand-lightGray h-[22rem] overflow-hidden border border-brand-border mb-5">
+                        <img src="https://7inxcg-ws.myshopify.com/cdn/shop/collections/wet-wavy-goddess-curl.webp" 
+                             alt="Luxury Tape-Ins" 
+                             class="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:scale-105 transition-transform duration-700 ease-in-out">
+                    </a>
+                    <div class="flex flex-col text-center px-2">
+                        <h4 class="font-sans font-bold text-sm tracking-[0.15em] text-brand-dark uppercase mb-1.5">Luxury Tape-Ins</h4>
+                        <p class="font-serif italic text-brand-gray text-sm mb-3">Quick & Flawless Volume</p>
+                        <p class="font-sans text-sm text-brand-dark tracking-wide">From $150</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <a href="#" class="inline-block border border-brand-dark text-brand-dark px-10 py-4 text-xs font-bold tracking-[0.2em] uppercase hover:bg-brand-dark hover:text-white transition-all duration-300">
+                    VIEW ALL METHODS
+                </a>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="bg-brand-lightGray py-20 md:py-32 border-t border-brand-border">
+            <div class="max-w-7xl mx-auto px-4 flex flex-col items-center">
+                <div class="mb-16 flex flex-col items-center text-center">
+                    <p class="text-[10px] md:text-xs font-bold tracking-[0.2em] text-brand-gray mb-4 uppercase">Who's wearing Serenity Lux</p>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-cinzel text-brand-dark">The Serenity Experience</h2>
+                    <div class="w-12 h-[1px] bg-brand-border mt-6"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 w-full max-w-5xl">
+                    <div class="overflow-hidden hover-lift border border-brand-border bg-white">
+                        <img src="https://7inxcg-ws.myshopify.com/cdn/shop/files/664854_aceb23d506874493b0d4cde3fa6de321_mv2.avif" alt="Experience Image 1" class="w-full h-auto object-cover aspect-[9/16] opacity-90 hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="overflow-hidden hover-lift border border-brand-border bg-white">
+                        <img src="https://7inxcg-ws.myshopify.com/cdn/shop/files/664854_aceb23d506874493b0d4cde3fa6de321_mv2.avif" alt="Experience Image 2" class="w-full h-auto object-cover aspect-[9/16] opacity-90 hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="overflow-hidden hover-lift border border-brand-border bg-white">
+                        <img src="https://7inxcg-ws.myshopify.com/cdn/shop/files/664854_aceb23d506874493b0d4cde3fa6de321_mv2.avif" alt="Experience Image 3" class="w-full h-auto object-cover aspect-[9/16] opacity-90 hover:opacity-100 transition-opacity">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section class="bg-white py-24 md:py-32 border-t border-brand-border">
+            <div class="max-w-7xl mx-auto px-4 relative z-10">
+                <div class="mb-20 flex flex-col items-center text-center">
+                    <p class="text-[10px] md:text-xs font-bold tracking-[0.2em] text-brand-gray mb-4 uppercase">Verified Stylist & Customer Reviews</p>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-cinzel text-brand-dark">The Serenity Standard</h2>
+                    <div class="w-12 h-[1px] bg-brand-border mt-6"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+                    <!-- Review 1 -->
+                    <div class="bg-brand-lightGray border border-brand-border p-10 md:p-12 relative flex flex-col items-center text-center hover-lift">
+                        <div class="absolute -top-7 bg-brand-dark text-white w-14 h-14 rounded-full flex items-center justify-center font-cinzel font-bold text-4xl pt-4 shadow-sm">“</div>
+                        <p class="text-brand-dark text-lg tracking-[0.2em] mb-8 mt-4">★★★★★</p>
+                        <h4 class="font-serif italic text-lg md:text-xl text-brand-gray leading-relaxed flex-grow">
+                            "The seamless blend and zero return hair on the Serenity wefts completely elevated my salon's offerings. My Clients refuse to wear anything else."
+                        </h4>
+                        <div class="mt-10 w-full pt-2 flex flex-col items-center">
+                            <div class="w-8 h-[1px] bg-brand-border mb-6"></div>
+                            <h6 class="font-sans font-bold text-xs tracking-[0.15em] text-brand-dark mb-1">ELENA R.</h6>
+                            <p class="text-[10px] tracking-[0.15em] text-brand-gray uppercase">Master Stylist, LA</p>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="bg-brand-lightGray border border-brand-border p-10 md:p-12 relative flex flex-col items-center text-center hover-lift">
+                        <div class="absolute -top-7 bg-brand-dark text-white w-14 h-14 rounded-full flex items-center justify-center font-cinzel font-bold text-4xl pt-4 shadow-sm">“</div>
+                        <p class="text-brand-dark text-lg tracking-[0.2em] mb-8 mt-4">★★★★★</p>
+                        <h4 class="font-serif italic text-lg md:text-xl text-brand-gray leading-relaxed flex-grow">
+                            "I've tried every luxury extension brand on the market. The longevity and silkiness of Serenity Lux outlasts them all by months."
+                        </h4>
+                        <div class="mt-10 w-full pt-2 flex flex-col items-center">
+                            <div class="w-8 h-[1px] bg-brand-border mb-6"></div>
+                            <h6 class="font-sans font-bold text-xs tracking-[0.15em] text-brand-dark mb-1">SARAH M.</h6>
+                            <p class="text-[10px] tracking-[0.15em] text-brand-gray uppercase">Verified Customer</p>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="bg-brand-lightGray border border-brand-border p-10 md:p-12 relative flex flex-col items-center text-center hover-lift">
+                        <div class="absolute -top-7 bg-brand-dark text-white w-14 h-14 rounded-full flex items-center justify-center font-cinzel font-bold text-4xl pt-4 shadow-sm">“</div>
+                        <p class="text-brand-dark text-lg tracking-[0.2em] mb-8 mt-4">★★★★★</p>
+                        <h4 class="font-serif italic text-lg md:text-xl text-brand-gray leading-relaxed flex-grow">
+                            "The color matching is flawless out of the package. It saves me so much custom toning time behind the chair. Absolutely brilliant."
+                        </h4>
+                        <div class="mt-10 w-full pt-2 flex flex-col items-center">
+                            <div class="w-8 h-[1px] bg-brand-border mb-6"></div>
+                            <h6 class="font-sans font-bold text-xs tracking-[0.15em] text-brand-dark mb-1">JESSICA T.</h6>
+                            <p class="text-[10px] tracking-[0.15em] text-brand-gray uppercase">Salon Owner, NYC</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-light border-t border-brand-grayBeige pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="https://7inxcg-ws.myshopify.com/cdn/shop/files/Black_Spooky_Spider_Web_Halloween_Email_Header_1.png?v=1793064265" 
+                         alt="Serenity Lux Hair Extensions" 
+                         class="w-[70%] max-w-xs md:max-w-md">
+                </div>
+                
+                <!-- Footer Menus (Simplified to match visuals) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-brand-gray">
+                    <div>
+                        <h6 class="font-bold tracking-widest text-sm mb-4">SHOP</h6>
+                        <ul class="space-y-3 text-sm">
+                            <li><a href="#" class="hover:text-black transition-colors">Search</a></li>
+                            <li><a href="#" class="hover:text-black transition-colors flex items-center">Your Privacy Choices <i data-feather="shield" class="w-3 h-3 ml-1"></i></a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h6 class="font-bold tracking-widest text-sm mb-4">CUSTOMER CARE</h6>
+                        <!-- Empty list in source, leaving placeholder -->
+                        <ul class="space-y-3 text-sm">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-brand-card mb-8">
+
+            <!-- Footer Utilities -->
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-brand-gray space-y-4 md:space-y-0">
+                <div>
+                    &copy; 2026 <a href="/" class="hover:text-black transition-colors">Serenity Lux Hair Extensions</a>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-black transition-colors">Terms and Policies</a>
+                    <a href="#" class="hover:text-black transition-colors">Privacy policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Feather Icons -->
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
