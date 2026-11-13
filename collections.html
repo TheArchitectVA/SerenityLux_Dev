@@ -1,1 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair Collections | Serenity Lux Hair Extensions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            DEFAULT: '#c5a059',
+                            light: '#e2cb99',
+                            dark: '#9a7732',
+                            metallic: '#c5a059'
+                        },
+                        luxdark: '#222222',
+                        luxwhite: '#ffffff',
+                        luxgray: '#fcfcfc'
+                    },
+                    fontFamily: {
+                        cinzel: ['"Cinzel Decorative"', 'Georgia', 'serif'],
+                        sans: ['"Inter"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Cinzel Decorative & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #222222;
+        }
+        .gold-bg { background-color: #c5a059; }
+        .gold-border { border-color: #c5a059; }
+        .gold-text { color: #c5a059; }
+        .gold-gradient { background: linear-gradient(135deg, #e2cb99 0%, #c5a059 50%, #9a7732 100%); }
+    </style>
+</head>
+<body class="bg-[#ffffff] text-[#222222] font-sans antialiased selection:bg-[#c5a059] selection:text-white">
 
+    <!-- Category Selection Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs sm:text-sm uppercase tracking-[0.3em] text-[#c5a059] font-semibold mb-3 inline-block">Curated Textures</span>
+            <h2 class="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold text-[#222222] mb-4">Explore Our Collections</h2>
+            <p class="text-gray-600 text-sm sm:text-base leading-relaxed font-sans">
+                Ethically sourced 100% raw virgin hair extensions meticulously categorized by texture to match your signature look.
+            </p>
+        </div>
+
+        <!-- 3 Category Boxes Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+            
+            <!-- Category 1: Coarse Straight Hair -->
+            <div class="bg-[#fcfcfc] rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+                <div class="relative overflow-hidden aspect-[4/5] bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1584294676526-ed16752d5b41?auto=format&fit=crop&w=800&q=80" alt="Coarse Straight Hair" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60"></div>
+                    <span class="absolute top-4 left-4 bg-[#222222]/90 text-[#c5a059] text-[10px] font-bold uppercase px-3 py-1 rounded-full tracking-wider shadow-md">Signature Voluminous</span>
+                </div>
+                <div class="p-8 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-cinzel text-xl font-bold text-[#222222] mb-3 group-hover:text-[#c5a059] transition-colors">Coarse Straight Hair</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6 font-sans">
+                            Thick density and textured finish with incredible volume, natural body, and exceptional durability for effortless styling.
+                        </p>
+                    </div>
+                    <a href="coarse_straight_catalog.html" class="w-full bg-[#222222] hover:bg-[#c5a059] text-white text-center py-3.5 rounded-lg text-xs font-semibold uppercase tracking-widest shadow-md transition-all duration-300 flex items-center justify-center font-cinzel">
+                        <span>Shop Now</span>
+                        <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Category 2: Silky Straight Hair -->
+            <div class="bg-[#fcfcfc] rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+                <div class="relative overflow-hidden aspect-[4/5] bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=800&q=80" alt="Silky Straight Hair" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60"></div>
+                    <span class="absolute top-4 left-4 bg-[#222222]/90 text-[#c5a059] text-[10px] font-bold uppercase px-3 py-1 rounded-full tracking-wider shadow-md">Glass-Like Shine</span>
+                </div>
+                <div class="p-8 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-cinzel text-xl font-bold text-[#222222] mb-3 group-hover:text-[#c5a059] transition-colors">Silky Straight Hair</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6 font-sans">
+                            Immaculately smooth, bone-straight texture with a brilliant reflective shine. Crafted for timeless elegance and sleek sophistication.
+                        </p>
+                    </div>
+                    <a href="silky_straight_catalog.html" class="w-full bg-[#222222] hover:bg-[#c5a059] text-white text-center py-3.5 rounded-lg text-xs font-semibold uppercase tracking-widest shadow-md transition-all duration-300 flex items-center justify-center font-cinzel">
+                        <span>Shop Now</span>
+                        <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Category 3: Straight Hair -->
+            <div class="bg-[#fcfcfc] rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+                <div class="relative overflow-hidden aspect-[4/5] bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Straight Hair" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60"></div>
+                    <span class="absolute top-4 left-4 bg-[#222222]/90 text-[#c5a059] text-[10px] font-bold uppercase px-3 py-1 rounded-full tracking-wider shadow-md">Versatile Classic</span>
+                </div>
+                <div class="p-8 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-cinzel text-xl font-bold text-[#222222] mb-3 group-hover:text-[#c5a059] transition-colors">Straight Hair</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6 font-sans">
+                            Versatile, natural movement with pristine cuticle alignment. Soft luster and adaptable styling for everyday luxury wear.
+                        </p>
+                    </div>
+                    <a href="straight_catalog.html" class="w-full bg-[#222222] hover:bg-[#c5a059] text-white text-center py-3.5 rounded-lg text-xs font-semibold uppercase tracking-widest shadow-md transition-all duration-300 flex items-center justify-center font-cinzel">
+                        <span>Shop Now</span>
+                        <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
