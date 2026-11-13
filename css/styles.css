@@ -1,0 +1,105 @@
+/* Global Luxury Styling for Serenity Lux Hair */
+:root {
+  --bg-primary: #FFFFFF;
+  --bg-subtle: #F9F9F9;
+  --text-main: #1A1A1A;
+  --text-muted: #555555;
+  --accent-gold: #D4AF37;
+  --border-light: #EAEAEA;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.05em;
+  color: var(--text-main);
+}
+
+/* Header & Navigation */
+header {
+  padding: 20px 40px;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-primary);
+}
+
+header .logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  color: var(--text-main);
+}
+
+header nav {
+  display: flex;
+  gap: 25px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover,
+header nav a.active {
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+
+/* Buttons */
+.btn-gold {
+  display: inline-block;
+  background-color: var(--accent-gold);
+  color: #FFFFFF;
+  padding: 12px 28px;
+  border: none;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.btn-gold:hover {
+  opacity: 0.85;
+}
+
+/* Product & Collection Grids */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.card {
+  border: 1px solid var(--border-light);
+  padding: 25px;
+  background: var(--bg-primary);
+  text-align: center;
+}
+
+.card-img-placeholder {
+  height: 220px;
+  background: var(--bg-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888888;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
