@@ -1,515 +1,202 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silky Straight Collection | Serenity Lux Hair Extensions</title>
-    <!-- Tailwind CSS CDN -->
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant:ital,wght@0,700;1,700&family=Lato:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        gold: {
-                            DEFAULT: '#c5a059',
-                            light: '#e2cb99',
-                            dark: '#9a7732',
-                            metallic: '#c5a059'
-                        },
-                        luxdark: '#222222',
-                        luxwhite: '#ffffff',
-                        luxgray: '#fcfcfc'
+                        brand: {
+                            dark: '#222222',
+                            gray: '#555555',
+                            light: '#ffffff',
+                            lightGray: '#F9F9F9',
+                            border: '#E5E5E5',
+                            accent: '#333333'
+                        }
                     },
                     fontFamily: {
-                        cinzel: ['"Cinzel Decorative"', 'Georgia', 'serif'],
-                        sans: ['"Inter"', 'sans-serif']
+                        sans: ['Lato', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        accent: ['Cormorant', 'serif'],
+                        cinzel: ['"Cinzel Decorative"', 'serif'],
                     }
                 }
             }
         }
     </script>
-    <!-- Google Fonts: Cinzel Decorative & Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Feather Icons for lightweight SVGs -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    
     <style>
         body {
-            background-color: #ffffff;
-            color: #222222;
+            color: #555555;
         }
-        .gold-bg { background-color: #c5a059; }
-        .gold-border { border-color: #c5a059; }
-        .gold-text { color: #c5a059; }
-        .gold-gradient { background: linear-gradient(135deg, #e2cb99 0%, #c5a059 50%, #9a7732 100%); }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f9f9f9; }
-        ::-webkit-scrollbar-thumb { background: #c5a059; border-radius: 4px; }
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
     </style>
 </head>
-<body class="bg-[#ffffff] text-[#222222] font-sans antialiased selection:bg-[#c5a059] selection:text-white">
+<body class="bg-brand-light antialiased flex flex-col min-h-screen">
 
-    <!-- Hero / Category Header Section -->
-    <section class="relative bg-[#fcfcfc] py-16 sm:py-24 border-b border-gray-100 overflow-hidden">
-        <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#c5a059_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <span class="text-xs sm:text-sm uppercase tracking-[0.3em] text-[#c5a059] font-semibold mb-3 inline-block">Exclusive Signature Line</span>
-            <h1 class="font-cinzel text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#222222] mb-4">Silky Straight Collection</h1>
-            <p class="max-w-2xl mx-auto text-gray-600 text-sm sm:text-base leading-relaxed mb-8 font-sans">
-                Immaculately smooth, bone-straight texture with a glass-like shine. Ethically sourced 100% raw virgin hair crafted for timeless sophistication.
-            </p>
-            <div class="flex flex-wrap justify-center gap-4 text-xs sm:text-sm font-medium text-gray-700">
-                <span class="bg-white px-4 py-2 rounded-full shadow-sm border border-gray-200 flex items-center"><i class="fa-solid fa-check text-[#c5a059] mr-2"></i> 100% Raw Virgin Hair</span>
-                <span class="bg-white px-4 py-2 rounded-full shadow-sm border border-gray-200 flex items-center"><i class="fa-solid fa-check text-[#c5a059] mr-2"></i> Tangle-Free & Sleek Finish</span>
-                <span class="bg-white px-4 py-2 rounded-full shadow-sm border border-gray-200 flex items-center"><i class="fa-solid fa-check text-[#c5a059] mr-2"></i> Reusable & Heat-Friendly</span>
+    <!-- Announcement Bar -->
+    <div class="bg-brand-dark text-white text-center py-2.5 px-4 text-[10px] font-sans font-bold uppercase tracking-[0.2em]">
+        Shop the bedroom event - on now!
+    </div>
+
+    <!-- Header -->
+    <header class="bg-brand-light border-b border-brand-border sticky top-0 z-50 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-5 pb-5">
+            
+            <!-- Top Row (Logo & Icons) -->
+            <div class="flex justify-between items-center">
+                
+                <!-- Mobile Menu Button & Spacer (Left) -->
+                <div class="flex items-center flex-1">
+                    <button class="text-brand-gray p-2 -ml-2 md:hidden hover:text-brand-dark transition-colors">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+
+                <!-- Logo (Centered) -->
+                <div class="flex-shrink-0 flex justify-center">
+                    <a href="../../index.html">
+                        <img src="https://7inxcg-ws.myshopify.com/cdn/shop/files/Black_Spooky_Spider_Web_Halloween_Email_Header_1.png?height=56&v=1793064265" 
+                             alt="Serenity Lux Hair Extensions" 
+                             class="h-11 md:h-14 object-contain">
+                    </a>
+                </div>
+
+                <!-- Action Icons (Right) -->
+                <div class="flex items-center justify-end space-x-5 md:space-x-7 text-brand-gray flex-1">
+                    <button aria-label="Search" class="hover:text-brand-dark transition-colors"><i data-feather="search" class="w-4 h-4"></i></button>
+                    <button aria-label="Account" class="hover:text-brand-dark transition-colors hidden sm:block"><i data-feather="user" class="w-4 h-4"></i></button>
+                    <button aria-label="Cart" class="hover:text-brand-dark transition-colors relative">
+                        <i data-feather="shopping-cart" class="w-4 h-4"></i>
+                        <span class="absolute -top-2 -right-2.5 bg-brand-dark text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+                    </button>
+                </div>
             </div>
+
+            <!-- Bottom Row (Desktop Nav - Below Logo) -->
+            <nav class="hidden md:flex justify-center space-x-10 mt-6">
+                <a href="../../index.html" class="text-brand-gray hover:text-brand-dark font-sans text-sm font-bold tracking-[0.15em] transition-colors">HOME</a>
+                <a href="../index.html" class="text-brand-gray hover:text-brand-dark font-sans text-sm font-bold tracking-[0.15em] transition-colors">SERENITY COLLECTION</a>
+                <a href="../deep-wave/" class="text-brand-gray hover:text-brand-dark font-sans text-sm font-bold tracking-[0.15em] transition-colors">DEEP WAVE</a>
+                <a href="index.html" class="text-brand-dark font-sans text-sm font-bold tracking-[0.15em] transition-colors border-b-2 border-brand-dark pb-1">SILKY STRAIGHT</a>
+            </nav>
+
         </div>
-    </section>
+    </header>
 
-    <!-- Main Catalog Section -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        
-        <!-- Search, Filter & Sorting Bar -->
-        <div class="flex flex-col md:flex-row justify-between items-center mb-10 pb-6 border-b border-gray-200 gap-4">
-            <div class="w-full md:w-1/3">
-                <div class="relative">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
-                    <input type="text" id="search-input" placeholder="Search by color or length..." class="w-full bg-[#fcfcfc] border border-gray-300 rounded-lg pl-10 pr-4 py-2.5 text-sm text-[#222222] focus:outline-none focus:ring-1 focus:ring-[#c5a059]">
-                </div>
-            </div>
-            <div class="flex items-center justify-between md:justify-end space-x-4 w-full md:w-auto">
-                <div class="flex items-center space-x-2">
-                    <label for="sort-select" class="text-xs text-gray-500 uppercase tracking-wider whitespace-nowrap">Sort By:</label>
-                    <select id="sort-select" class="bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm text-[#222222] focus:outline-none focus:ring-1 focus:ring-[#c5a059]">
-                        <option value="default">Featured</option>
-                        <option value="price-asc">Price: Low to High</option>
-                        <option value="price-desc">Price: High to Low</option>
-                        <option value="weight-desc">Weight: Heaviest First</option>
-                    </select>
-                </div>
-            </div>
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 py-20 md:py-32 w-full">
+        <div class="mb-16 flex flex-col items-center text-center">
+            <p class="text-[10px] md:text-xs font-bold tracking-[0.2em] text-brand-gray mb-4 uppercase">Signature Texture</p>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-cinzel text-brand-dark">Silky Straight Collection</h1>
+            <div class="w-12 h-[1px] bg-brand-border mt-6"></div>
+            <p class="text-brand-gray text-sm md:text-base font-sans max-w-xl mt-6 leading-relaxed">
+                Bone-straight, glass-finish wholesale hair extensions designed with Italian keratin bonds and micro-cylinders for elite salon applications.
+            </p>
         </div>
 
         <!-- Product Grid -->
-        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Dynamically rendered products -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Product 1 -->
+            <div class="group flex flex-col hover-lift bg-white border border-brand-border p-5">
+                <div class="relative bg-brand-lightGray h-[22rem] overflow-hidden mb-5">
+                    <img src="https://7inxcg-ws.myshopify.com/cdn/shop/collections/Bright-Color-Straight-Human-Hair-Bundles-P-Dyed-Women-s-Hair-Extensions-Casual-Simple-Style-No-Bangs-Long-Straight-Hair-Weave-Hairpiece-Wig-0.webp" 
+                         alt="Silky Straight K-Tips" 
+                         class="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:scale-105 transition-transform duration-700 ease-in-out">
+                </div>
+                <div class="flex flex-col text-center px-2 flex-grow justify-between">
+                    <div>
+                        <h4 class="font-sans font-bold text-sm tracking-[0.15em] text-brand-dark uppercase mb-1.5">Silky Straight Keratin K-Tips</h4>
+                        <p class="font-serif italic text-brand-gray text-sm mb-3">Italian keratin bonds for custom fusion</p>
+                        <p class="font-sans text-sm text-brand-dark tracking-wide mb-6">From $185</p>
+                    </div>
+                    <button class="w-full bg-brand-dark text-white py-3 text-xs font-bold tracking-[0.2em] uppercase hover:bg-brand-accent transition-colors">
+                        Inquire / Order
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="group flex flex-col hover-lift bg-white border border-brand-border p-5">
+                <div class="relative bg-brand-lightGray h-[22rem] overflow-hidden mb-5">
+                    <img src="https://7inxcg-ws.myshopify.com/cdn/shop/files/colorful-array-human-hair-extensions-various-shades_963414-10050.avif?v=1793073071&width=800" 
+                         alt="Silky Straight I-Tips" 
+                         class="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:scale-105 transition-transform duration-700 ease-in-out">
+                </div>
+                <div class="flex flex-col text-center px-2 flex-grow justify-between">
+                    <div>
+                        <h4 class="font-sans font-bold text-sm tracking-[0.15em] text-brand-dark uppercase mb-1.5">Silky Straight Micro I-Tips</h4>
+                        <p class="font-serif italic text-brand-gray text-sm mb-3">Beaded micro-cylinders with zero heat</p>
+                        <p class="font-sans text-sm text-brand-dark tracking-wide mb-6">From $195</p>
+                    </div>
+                    <button class="w-full bg-brand-dark text-white py-3 text-xs font-bold tracking-[0.2em] uppercase hover:bg-brand-accent transition-colors">
+                        Inquire / Order
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="group flex flex-col hover-lift bg-white border border-brand-border p-5">
+                <div class="relative bg-brand-lightGray h-[22rem] overflow-hidden mb-5">
+                    <img src="https://7inxcg-ws.myshopify.com/cdn/shop/collections/Loose-Curl-Bulk-Hair-Extensions-for-Braiding-with-Good-Quality.webp" 
+                         alt="Silky Straight Wefts" 
+                         class="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:scale-105 transition-transform duration-700 ease-in-out">
+                </div>
+                <div class="flex flex-col text-center px-2 flex-grow justify-between">
+                    <div>
+                        <h4 class="font-sans font-bold text-sm tracking-[0.15em] text-brand-dark uppercase mb-1.5">Silky Straight Wefts</h4>
+                        <p class="font-serif italic text-brand-gray text-sm mb-3">Bone-straight glass finish volume</p>
+                        <p class="font-sans text-sm text-brand-dark tracking-wide mb-6">From $250</p>
+                    </div>
+                    <button class="w-full bg-brand-dark text-white py-3 text-xs font-bold tracking-[0.2em] uppercase hover:bg-brand-accent transition-colors">
+                        Inquire / Order
+                    </button>
+                </div>
+            </div>
+
         </div>
     </main>
 
-    <!-- Floating Bag Trigger Button -->
-    <button id="floating-cart-btn" class="fixed bottom-6 right-6 z-40 bg-[#222222] hover:bg-[#c5a059] text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 group" aria-label="Open Shopping Bag">
-        <i class="fa-solid fa-bag-shopping text-xl"></i>
-        <span id="floating-cart-badge" class="absolute -top-2 -right-2 bg-[#c5a059] group-hover:bg-[#222222] text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shadow-md">0</span>
-    </button>
-
-    <!-- Slide-out Cart Drawer -->
-    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden">
-        <div id="cart-backdrop" class="absolute inset-0 bg-black/50 transition-opacity backdrop-blur-sm"></div>
-        <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
-            <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
-                <!-- Cart Header -->
-                <div class="flex items-center justify-between px-6 py-5 border-b border-gray-200">
-                    <h2 class="font-cinzel text-xl font-bold text-[#222222] flex items-center">
-                        <i class="fa-solid fa-bag-shopping text-[#c5a059] mr-2"></i> Your Bag (<span id="cart-count-header">0</span>)
-                    </h2>
-                    <button id="close-cart" class="text-gray-400 hover:text-[#222222] p-2" aria-label="Close Bag">
-                        <i class="fa-solid fa-xmark text-xl"></i>
-                    </button>
+    <!-- Footer -->
+    <footer class="bg-brand-light border-t border-brand-border pt-16 pb-8 mt-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-brand-gray space-y-4 md:space-y-0">
+                <div>
+                    &copy; 2026 <a href="../../index.html" class="hover:text-black transition-colors">Serenity Lux Hair Extensions</a>
                 </div>
-                <!-- Cart Items Container -->
-                <div id="cart-items-container" class="flex-1 overflow-y-auto px-6 py-4 space-y-4">
-                    <!-- Dynamic Cart Items -->
-                </div>
-                <!-- Cart Footer -->
-                <div class="border-t border-gray-200 px-6 py-6 bg-[#fcfcfc]">
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="text-sm text-gray-600 font-medium">Subtotal</span>
-                        <span id="cart-subtotal" class="font-cinzel text-xl font-bold text-[#222222]">$0.00</span>
-                    </div>
-                    <p class="text-xs text-gray-500 mb-4">Shipping & taxes calculated at checkout. WhatsApp instant order supported.</p>
-                    <div class="space-y-3">
-                        <button id="whatsapp-checkout-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition-colors flex items-center justify-center text-sm">
-                            <i class="fa-brands fa-whatsapp text-lg mr-2"></i> Order via WhatsApp Inquiry
-                        </button>
-                        <button onclick="showToast('Secure Checkout simulation initialized. Proceeding to payment...');" class="w-full bg-[#c5a059] hover:bg-[#b08b47] text-white font-semibold py-3 px-4 rounded-lg shadow-md transition-all text-sm">
-                            Proceed to Secure Checkout
-                        </button>
-                    </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-black transition-colors">Terms and Policies</a>
+                    <a href="#" class="hover:text-black transition-colors">Privacy policy</a>
                 </div>
             </div>
         </div>
-    </div>
+    </footer>
 
-    <!-- Quick View Modal -->
-    <div id="quick-view-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
-        <div id="modal-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-        <div class="relative bg-white rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl z-10 animate-in fade-in zoom-in-95 duration-200">
-            <button id="close-modal" class="absolute top-4 right-4 z-20 bg-white/80 hover:bg-white text-gray-700 w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-colors" aria-label="Close modal">
-                <i class="fa-solid fa-xmark text-lg"></i>
-            </button>
-            <div id="modal-content" class="grid grid-cols-1 md:grid-cols-2">
-                <!-- Dynamically filled modal details -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-6 left-6 z-50 bg-[#222222] text-white px-5 py-3 rounded-xl shadow-2xl flex items-center space-x-3 transform -translate-y-24 opacity-0 transition-all duration-300">
-        <div class="w-7 h-7 bg-[#c5a059] rounded-full flex items-center justify-center text-white text-xs">
-            <i class="fa-solid fa-check"></i>
-        </div>
-        <div>
-            <p id="toast-title" class="text-xs font-semibold uppercase tracking-wider text-[#c5a059]">Success</p>
-            <p id="toast-message" class="text-sm">Item added to your shopping bag.</p>
-        </div>
-    </div>
-
-    <!-- JavaScript Application Logic -->
+    <!-- Initialize Feather Icons -->
     <script>
-        // Exact 7 Silky Straight Collection Products with requested specifications
-        const products = [
-            {
-                id: 1,
-                name: "Silky Straight Luxury Bundle",
-                texture: "Silky Straight",
-                color: "Sapphire Blue",
-                length: "22 Inches",
-                weight: "91 Grams",
-                price: 220.00,
-                rating: 5.0,
-                reviews: 34,
-                image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=800&q=80",
-                badge: "Bold & Vibrant",
-                description: "Striking sapphire blue bone-straight hair extension. Rich pigment with a flawless, glass-like reflective finish."
-            },
-            {
-                id: 2,
-                name: "Silky Straight Luxury Bundle",
-                texture: "Silky Straight",
-                color: "Light Brown",
-                length: "16 Inches",
-                weight: "66 Grams",
-                price: 175.00,
-                rating: 4.8,
-                reviews: 22,
-                image: "https://images.unsplash.com/photo-1584294676526-ed16752d5b41?auto=format&fit=crop&w=800&q=80",
-                badge: "Best Seller",
-                description: "Warm light brown tone in a sleek 16-inch length. Perfectly aligned cuticles for effortless styling and natural shine."
-            },
-            {
-                id: 3,
-                name: "Silky Straight Luxury Bundle",
-                texture: "Silky Straight",
-                color: "Med/Chocolate Brown",
-                length: "22 Inches",
-                weight: "91 Grams",
-                price: 190.00,
-                rating: 4.9,
-                reviews: 48,
-                image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
-                badge: "Popular",
-                description: "Rich medium and chocolate brown blend. Provides luxurious length and silky-smooth texture from root to tip."
-            },
-            {
-                id: 4,
-                name: "Silky Straight Luxury Bundle",
-                texture: "Silky Straight",
-                color: "Dark Brown",
-                length: "20 Inches",
-                weight: "84 Grams",
-                price: 185.00,
-                rating: 4.9,
-                reviews: 39,
-                image: "https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=800&q=80",
-                badge: "Classic Elegance",
-                description: "Deep dark brown bone-straight bundle. Elegant, versatile, and expertly treated for long-lasting smoothness."
-            },
-            {
-                id: 5,
-                name: "Silky Straight Luxury Bundle",
-                texture: "Silky Straight",
-                color: "Platinum Blonde",
-                length: "22 Inches",
-                weight: "112 Grams",
-                price: 250.00,
-                rating: 5.0,
-                reviews: 61,
-                image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
-                badge: "Signature Heavy",
-                description: "Dazzling platinum blonde with substantial 112g density. Ultra-smooth texture with brilliant radiance."
-            },
-            {
-                id: 6,
-                name: "Silky Straight Luxury Bundle",
-                texture: "Silky Straight",
-                color: "Natural Black",
-                length: "22 Inches",
-                weight: "91 Grams",
-                price: 180.00,
-                rating: 4.9,
-                reviews: 52,
-                image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
-                badge: "Timeless",
-                description: "Raw natural black silky straight hair. Features pristine cuticle alignment for zero tangles and incredible durability."
-            },
-            {
-                id: 7,
-                name: "Silky Straight Luxury Bundle",
-                texture: "Silky Straight",
-                color: "Dark Blonde",
-                length: "20 Inches",
-                weight: "51 Grams",
-                price: 165.00,
-                rating: 4.7,
-                reviews: 18,
-                image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
-                badge: "Lightweight",
-                description: "Sophisticated dark blonde shade. Smooth, lightweight, and versatile for flawless everyday blending."
-            }
-        ];
-
-        let cart = [];
-
-        // DOM Elements
-        const productGrid = document.getElementById('product-grid');
-        const cartDrawer = document.getElementById('cart-drawer');
-        const floatingCartBtn = document.getElementById('floating-cart-btn');
-        const closeCartBtn = document.getElementById('close-cart');
-        const cartBackdrop = document.getElementById('cart-backdrop');
-        const cartItemsContainer = document.getElementById('cart-items-container');
-        const floatingCartBadge = document.getElementById('floating-cart-badge');
-        const cartCountHeader = document.getElementById('cart-count-header');
-        const cartSubtotal = document.getElementById('cart-subtotal');
-        const searchInput = document.getElementById('search-input');
-        const sortSelect = document.getElementById('sort-select');
-        const quickViewModal = document.getElementById('quick-view-modal');
-        const modalBackdrop = document.getElementById('modal-backdrop');
-        const closeModal = document.getElementById('close-modal');
-        const modalContent = document.getElementById('modal-content');
-        const toast = document.getElementById('toast');
-        const toastTitle = document.getElementById('toast-title');
-        const toastMessage = document.getElementById('toast-message');
-        const whatsappCheckoutBtn = document.getElementById('whatsapp-checkout-btn');
-
-        // Render Product Catalog
-        function renderProducts(items) {
-            productGrid.innerHTML = '';
-            if (items.length === 0) {
-                productGrid.innerHTML = `<div class="col-span-full text-center py-12 text-gray-500">No matching extensions found. Try adjusting your search.</div>`;
-                return;
-            }
-
-            items.forEach(product => {
-                const card = document.createElement('div');
-                card.className = "bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group";
-                card.innerHTML = `
-                    <div class="relative overflow-hidden bg-gray-100 aspect-[4/5]">
-                        <img src="${product.image}" alt="${product.color}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-3 left-3 bg-[#222222]/90 text-[#c5a059] text-[10px] font-bold uppercase px-3 py-1 rounded-full tracking-wider shadow-md">${product.badge}</span>
-                        <button onclick="openQuickView(${product.id})" class="absolute bottom-3 right-3 bg-white/90 hover:bg-white text-[#222222] w-10 h-10 rounded-full flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity" aria-label="Quick View">
-                            <i class="fa-solid fa-eye text-sm"></i>
-                        </button>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between text-xs text-gray-500 mb-1">
-                                <span class="uppercase tracking-wider text-[#c5a059] font-semibold">${product.texture}</span>
-                                <div class="flex items-center text-amber-500">
-                                    <i class="fa-solid fa-star text-[10px] mr-1"></i>
-                                    <span>${product.rating} (${product.reviews})</span>
-                                </div>
-                            </div>
-                            <h3 class="font-cinzel text-lg font-bold text-[#222222] mb-2">${product.color}</h3>
-                            <div class="grid grid-cols-2 gap-2 text-xs text-gray-600 bg-[#fcfcfc] p-3 rounded-lg mb-4 border border-gray-100">
-                                <div><strong class="text-[#222222]">Length:</strong> ${product.length}</div>
-                                <div><strong class="text-[#222222]">Weight:</strong> ${product.weight}</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
-                            <div>
-                                <span class="text-xs text-gray-400 block">Retail Price</span>
-                                <span class="font-cinzel text-xl font-bold text-[#222222]">$${product.price.toFixed(2)}</span>
-                            </div>
-                            <button onclick="addToCart(${product.id})" class="bg-[#c5a059] hover:bg-[#b08b47] text-white px-4 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider shadow-sm transition-all flex items-center">
-                                <i class="fa-solid fa-bag-shopping mr-2"></i> Add to Bag
-                            </button>
-                        </div>
-                    </div>
-                `;
-                productGrid.appendChild(card);
-            });
-        }
-
-        // Cart Functions
-        function addToCart(productId) {
-            const product = products.find(p => p.id === productId);
-            const existingItem = cart.find(item => item.id === productId);
-
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({ ...product, quantity: 1 });
-            }
-
-            updateCartUI();
-            showToast("Added to Bag", `${product.color} (${product.length}) added successfully.`);
-        }
-
-        function updateCartUI() {
-            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
-            floatingCartBadge.textContent = totalCount;
-            cartCountHeader.textContent = totalCount;
-
-            if (cart.length === 0) {
-                cartItemsContainer.innerHTML = `
-                    <div class="text-center py-16 text-gray-400">
-                        <i class="fa-solid fa-bag-shopping text-4xl mb-3 text-gray-300"></i>
-                        <p class="text-sm font-medium">Your shopping bag is empty.</p>
-                    </div>
-                `;
-                cartSubtotal.textContent = "$0.00";
-                return;
-            }
-
-            cartItemsContainer.innerHTML = '';
-            let subtotal = 0;
-
-            cart.forEach(item => {
-                subtotal += item.price * item.quantity;
-                const itemEl = document.createElement('div');
-                itemEl.className = "flex items-center space-x-4 bg-[#fcfcfc] p-4 rounded-xl border border-gray-100";
-                itemEl.innerHTML = `
-                    <img src="${item.image}" alt="${item.color}" class="w-16 h-20 object-cover rounded-lg shadow-sm">
-                    <div class="flex-1">
-                        <h4 class="font-cinzel font-bold text-sm text-[#222222]">${item.color}</h4>
-                        <p class="text-xs text-gray-500">${item.length} &bull; ${item.weight}</p>
-                        <div class="flex items-center justify-between mt-2">
-                            <div class="flex items-center border border-gray-300 rounded bg-white">
-                                <button onclick="updateQuantity(${item.id}, -1)" class="px-2 py-0.5 text-gray-600 hover:text-[#c5a059]" aria-label="Decrease quantity">-</button>
-                                <span class="px-2 text-xs font-semibold">${item.quantity}</span>
-                                <button onclick="updateQuantity(${item.id}, 1)" class="px-2 py-0.5 text-gray-600 hover:text-[#c5a059]" aria-label="Increase quantity">+</button>
-                            </div>
-                            <span class="font-cinzel font-bold text-sm text-[#222222]">$${(item.price * item.quantity).toFixed(2)}</span>
-                        </div>
-                    </div>
-                    <button onclick="removeFromCart(${item.id})" class="text-gray-400 hover:text-red-500 p-1" aria-label="Remove item"><i class="fa-solid fa-trash-can text-sm"></i></button>
-                `;
-                cartItemsContainer.appendChild(itemEl);
-            });
-
-            cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
-        }
-
-        function updateQuantity(productId, change) {
-            const item = cart.find(i => i.id === productId);
-            if (item) {
-                item.quantity += change;
-                if (item.quantity <= 0) {
-                    cart = cart.filter(i => i.id !== productId);
-                }
-                updateCartUI();
-            }
-        }
-
-        function removeFromCart(productId) {
-            cart = cart.filter(i => i.id !== productId);
-            updateCartUI();
-            showToast("Item Removed", "Product removed from shopping bag.");
-        }
-
-        // Quick View Modal
-        function openQuickView(productId) {
-            const product = products.find(p => p.id === productId);
-            modalContent.innerHTML = `
-                <div class="aspect-[4/5] bg-gray-100">
-                    <img src="${product.image}" alt="${product.color}" class="w-full h-full object-cover">
-                </div>
-                <div class="p-8 flex flex-col justify-between">
-                    <div>
-                        <span class="text-xs uppercase tracking-widest text-[#c5a059] font-semibold">${product.texture} Collection</span>
-                        <h2 class="font-cinzel text-2xl font-bold text-[#222222] mt-1 mb-2">${product.color}</h2>
-                        <div class="flex items-center text-amber-500 mb-4 text-sm">
-                            <i class="fa-solid fa-star mr-1"></i>
-                            <span class="font-semibold text-gray-800">${product.rating}</span>
-                            <span class="text-gray-400 ml-1">(${product.reviews} verified reviews)</span>
-                        </div>
-                        <p class="font-cinzel text-2xl font-bold text-[#222222] mb-4">$${product.price.toFixed(2)}</p>
-                        <p class="text-gray-600 text-sm leading-relaxed mb-6">${product.description}</p>
-                        <div class="grid grid-cols-2 gap-3 mb-6 bg-[#fcfcfc] p-4 rounded-xl text-xs text-gray-700 border border-gray-100">
-                            <div><strong>Texture:</strong> ${product.texture}</div>
-                            <div><strong>Color:</strong> ${product.color}</div>
-                            <div><strong>Length:</strong> ${product.length}</div>
-                            <div><strong>Weight:</strong> ${product.weight}</div>
-                        </div>
-                    </div>
-                    <button onclick="addToCart(${product.id}); closeQuickViewModal();" class="w-full bg-[#c5a059] hover:bg-[#b08b47] text-white py-3 rounded-lg font-semibold text-sm tracking-wider uppercase shadow-md transition-all">
-                        Add to Bag - $${product.price.toFixed(2)}
-                    </button>
-                </div>
-            `;
-            quickViewModal.classList.remove('hidden');
-        }
-
-        function closeQuickViewModal() {
-            quickViewModal.classList.add('hidden');
-        }
-
-        // Toast Notification Function
-        function showToast(title, message) {
-            toastTitle.textContent = title;
-            toastMessage.textContent = message;
-            toast.classList.remove('-translate-y-24', 'opacity-0');
-            setTimeout(() => {
-                toast.classList.add('-translate-y-24', 'opacity-0');
-            }, 3500);
-        }
-
-        // Event Listeners
-        floatingCartBtn.addEventListener('click', () => cartDrawer.classList.remove('hidden'));
-        closeCartBtn.addEventListener('click', () => cartDrawer.classList.add('hidden'));
-        cartBackdrop.addEventListener('click', () => cartDrawer.classList.add('hidden'));
-
-        closeModal.addEventListener('click', closeQuickViewModal);
-        modalBackdrop.addEventListener('click', closeQuickViewModal);
-
-        searchInput.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase();
-            const filtered = products.filter(p => 
-                p.color.toLowerCase().includes(query) || 
-                p.length.toLowerCase().includes(query) || 
-                p.weight.toLowerCase().includes(query)
-            );
-            renderProducts(filtered);
-        });
-
-        sortSelect.addEventListener('change', (e) => {
-            let sorted = [...products];
-            const val = e.target.value;
-            if (val === 'price-asc') sorted.sort((a,b) => a.price - b.price);
-            if (val === 'price-desc') sorted.sort((a,b) => b.price - a.price);
-            if (val === 'weight-desc') sorted.sort((a,b) => parseInt(b.weight) - parseInt(a.weight));
-            renderProducts(sorted);
-        });
-
-        whatsappCheckoutBtn.addEventListener('click', () => {
-            if (cart.length === 0) {
-                showToast("Empty Bag", "Please add items before sending a WhatsApp inquiry.");
-                return;
-            }
-            let message = "Hello Serenity Lux Hair Extensions! I would like to order the following items from the Silky Straight Collection:%0A%0A";
-            let total = 0;
-            cart.forEach(item => {
-                message += `- ${item.color} (${item.length}, ${item.weight}) x ${item.quantity} = $${(item.price * item.quantity).toFixed(2)}%0A`;
-                total += item.price * item.quantity;
-            });
-            message += `%0ATotal Subtotal: $${total.toFixed(2)}%0APlease let me know the shipping details!`;
-            window.open(`https://wa.me/?text=${message}`, '_blank');
-        });
-
-        // Initialize Catalog on Load
-        window.onload = () => {
-            renderProducts(products);
-        };
+        feather.replace();
     </script>
 </body>
 </html>
